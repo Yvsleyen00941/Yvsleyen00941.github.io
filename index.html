@@ -1,403 +1,320 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yorben · App Developer & Student @ UA</title>
-  <meta name="description" content="Portfolio van Yorben Vandersleyen - Student aan de Universiteit Antwerpen en bouwer van iOS, macOS en Web applicaties.">
+  <title>Yorben Vandersleyen — Independent Software & iOS Creator</title>
+  <meta name="description" content="Portfolio of Yorben Vandersleyen — Student at University of Antwerp building thoughtful software across iOS, iPadOS, macOS, and the Web.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="ambient-glow" aria-hidden="true"></div>
+  <!-- Ambient Atmospheric Lighting -->
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
 
-  <!-- Header / Navigation -->
-  <header class="site-header">
-    <div class="container nav-container">
-      <a href="#" class="brand-logo">
-        <span class="logo-mark">Y</span>
-        <span class="logo-text">Yorben<span class="dot">.</span>me</span>
-      </a>
+  <!-- Outer Frame -->
+  <div class="page-shell">
+    <!-- Floating Pristine Canvas Container (Inspired by Mintly & Ordiva) -->
+    <div class="main-canvas">
 
-      <div class="nav-actions">
-        <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" id="github-profile-link">
-          <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-          </svg>
-          <span>GitHub</span>
+      <!-- Navigation Bar -->
+      <header class="canvas-nav">
+        <a href="#" class="brand-identity">
+          <span class="brand-symbol">≠</span>
+          <span class="brand-name">Yorben</span>
         </a>
-        <a href="#contact" class="btn btn-primary">Contact</a>
-      </div>
-    </div>
-  </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="container hero-container">
-        <div class="status-pill">
-          <span class="status-indicator"></span>
-          <span>Student @ Universiteit Antwerpen · Software Creator</span>
-        </div>
+        <nav class="nav-links">
+          <a href="#apps" class="nav-link active">Apps</a>
+          <a href="#about" class="nav-link">Craft</a>
+          <a href="#stack" class="nav-link">Toolkit</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
 
-        <h1 class="hero-title">
-          Ik bouw doordachte apps voor <span class="gradient-text">iOS, iPadOS & macOS</span>.
-        </h1>
-
-        <p class="hero-subtitle">
-          Van complete all-in-one workspaces en Gemini AI portfolio tracking tot 3D RealityKit games. 
-          Download de broncode direct via GitHub.
-        </p>
-
-        <!-- Quick filter tabs -->
-        <div class="filter-bar" role="tablist" aria-label="Project filters">
-          <button class="filter-chip active" data-filter="all">Alle projecten <span class="count">4</span></button>
-          <button class="filter-chip" data-filter="apple">Apple Apps <span class="count">3</span></button>
-          <button class="filter-chip" data-filter="ai">AI Integratie <span class="count">1</span></button>
-          <button class="filter-chip" data-filter="web">Web <span class="count">1</span></button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Grid -->
-    <section class="projects-section" id="projects">
-      <div class="container">
-        <div class="projects-grid">
-
-          <!-- Project 1: Cockpit -->
-          <article class="project-card-container" data-category="apple">
-            <div class="project-card">
-              <div class="card-visual visual-cockpit">
-                <div class="platform-badges">
-                  <span class="badge badge-platform">macOS, iPad & iPhone</span>
-                  <span class="badge badge-status status-beta">v0.4 Live</span>
-                </div>
-                <div class="app-icon-preview">
-                  <div class="cockpit-icon">
-                    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2">
-                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                      <line x1="16" y1="2" x2="16" y2="6"></line>
-                      <line x1="8" y1="2" x2="8" y2="6"></line>
-                      <line x1="3" y1="10" x2="21" y2="10"></line>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-content">
-                <div class="card-header">
-                  <h2 class="project-title">Cockpit</h2>
-                  <p class="project-tagline">De all-in-one dagelijkse werkplek</p>
-                </div>
-
-                <p class="project-description">
-                  Brengt je 4 belangrijkste tools samen in 1 vloeiende app: <strong>Agenda, Muziek, Notion en E-mail</strong>. Inclusief een macOS menu-bar helper, Pomodoro focus timers en contextuele iPad toetsen.
-                </p>
-
-                <div class="tech-stack-tags">
-                  <span class="tag">SwiftUI</span>
-                  <span class="tag">macOS & iPadOS</span>
-                  <span class="tag">Notion API</span>
-                  <span class="tag">Calendar Sync</span>
-                </div>
-
-                <div class="card-footer">
-                  <a href="https://github.com/Yvsleyen00941/Cockpit" target="_blank" rel="noopener noreferrer" class="btn btn-card-action">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                      <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                    </svg>
-                    Download / GitHub
-                  </a>
-                  <button class="btn btn-ghost btn-open-modal" data-modal="modal-cockpit">
-                    Details
-                  </button>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2: Cairn (Portfolio Tracker + Gemini AI) -->
-          <article class="project-card-container" data-category="apple ai">
-            <div class="project-card featured-glow">
-              <div class="card-visual visual-tracker">
-                <div class="platform-badges">
-                  <span class="badge badge-platform">iOS (iPhone)</span>
-                  <span class="badge badge-ai">✨ Gemini AI</span>
-                </div>
-                <div class="app-icon-preview">
-                  <div class="tracker-icon">
-                    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2">
-                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                      <polyline points="17 6 23 6 23 12"></polyline>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-content">
-                <div class="card-header">
-                  <h2 class="project-title">Cairn</h2>
-                  <p class="project-tagline">Multi-market portfolio tracker met AI brief</p>
-                </div>
-
-                <p class="project-description">
-                  Dekt wereldwijd elke beurs in één overzichtelijke portfolio, live omgerekend naar jouw valuta. Inclusief gratis <strong>Gemini AI daily briefs</strong>, Live Activities, lockscreen widgets en koersalerts.
-                </p>
-
-                <div class="tech-stack-tags">
-                  <span class="tag">SwiftUI</span>
-                  <span class="tag">Gemini API</span>
-                  <span class="tag">Live Activities</span>
-                  <span class="tag">Widgets</span>
-                </div>
-
-                <div class="card-footer">
-                  <a href="https://github.com/Yvsleyen00941/Cairn" target="_blank" rel="noopener noreferrer" class="btn btn-card-action">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                      <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                    </svg>
-                    Download / GitHub
-                  </a>
-                  <button class="btn btn-ghost btn-open-modal" data-modal="modal-tracker">
-                    Details
-                  </button>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 3: Waybill -->
-          <article class="project-card-container" data-category="apple">
-            <div class="project-card">
-              <div class="card-visual visual-game">
-                <div class="platform-badges">
-                  <span class="badge badge-platform">iPadOS (iPad)</span>
-                  <span class="badge badge-status status-live">Complete v1.0</span>
-                </div>
-                <div class="app-icon-preview">
-                  <div class="game-icon">
-                    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2">
-                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-content">
-                <div class="card-header">
-                  <h2 class="project-title">Waybill</h2>
-                  <p class="project-tagline">Logistics idle game in 3D RealityKit</p>
-                </div>
-
-                <p class="project-description">
-                  Volledig afgewerkte logistieke idle game met 5 handgemaakte 3D-diorama's: van distributietrucks in Riverside en kadekranen in Harbour City tot goederentreinen en raketlanceringen in Orbit.
-                </p>
-
-                <div class="tech-stack-tags">
-                  <span class="tag">SwiftUI</span>
-                  <span class="tag">RealityKit</span>
-                  <span class="tag">Custom Shaders</span>
-                  <span class="tag">3D Mesh Kit</span>
-                </div>
-
-                <div class="card-footer">
-                  <a href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener noreferrer" class="btn btn-card-action">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                      <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                    </svg>
-                    Download / GitHub
-                  </a>
-                  <button class="btn btn-ghost btn-open-modal" data-modal="modal-game">
-                    Details
-                  </button>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 4: PortTracker Web -->
-          <article class="project-card-container" data-category="web">
-            <div class="project-card">
-              <div class="card-visual visual-webapp">
-                <div class="platform-badges">
-                  <span class="badge badge-platform">Web / PWA</span>
-                  <span class="badge badge-status status-live">Live</span>
-                </div>
-                <div class="app-icon-preview">
-                  <div class="web-icon">
-                    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="2" y1="12" x2="22" y2="12"></line>
-                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-content">
-                <div class="card-header">
-                  <h2 class="project-title">PortTracker Web</h2>
-                  <p class="project-tagline">Financiële portfolio webapplicatie</p>
-                </div>
-
-                <p class="project-description">
-                  Mobile-first Progressive Web App voor Europese aandelen, ETF's, crypto en hefboomproducten. Gebouwd met Next.js 15, Tailwind v4 en Supabase PostgreSQL.
-                </p>
-
-                <div class="tech-stack-tags">
-                  <span class="tag">Next.js 15</span>
-                  <span class="tag">TypeScript</span>
-                  <span class="tag">Tailwind CSS</span>
-                  <span class="tag">Supabase</span>
-                </div>
-
-                <div class="card-footer">
-                  <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="btn btn-card-action">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                      <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                    </svg>
-                    GitHub Profiel
-                  </a>
-                  <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
-                    Bekijk
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Workflow / About Section -->
-    <section class="about-section" id="about">
-      <div class="container">
-        <div class="glass-box">
-          <div class="glass-header">
-            <span class="badge badge-platform">Hoe deze apps tot leven komen</span>
-            <h2>Van idee tot werkende app</h2>
-          </div>
-          <div class="workflow-steps">
-            <div class="step-card">
-              <div class="step-num">01</div>
-              <h3>Idee & Ontwikkeling met Claude</h3>
-              <p>Snelle prototyping, architectuur en code met Claude Pro.</p>
-            </div>
-            <div class="step-card">
-              <div class="step-num">02</div>
-              <h3>GitHub Student Pack & CI/CD</h3>
-              <p>Veilig versiebeheer, cloud credits en gratis tooling via het UA studentenpakket.</p>
-            </div>
-            <div class="step-card">
-              <div class="step-num">03</div>
-              <h3>Live Showcase & Downloads</h3>
-              <p>Direct beschikbaar op yorben.me met directe toegang tot broncode en releases.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact & Footer -->
-    <section class="contact-section" id="contact">
-      <div class="container contact-container">
-        <h2>Laten we iets bouwen</h2>
-        <p>Heb je een vraag over een van de apps, feedback of wil je samenwerken?</p>
-        <div class="contact-buttons">
-          <a href="mailto:yorbenvandersleyen@users.noreply.github.com" class="btn btn-primary" id="email-button">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
+        <div class="nav-cta">
+          <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="btn btn-dark-pill">
+            <span>GitHub Profile</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
-            Stuur een bericht
-          </a>
-          <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="footer-github-link">
-            GitHub Profiel
           </a>
         </div>
-      </div>
-    </section>
-  </main>
+      </header>
 
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <p>© <span id="current-year">2026</span> Yorben Vandersleyen · Universiteit Antwerpen</p>
-      <p class="footer-note">Gehost op <a href="http://yorben.me" style="color:inherit">yorben.me</a> via GitHub Pages</p>
-    </div>
-  </footer>
+      <!-- Hero Header Section with Mintly Two-Tone Typography -->
+      <section class="hero-strip" id="apps">
+        <div class="hero-left">
+          <div class="academic-badge">
+            <span class="pulse-dot"></span>
+            <span>University of Antwerp · Independent Developer</span>
+          </div>
+          <h1 class="hero-headline">
+            <span class="headline-bold">Build</span>
+            <span class="headline-faint">Ship Refine</span>
+          </h1>
+          <p class="hero-subtext">
+            Native applications crafted for Apple platforms and the modern Web. 
+            Focused on purposeful design, zero third-party bloat, and intelligent AI integration.
+          </p>
+        </div>
 
-  <!-- Native HTML5 Dialog Modals for Extra Project Details -->
-  <dialog id="modal-cockpit" class="project-modal">
-    <div class="modal-card">
-      <button class="modal-close" aria-label="Sluit modal">&times;</button>
-      <div class="modal-header">
-        <span class="badge badge-platform">macOS, iPad & iPhone</span>
-        <h3>Cockpit</h3>
-      </div>
-      <div class="modal-body">
-        <p><strong>Over Cockpit:</strong></p>
-        <p>Cockpit brengt je Mac en iPad/iPhone samen in één commandocentrale:</p>
-        <ul class="feature-list">
-          <li><strong>📅 Kalender & Briefing:</strong> Direct overzicht van afspraken, lessen en dagprioriteiten.</li>
-          <li><strong>🎵 Muziek & Focus:</strong> Compacte muziekbediening en Pomodoro/deep-work timers.</li>
-          <li><strong>📝 Notion & Contextuele toetsen:</strong> Snelle notities en contextuele knoppen voor actieve apps.</li>
-          <li><strong>✉️ Mail:</strong> Schone inbox-weergave met prioriteitsfiltering.</li>
-        </ul>
-      </div>
-      <div class="modal-actions">
-        <a href="https://github.com/Yvsleyen00941/Cockpit" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Bekijk op GitHub</a>
-      </div>
-    </div>
-  </dialog>
+        <!-- Category View Tabs with Active Underline -->
+        <div class="view-tabs" role="tablist" aria-label="App filters">
+          <button class="tab-item active" data-filter="all">All Apps</button>
+          <button class="tab-item" data-filter="apple">Apple Ecosystem</button>
+          <button class="tab-item" data-filter="ai">AI Integration</button>
+          <button class="tab-item" data-filter="web">Web & PWA</button>
+        </div>
+      </section>
 
-  <dialog id="modal-tracker" class="project-modal">
-    <div class="modal-card">
-      <button class="modal-close" aria-label="Sluit modal">&times;</button>
-      <div class="modal-header">
-        <span class="badge badge-ai">✨ Gemini AI</span>
-        <h3>Cairn</h3>
-      </div>
-      <div class="modal-body">
-        <p><strong>Over Cairn:</strong></p>
-        <p>Volg aandelen, ETF's en crypto over de hele wereld zonder abonnementskosten:</p>
-        <ul class="feature-list">
-          <li><strong>🤖 Gemini AI Brief:</strong> Elke dag een intelligente briefing van marktbewegingen.</li>
-          <li><strong>📱 Widgets & Live Activity:</strong> Realtime koersen direct op je lockscreen en Dynamic Island.</li>
-          <li><strong>🔔 Prijsalerts:</strong> Notificaties wanneer assets je doelniveaus bereiken.</li>
-          <li><strong>🔒 Privacy:</strong> Data blijft op je eigen toestel via veilige lokale opslag.</li>
-        </ul>
-      </div>
-      <div class="modal-actions">
-        <a href="https://github.com/Yvsleyen00941/Cairn" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Bekijk op GitHub</a>
-      </div>
-    </div>
-  </dialog>
+      <!-- Apps Showcase Grid (Mintly Card Architecture) -->
+      <section class="grid-section">
+        <div class="apps-grid">
 
-  <dialog id="modal-game" class="project-modal">
-    <div class="modal-card">
-      <button class="modal-close" aria-label="Sluit modal">&times;</button>
-      <div class="modal-header">
-        <span class="badge badge-status status-live">Complete v1.0</span>
-        <h3>Waybill</h3>
-      </div>
-      <div class="modal-body">
-        <p><strong>Over Waybill:</strong></p>
-        <p>Een complete 3D logistieke idle game voor iPad gebouwd met RealityKit:</p>
-        <ul class="feature-list">
-          <li><strong>🌍 5 Unieke Werelden:</strong> Riverside, Harbour City, Granite Pass, Metro en Orbit.</li>
-          <li><strong>🚚 Gevarieerde Vloot:</strong> Van vrachtwagens en schepen tot goederentreinen en raketten.</li>
-          <li><strong>🎨 3D Diorama's:</strong> Procedurele meshes, dag-nacht cyclus en visuele effecten.</li>
-          <li><strong>⏱️ Idle Progressie:</strong> Verdien inkomsten door terwijl je weg bent.</li>
-        </ul>
-      </div>
-      <div class="modal-actions">
-        <a href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Bekijk op GitHub</a>
-      </div>
+          <!-- Card 1: Cockpit -->
+          <article class="app-card" data-category="apple">
+            <div class="card-top">
+              <div class="title-group">
+                <h2 class="app-title">Cockpit</h2>
+                <p class="app-sub">macOS, iPad & iPhone Workspace</p>
+              </div>
+              <p class="card-editorial-note">
+                Unifies your calendar, Apple Music, Notion workspace, and triage mail into a distraction-free command surface.
+              </p>
+            </div>
+
+            <!-- High Quality Visual: App Icon + Bespoke Precision Geometric Graphic -->
+            <div class="card-visual-wrapper">
+              <div class="icon-frame">
+                <img src="assets/cockpit-icon.png" alt="Cockpit App Icon" class="app-avatar-img">
+              </div>
+              <!-- Technical Precision Blueprint Wireframe -->
+              <div class="technical-wireframe">
+                <svg viewBox="0 0 160 80" class="wireframe-svg" fill="none" stroke="currentColor">
+                  <!-- Blueprint grid & concentric radar/context matrix -->
+                  <circle cx="80" cy="40" r="32" stroke="rgba(0,0,0,0.08)" stroke-width="1.2"/>
+                  <circle cx="80" cy="40" r="20" stroke="rgba(0,0,0,0.12)" stroke-width="1.2" stroke-dasharray="3 3"/>
+                  <circle cx="80" cy="40" r="8" stroke="#111827" stroke-width="1.5"/>
+                  <line x1="30" y1="40" x2="130" y2="40" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+                  <line x1="80" y1="10" x2="80" y2="70" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+                  <!-- Orbiting indicators -->
+                  <circle cx="102" cy="40" r="3" fill="#3b82f6"/>
+                  <circle cx="80" cy="20" r="2.5" fill="#8b5cf6"/>
+                  <circle cx="65" cy="55" r="2.5" fill="#10b981"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="card-bottom">
+              <div class="tag-row">
+                <span class="tag-pill">SwiftUI</span>
+                <span class="tag-pill">macOS Helper</span>
+                <span class="tag-pill">Notion API</span>
+              </div>
+              <a href="https://github.com/Yvsleyen00941/Cockpit" target="_blank" rel="noopener noreferrer" class="circle-action-btn" title="Download on GitHub">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: Cairn (Portfolio Tracker + Gemini AI) -->
+          <article class="app-card card-featured" data-category="apple ai">
+            <div class="card-top">
+              <div class="title-group">
+                <div class="title-with-pill">
+                  <h2 class="app-title">Cairn</h2>
+                  <span class="ai-pill">✨ Gemini AI</span>
+                </div>
+                <p class="app-sub">Global Market Tracker & Brief</p>
+              </div>
+              <p class="card-editorial-note">
+                Tracks worldwide equities, ETFs and crypto valued live in your currency with intelligent automated AI briefings.
+              </p>
+            </div>
+
+            <!-- High Quality Visual: App Icon + Balanced Stone Cairn Geometry -->
+            <div class="card-visual-wrapper">
+              <div class="icon-frame">
+                <img src="assets/cairn-icon.png" alt="Cairn App Icon" class="app-avatar-img">
+              </div>
+              <!-- Technical Precision Geometric Cairn & Market Vectors -->
+              <div class="technical-wireframe">
+                <svg viewBox="0 0 160 80" class="wireframe-svg" fill="none" stroke="currentColor">
+                  <!-- Geometric Venn / Balanced Stack Motif -->
+                  <ellipse cx="80" cy="58" rx="26" ry="10" stroke="rgba(0,0,0,0.12)" stroke-width="1.2"/>
+                  <ellipse cx="80" cy="42" rx="20" ry="8" stroke="rgba(0,0,0,0.16)" stroke-width="1.2"/>
+                  <ellipse cx="80" cy="28" rx="13" ry="6" stroke="#0891b2" stroke-width="1.5"/>
+                  <circle cx="80" cy="16" r="4.5" fill="#0891b2"/>
+                  <!-- Subtle sparkline trend -->
+                  <path d="M25 60 Q 55 45, 80 50 T 135 25" stroke="rgba(8,145,178,0.25)" stroke-width="1.5" stroke-dasharray="2 3"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="card-bottom">
+              <div class="tag-row">
+                <span class="tag-pill">SwiftUI</span>
+                <span class="tag-pill">Gemini AI</span>
+                <span class="tag-pill">Live Activities</span>
+              </div>
+              <a href="https://github.com/Yvsleyen00941/Cairn" target="_blank" rel="noopener noreferrer" class="circle-action-btn" title="Download on GitHub">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3: Waybill -->
+          <article class="app-card" data-category="apple">
+            <div class="card-top">
+              <div class="title-group">
+                <div class="title-with-pill">
+                  <h2 class="app-title">Waybill</h2>
+                  <span class="version-pill">v1.0 Complete</span>
+                </div>
+                <p class="app-sub">Logistics 3D Diorama Game</p>
+              </div>
+              <p class="card-editorial-note">
+                Five hand-built 3D dioramas on RealityKit: Riverside box trucks, Harbour cranes, Granite trains, and Orbit rockets.
+              </p>
+            </div>
+
+            <!-- High Quality Visual: App Icon + Isometric 3D Diorama Wireframe Grid -->
+            <div class="card-visual-wrapper">
+              <div class="icon-frame">
+                <img src="assets/waybill-icon.png" alt="Waybill App Icon" class="app-avatar-img">
+              </div>
+              <!-- Technical Isometric Grid Wireframe (Ordiva style) -->
+              <div class="technical-wireframe">
+                <svg viewBox="0 0 160 80" class="wireframe-svg" fill="none" stroke="currentColor">
+                  <!-- Isometric Cube / Diorama Blueprint -->
+                  <path d="M80 15 L125 38 L80 62 L35 38 Z" stroke="rgba(0,0,0,0.12)" stroke-width="1.2"/>
+                  <path d="M35 38 L35 52 L80 75 L125 52 L125 38" stroke="rgba(0,0,0,0.08)" stroke-width="1.2"/>
+                  <line x1="80" y1="62" x2="80" y2="75" stroke="rgba(0,0,0,0.12)" stroke-width="1.2"/>
+                  <!-- Vehicle path nodes -->
+                  <circle cx="80" cy="38" r="3" fill="#f59e0b"/>
+                  <line x1="55" y1="28" x2="105" y2="50" stroke="#f59e0b" stroke-width="1" stroke-dasharray="2 2"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="card-bottom">
+              <div class="tag-row">
+                <span class="tag-pill">RealityKit</span>
+                <span class="tag-pill">Custom Shaders</span>
+                <span class="tag-pill">iPad Game</span>
+              </div>
+              <a href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener noreferrer" class="circle-action-btn" title="Download on GitHub">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 4: PortTracker Web -->
+          <article class="app-card" data-category="web">
+            <div class="card-top">
+              <div class="title-group">
+                <h2 class="app-title">PortTracker Web</h2>
+                <p class="app-sub">High-Precision Financial PWA</p>
+              </div>
+              <p class="card-editorial-note">
+                Engineered around strict mathematical precision contracts. Built on Next.js 15, TypeScript, Tailwind v4 and Supabase.
+              </p>
+            </div>
+
+            <!-- High Quality Visual: Web Geometric Ledger Architecture -->
+            <div class="card-visual-wrapper">
+              <div class="icon-frame icon-web-frame">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <!-- Technical Precision Blueprint Diagram -->
+              <div class="technical-wireframe">
+                <svg viewBox="0 0 160 80" class="wireframe-svg" fill="none" stroke="currentColor">
+                  <!-- Data layered architecture -->
+                  <rect x="40" y="22" width="80" height="14" rx="4" stroke="rgba(0,0,0,0.12)" stroke-width="1.2"/>
+                  <rect x="32" y="42" width="96" height="14" rx="4" stroke="rgba(0,0,0,0.16)" stroke-width="1.2"/>
+                  <line x1="80" y1="36" x2="80" y2="42" stroke="#6366f1" stroke-width="1.5"/>
+                  <circle cx="56" cy="29" r="2" fill="#6366f1"/>
+                  <circle cx="68" cy="29" r="2" fill="#6366f1"/>
+                  <circle cx="80" cy="29" r="2" fill="#6366f1"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="card-bottom">
+              <div class="tag-row">
+                <span class="tag-pill">Next.js 15</span>
+                <span class="tag-pill">TypeScript</span>
+                <span class="tag-pill">Supabase</span>
+              </div>
+              <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="circle-action-btn" title="View Profile on GitHub">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Craft & Philosophy Strip (Ordiva / Sève Editorial Touch) -->
+      <section class="editorial-strip" id="about">
+        <div class="editorial-header">
+          <span class="section-label">HOW IT’S BUILT</span>
+          <h3 class="editorial-title">From Concept to Native Production</h3>
+        </div>
+        <div class="editorial-grid">
+          <div class="editorial-column">
+            <span class="col-number">01</span>
+            <h4>Rapid Prototyping with Claude</h4>
+            <p>Architecting robust data models, edge-case math, and Swift frameworks at maximum velocity using Claude Pro.</p>
+          </div>
+          <div class="editorial-column">
+            <span class="col-number">02</span>
+            <h4>GitHub Student Ecosystem</h4>
+            <p>Automated CI/CD pipelines, secure code distribution, and zero-cost cloud infrastructure backed by GitHub.</p>
+          </div>
+          <div class="editorial-column">
+            <span class="col-number">03</span>
+            <h4>Direct Distribution</h4>
+            <p>Every application is published open-source or through verified TestFlight channels, reachable directly via yorben.me.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Minimal Contact & Footer -->
+      <footer class="canvas-footer" id="contact">
+        <div class="footer-left">
+          <div class="footer-brand">≠ Yorben Vandersleyen</div>
+          <p class="footer-copy">Student at University of Antwerp · Software & App Engineer</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="footer-anchor">GitHub</a>
+          <a href="mailto:yorbenvandersleyen@users.noreply.github.com" class="footer-anchor">Email</a>
+          <span class="domain-badge">yorben.me</span>
+        </div>
+      </footer>
+
     </div>
-  </dialog>
+  </div>
 
   <script src="script.js"></script>
 </body>
