@@ -3,317 +3,342 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yorben Vandersleyen — Independent Software & iOS Creator</title>
-  <meta name="description" content="Portfolio of Yorben Vandersleyen — Student at University of Antwerp building thoughtful software across iOS, iPadOS, macOS, and the Web.">
+  <title>Yorben — Independent Software & iOS Creator</title>
+  <meta name="description" content="Portfolio of Yorben Vandersleyen — Independent software creator building thoughtful apps across iOS, iPadOS, macOS, and Web.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Ambient Atmospheric Lighting -->
-  <div class="ambient-glow glow-top" aria-hidden="true"></div>
-  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+  <!-- Ambient Atmospheric Fog (Mintly Inspiration) -->
+  <div class="ambient-glow ambient-glow-br" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-tl" aria-hidden="true"></div>
 
-  <!-- Outer Frame -->
-  <div class="page-shell">
-    <!-- Floating Pristine Canvas Container (Inspired by Mintly & Ordiva) -->
-    <div class="main-canvas">
+  <div class="viewport-wrapper">
+    <!-- Main Floating White Dashboard Canvas -->
+    <main class="dashboard-canvas">
 
-      <!-- Navigation Bar -->
-      <header class="canvas-nav">
-        <a href="#" class="brand-identity">
-          <span class="brand-symbol">≠</span>
-          <span class="brand-name">Yorben</span>
+      <!-- Navigation Header -->
+      <header class="dashboard-header">
+        <a href="#" class="brand-link">
+          <span class="brand-glyph">≠</span>
+          <span class="brand-title">Yorben</span>
         </a>
 
-        <nav class="nav-links">
-          <a href="#apps" class="nav-link active">Apps</a>
-          <a href="#about" class="nav-link">Craft</a>
-          <a href="#stack" class="nav-link">Toolkit</a>
-          <a href="#contact" class="nav-link">Contact</a>
+        <nav class="center-nav">
+          <a href="#apps" class="nav-item active">Apps</a>
+          <a href="#stack" class="nav-item">Ecosystem</a>
+          <a href="#about" class="nav-item">Architecture</a>
+          <a href="#contact" class="nav-item">Contact</a>
         </nav>
 
-        <div class="nav-cta">
-          <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="btn btn-dark-pill">
+        <div class="header-action">
+          <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="btn-connect">
             <span>GitHub Profile</span>
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
+            <span class="arrow-glyph">→</span>
           </a>
         </div>
       </header>
 
-      <!-- Hero Header Section with Mintly Two-Tone Typography -->
-      <section class="hero-strip" id="apps">
-        <div class="hero-left">
-          <div class="academic-badge">
-            <span class="pulse-dot"></span>
-            <span>University of Antwerp · Independent Developer</span>
-          </div>
-          <h1 class="hero-headline">
-            <span class="headline-bold">Build</span>
-            <span class="headline-faint">Ship Refine</span>
+      <!-- Hero Title Row (Mintly Two-Tone Headline + Right-Aligned Tabs) -->
+      <section class="headline-section" id="apps">
+        <div class="title-column">
+          <h1 class="main-headline">
+            <span class="word-bold">Build</span>
+            <span class="word-faint">Ship Scale</span>
           </h1>
-          <p class="hero-subtext">
-            Native applications crafted for Apple platforms and the modern Web. 
-            Focused on purposeful design, zero third-party bloat, and intelligent AI integration.
-          </p>
         </div>
 
-        <!-- Category View Tabs with Active Underline -->
-        <div class="view-tabs" role="tablist" aria-label="App filters">
-          <button class="tab-item active" data-filter="all">All Apps</button>
-          <button class="tab-item" data-filter="apple">Apple Ecosystem</button>
-          <button class="tab-item" data-filter="ai">AI Integration</button>
-          <button class="tab-item" data-filter="web">Web & PWA</button>
-        </div>
-      </section>
-
-      <!-- Apps Showcase Grid (Mintly Card Architecture) -->
-      <section class="grid-section">
-        <div class="apps-grid">
-
-          <!-- Card 1: Cockpit -->
-          <article class="app-card" data-category="apple">
-            <div class="card-top">
-              <div class="title-group">
-                <h2 class="app-title">Cockpit</h2>
-                <p class="app-sub">macOS, iPad & iPhone Workspace</p>
-              </div>
-              <p class="card-editorial-note">
-                Unifies your calendar, Apple Music, Notion workspace, and triage mail into a distraction-free command surface.
-              </p>
-            </div>
-
-            <!-- High Quality Visual: App Icon + Bespoke Precision Geometric Graphic -->
-            <div class="card-visual-wrapper">
-              <div class="icon-frame">
-                <img src="assets/cockpit-icon.png" alt="Cockpit App Icon" class="app-avatar-img">
-              </div>
-              <!-- Technical Precision Blueprint Wireframe -->
-              <div class="technical-wireframe">
-                <svg viewBox="0 0 160 80" class="wireframe-svg" fill="none" stroke="currentColor">
-                  <!-- Blueprint grid & concentric radar/context matrix -->
-                  <circle cx="80" cy="40" r="32" stroke="rgba(0,0,0,0.08)" stroke-width="1.2"/>
-                  <circle cx="80" cy="40" r="20" stroke="rgba(0,0,0,0.12)" stroke-width="1.2" stroke-dasharray="3 3"/>
-                  <circle cx="80" cy="40" r="8" stroke="#111827" stroke-width="1.5"/>
-                  <line x1="30" y1="40" x2="130" y2="40" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
-                  <line x1="80" y1="10" x2="80" y2="70" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
-                  <!-- Orbiting indicators -->
-                  <circle cx="102" cy="40" r="3" fill="#3b82f6"/>
-                  <circle cx="80" cy="20" r="2.5" fill="#8b5cf6"/>
-                  <circle cx="65" cy="55" r="2.5" fill="#10b981"/>
-                </svg>
-              </div>
-            </div>
-
-            <div class="card-bottom">
-              <div class="tag-row">
-                <span class="tag-pill">SwiftUI</span>
-                <span class="tag-pill">macOS Helper</span>
-                <span class="tag-pill">Notion API</span>
-              </div>
-              <a href="https://github.com/Yvsleyen00941/Cockpit" target="_blank" rel="noopener noreferrer" class="circle-action-btn" title="Download on GitHub">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <!-- Card 2: Cairn (Portfolio Tracker + Gemini AI) -->
-          <article class="app-card card-featured" data-category="apple ai">
-            <div class="card-top">
-              <div class="title-group">
-                <div class="title-with-pill">
-                  <h2 class="app-title">Cairn</h2>
-                  <span class="ai-pill">✨ Gemini AI</span>
-                </div>
-                <p class="app-sub">Global Market Tracker & Brief</p>
-              </div>
-              <p class="card-editorial-note">
-                Tracks worldwide equities, ETFs and crypto valued live in your currency with intelligent automated AI briefings.
-              </p>
-            </div>
-
-            <!-- High Quality Visual: App Icon + Balanced Stone Cairn Geometry -->
-            <div class="card-visual-wrapper">
-              <div class="icon-frame">
-                <img src="assets/cairn-icon.png" alt="Cairn App Icon" class="app-avatar-img">
-              </div>
-              <!-- Technical Precision Geometric Cairn & Market Vectors -->
-              <div class="technical-wireframe">
-                <svg viewBox="0 0 160 80" class="wireframe-svg" fill="none" stroke="currentColor">
-                  <!-- Geometric Venn / Balanced Stack Motif -->
-                  <ellipse cx="80" cy="58" rx="26" ry="10" stroke="rgba(0,0,0,0.12)" stroke-width="1.2"/>
-                  <ellipse cx="80" cy="42" rx="20" ry="8" stroke="rgba(0,0,0,0.16)" stroke-width="1.2"/>
-                  <ellipse cx="80" cy="28" rx="13" ry="6" stroke="#0891b2" stroke-width="1.5"/>
-                  <circle cx="80" cy="16" r="4.5" fill="#0891b2"/>
-                  <!-- Subtle sparkline trend -->
-                  <path d="M25 60 Q 55 45, 80 50 T 135 25" stroke="rgba(8,145,178,0.25)" stroke-width="1.5" stroke-dasharray="2 3"/>
-                </svg>
-              </div>
-            </div>
-
-            <div class="card-bottom">
-              <div class="tag-row">
-                <span class="tag-pill">SwiftUI</span>
-                <span class="tag-pill">Gemini AI</span>
-                <span class="tag-pill">Live Activities</span>
-              </div>
-              <a href="https://github.com/Yvsleyen00941/Cairn" target="_blank" rel="noopener noreferrer" class="circle-action-btn" title="Download on GitHub">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <!-- Card 3: Waybill -->
-          <article class="app-card" data-category="apple">
-            <div class="card-top">
-              <div class="title-group">
-                <div class="title-with-pill">
-                  <h2 class="app-title">Waybill</h2>
-                  <span class="version-pill">v1.0 Complete</span>
-                </div>
-                <p class="app-sub">Logistics 3D Diorama Game</p>
-              </div>
-              <p class="card-editorial-note">
-                Five hand-built 3D dioramas on RealityKit: Riverside box trucks, Harbour cranes, Granite trains, and Orbit rockets.
-              </p>
-            </div>
-
-            <!-- High Quality Visual: App Icon + Isometric 3D Diorama Wireframe Grid -->
-            <div class="card-visual-wrapper">
-              <div class="icon-frame">
-                <img src="assets/waybill-icon.png" alt="Waybill App Icon" class="app-avatar-img">
-              </div>
-              <!-- Technical Isometric Grid Wireframe (Ordiva style) -->
-              <div class="technical-wireframe">
-                <svg viewBox="0 0 160 80" class="wireframe-svg" fill="none" stroke="currentColor">
-                  <!-- Isometric Cube / Diorama Blueprint -->
-                  <path d="M80 15 L125 38 L80 62 L35 38 Z" stroke="rgba(0,0,0,0.12)" stroke-width="1.2"/>
-                  <path d="M35 38 L35 52 L80 75 L125 52 L125 38" stroke="rgba(0,0,0,0.08)" stroke-width="1.2"/>
-                  <line x1="80" y1="62" x2="80" y2="75" stroke="rgba(0,0,0,0.12)" stroke-width="1.2"/>
-                  <!-- Vehicle path nodes -->
-                  <circle cx="80" cy="38" r="3" fill="#f59e0b"/>
-                  <line x1="55" y1="28" x2="105" y2="50" stroke="#f59e0b" stroke-width="1" stroke-dasharray="2 2"/>
-                </svg>
-              </div>
-            </div>
-
-            <div class="card-bottom">
-              <div class="tag-row">
-                <span class="tag-pill">RealityKit</span>
-                <span class="tag-pill">Custom Shaders</span>
-                <span class="tag-pill">iPad Game</span>
-              </div>
-              <a href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener noreferrer" class="circle-action-btn" title="Download on GitHub">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <!-- Card 4: PortTracker Web -->
-          <article class="app-card" data-category="web">
-            <div class="card-top">
-              <div class="title-group">
-                <h2 class="app-title">PortTracker Web</h2>
-                <p class="app-sub">High-Precision Financial PWA</p>
-              </div>
-              <p class="card-editorial-note">
-                Engineered around strict mathematical precision contracts. Built on Next.js 15, TypeScript, Tailwind v4 and Supabase.
-              </p>
-            </div>
-
-            <!-- High Quality Visual: Web Geometric Ledger Architecture -->
-            <div class="card-visual-wrapper">
-              <div class="icon-frame icon-web-frame">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="2" y1="12" x2="22" y2="12"></line>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                </svg>
-              </div>
-              <!-- Technical Precision Blueprint Diagram -->
-              <div class="technical-wireframe">
-                <svg viewBox="0 0 160 80" class="wireframe-svg" fill="none" stroke="currentColor">
-                  <!-- Data layered architecture -->
-                  <rect x="40" y="22" width="80" height="14" rx="4" stroke="rgba(0,0,0,0.12)" stroke-width="1.2"/>
-                  <rect x="32" y="42" width="96" height="14" rx="4" stroke="rgba(0,0,0,0.16)" stroke-width="1.2"/>
-                  <line x1="80" y1="36" x2="80" y2="42" stroke="#6366f1" stroke-width="1.5"/>
-                  <circle cx="56" cy="29" r="2" fill="#6366f1"/>
-                  <circle cx="68" cy="29" r="2" fill="#6366f1"/>
-                  <circle cx="80" cy="29" r="2" fill="#6366f1"/>
-                </svg>
-              </div>
-            </div>
-
-            <div class="card-bottom">
-              <div class="tag-row">
-                <span class="tag-pill">Next.js 15</span>
-                <span class="tag-pill">TypeScript</span>
-                <span class="tag-pill">Supabase</span>
-              </div>
-              <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="circle-action-btn" title="View Profile on GitHub">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- Craft & Philosophy Strip (Ordiva / Sève Editorial Touch) -->
-      <section class="editorial-strip" id="about">
-        <div class="editorial-header">
-          <span class="section-label">HOW IT’S BUILT</span>
-          <h3 class="editorial-title">From Concept to Native Production</h3>
-        </div>
-        <div class="editorial-grid">
-          <div class="editorial-column">
-            <span class="col-number">01</span>
-            <h4>Rapid Prototyping with Claude</h4>
-            <p>Architecting robust data models, edge-case math, and Swift frameworks at maximum velocity using Claude Pro.</p>
-          </div>
-          <div class="editorial-column">
-            <span class="col-number">02</span>
-            <h4>GitHub Student Ecosystem</h4>
-            <p>Automated CI/CD pipelines, secure code distribution, and zero-cost cloud infrastructure backed by GitHub.</p>
-          </div>
-          <div class="editorial-column">
-            <span class="col-number">03</span>
-            <h4>Direct Distribution</h4>
-            <p>Every application is published open-source or through verified TestFlight channels, reachable directly via yorben.me.</p>
+        <div class="controls-column">
+          <div class="view-switcher" role="tablist">
+            <button class="switcher-tab active" data-filter="all">All Apps</button>
+            <button class="switcher-tab" data-filter="apple">Apple Native</button>
+            <button class="switcher-tab" data-filter="ai">AI & Web</button>
           </div>
         </div>
       </section>
 
-      <!-- Minimal Contact & Footer -->
-      <footer class="canvas-footer" id="contact">
+      <!-- 6-Card Grid (Exact Mintly 3x2 Proportions & Geometric Visual Art) -->
+      <section class="cards-section">
+        <div class="cards-grid">
+
+          <!-- 1. Cockpit -->
+          <article class="mintly-card" data-category="apple">
+            <div class="card-header-row">
+              <div class="card-identity">
+                <h2 class="card-name">Cockpit</h2>
+                <p class="card-meta">macOS, iPad & iPhone Workspace</p>
+              </div>
+              <div class="card-thesis">
+                <p>Zero third-party bloat. Unifies Calendar, Apple Music, Notion workspace, and triage mail into one native command surface.</p>
+              </div>
+            </div>
+
+            <!-- Geometric Art Piece: Concentric Radar Matrix (Inspired by Mintly Bitcoin) -->
+            <div class="card-art-stage">
+              <svg viewBox="0 0 140 100" class="mintly-art-svg">
+                <circle cx="55" cy="50" r="40" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <circle cx="55" cy="50" r="28" stroke="#0f172a" stroke-width="1.4" fill="none"/>
+                <circle cx="55" cy="50" r="16" stroke="#0f172a" stroke-width="1.4" fill="none"/>
+                <circle cx="55" cy="50" r="6" stroke="#0f172a" stroke-width="1.6" fill="#0f172a"/>
+                <line x1="8" y1="50" x2="102" y2="50" stroke="#0f172a" stroke-width="1.2" stroke-dasharray="2 3"/>
+                <line x1="55" y1="3" x2="55" y2="97" stroke="#0f172a" stroke-width="1.2" stroke-dasharray="2 3"/>
+              </svg>
+            </div>
+
+            <div class="card-footer-row">
+              <div class="tags-cluster">
+                <span class="micro-badge">SwiftUI</span>
+                <span class="micro-badge">macOS</span>
+                <span class="micro-badge">Notion</span>
+              </div>
+              <a href="https://github.com/Yvsleyen00941/Cockpit" target="_blank" rel="noopener noreferrer" class="mintly-plus-btn" title="View Cockpit on GitHub" aria-label="Open Cockpit">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 2. Cairn -->
+          <article class="mintly-card" data-category="apple ai">
+            <div class="card-header-row">
+              <div class="card-identity">
+                <h2 class="card-name">Cairn</h2>
+                <p class="card-meta">Global Multi-Market Portfolio</p>
+              </div>
+              <div class="card-thesis">
+                <p>35+ global exchanges tracked live in your local currency with automated Gemini AI morning briefings and Lock Screen widgets.</p>
+              </div>
+            </div>
+
+            <!-- Geometric Art Piece: Overlapping Venn / Stone Stack (Inspired by Mintly Ethereum) -->
+            <div class="card-art-stage">
+              <svg viewBox="0 0 140 100" class="mintly-art-svg">
+                <!-- 3 Overlapping Intersecting Rings -->
+                <circle cx="45" cy="42" r="24" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <circle cx="75" cy="42" r="24" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <circle cx="60" cy="65" r="24" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+              </svg>
+            </div>
+
+            <div class="card-footer-row">
+              <div class="tags-cluster">
+                <span class="micro-badge">Gemini AI</span>
+                <span class="micro-badge">Widgets</span>
+                <span class="micro-badge">iOS</span>
+              </div>
+              <a href="https://github.com/Yvsleyen00941/Cairn" target="_blank" rel="noopener noreferrer" class="mintly-plus-btn" title="View Cairn on GitHub" aria-label="Open Cairn">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 3. Waybill -->
+          <article class="mintly-card" data-category="apple">
+            <div class="card-header-row">
+              <div class="card-identity">
+                <h2 class="card-name">Waybill</h2>
+                <p class="card-meta">Logistics 3D Diorama Game</p>
+              </div>
+              <div class="card-thesis">
+                <p>Five hand-crafted 3D dioramas on RealityKit: Riverside box trucks, Harbour cranes, Granite trains, and Orbit rockets.</p>
+              </div>
+            </div>
+
+            <!-- Geometric Art Piece: Perspective Layered Discs (Inspired by Mintly Solana) -->
+            <div class="card-art-stage">
+              <svg viewBox="0 0 140 100" class="mintly-art-svg">
+                <ellipse cx="60" cy="22" rx="36" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <ellipse cx="60" cy="36" rx="36" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <ellipse cx="60" cy="50" rx="36" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <ellipse cx="60" cy="64" rx="36" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <ellipse cx="60" cy="78" rx="36" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+              </svg>
+            </div>
+
+            <div class="card-footer-row">
+              <div class="tags-cluster">
+                <span class="micro-badge">RealityKit</span>
+                <span class="micro-badge">v1.0 Game</span>
+                <span class="micro-badge">iPadOS</span>
+              </div>
+              <a href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener noreferrer" class="mintly-plus-btn" title="View Waybill on GitHub" aria-label="Open Waybill">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 4. PortTracker Web -->
+          <article class="mintly-card" data-category="ai">
+            <div class="card-header-row">
+              <div class="card-identity">
+                <h2 class="card-name">PortTracker</h2>
+                <p class="card-meta">Precision Financial Ledger PWA</p>
+              </div>
+              <div class="card-thesis">
+                <p>IEEE-754 precision rule: number is a transport format, never an arithmetic one. Built on Next.js 15, Tailwind v4, Supabase.</p>
+              </div>
+            </div>
+
+            <!-- Geometric Art Piece: Topological Constellation Grid (Inspired by Mintly Cardano) -->
+            <div class="card-art-stage">
+              <svg viewBox="0 0 140 100" class="mintly-art-svg">
+                <!-- Topological grid with node points -->
+                <path d="M20 70 L45 35 L85 30 L115 55 L80 82 L35 80 Z" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <line x1="45" y1="35" x2="80" y2="82" stroke="#0f172a" stroke-width="1.4"/>
+                <line x1="85" y1="30" x2="35" y2="80" stroke="#0f172a" stroke-width="1.4"/>
+                <line x1="20" y1="70" x2="85" y2="30" stroke="#0f172a" stroke-width="1.4"/>
+                <!-- Node circles -->
+                <circle cx="20" cy="70" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+                <circle cx="45" cy="35" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+                <circle cx="85" cy="30" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+                <circle cx="115" cy="55" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+                <circle cx="80" cy="82" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+                <circle cx="35" cy="80" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+              </svg>
+            </div>
+
+            <div class="card-footer-row">
+              <div class="tags-cluster">
+                <span class="micro-badge">Next.js 15</span>
+                <span class="micro-badge">TypeScript</span>
+                <span class="micro-badge">Supabase</span>
+              </div>
+              <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="mintly-plus-btn" title="View PortTracker on GitHub" aria-label="Open PortTracker">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 5. HomeHub -->
+          <article class="mintly-card" data-category="apple">
+            <div class="card-header-row">
+              <div class="card-identity">
+                <h2 class="card-name">HomeHub</h2>
+                <p class="card-meta">Living Room Surface for iPadOS</p>
+              </div>
+              <div class="card-thesis">
+                <p>Native wall console for iPad Air 2 in Vremde: Buienradar integration, live solar yield, climate controls and circadian dimming.</p>
+              </div>
+            </div>
+
+            <!-- Geometric Art Piece: Stippled Radial Sunburst (Inspired by Mintly Dogecoin) -->
+            <div class="card-art-stage">
+              <svg viewBox="0 0 140 100" class="mintly-art-svg">
+                <!-- Center point -->
+                <circle cx="60" cy="50" r="4.5" fill="#0f172a"/>
+                <!-- Inner ring of dots -->
+                <circle cx="60" cy="38" r="2" fill="#0f172a"/>
+                <circle cx="68" cy="41" r="2" fill="#0f172a"/>
+                <circle cx="72" cy="50" r="2" fill="#0f172a"/>
+                <circle cx="68" cy="59" r="2" fill="#0f172a"/>
+                <circle cx="60" cy="62" r="2" fill="#0f172a"/>
+                <circle cx="52" cy="59" r="2" fill="#0f172a"/>
+                <circle cx="48" cy="50" r="2" fill="#0f172a"/>
+                <circle cx="52" cy="41" r="2" fill="#0f172a"/>
+                <!-- Middle radial lines & dots -->
+                <line x1="60" y1="32" x2="60" y2="24" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="72" y1="38" x2="78" y2="33" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="78" y1="50" x2="86" y2="50" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="72" y1="62" x2="78" y2="67" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="60" y1="68" x2="60" y2="76" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="48" y1="62" x2="42" y2="67" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="42" y1="50" x2="34" y2="50" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="48" y1="38" x2="42" y2="33" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round"/>
+                <!-- Outer satellites -->
+                <circle cx="60" cy="16" r="2.5" fill="#0f172a"/>
+                <circle cx="86" cy="27" r="2.5" fill="#0f172a"/>
+                <circle cx="95" cy="50" r="2.5" fill="#0f172a"/>
+                <circle cx="86" cy="73" r="2.5" fill="#0f172a"/>
+                <circle cx="60" cy="84" r="2.5" fill="#0f172a"/>
+                <circle cx="34" cy="73" r="2.5" fill="#0f172a"/>
+                <circle cx="25" cy="50" r="2.5" fill="#0f172a"/>
+                <circle cx="34" cy="27" r="2.5" fill="#0f172a"/>
+              </svg>
+            </div>
+
+            <div class="card-footer-row">
+              <div class="tags-cluster">
+                <span class="micro-badge">iPadOS 15</span>
+                <span class="micro-badge">IoT Surface</span>
+                <span class="micro-badge">Energy</span>
+              </div>
+              <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="mintly-plus-btn" title="View HomeHub on GitHub" aria-label="Open HomeHub">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 6. Metal Shaders & RealityKit Engine -->
+          <article class="mintly-card" data-category="apple">
+            <div class="card-header-row">
+              <div class="card-identity">
+                <h2 class="card-name">Metal Engine</h2>
+                <p class="card-meta">Custom Shaders & Spatial Physics</p>
+              </div>
+              <div class="card-thesis">
+                <p>Low-level GPU compute, water wave simulations, volumetric day/night lighting models, and 120 FPS ProMotion rendering pipelines.</p>
+              </div>
+            </div>
+
+            <!-- Geometric Art Piece: Optical Hourglass / Isometric Geometry (Inspired by Mintly XRP) -->
+            <div class="card-art-stage">
+              <svg viewBox="0 0 140 100" class="mintly-art-svg">
+                <!-- Double perspective geometry / optical wireframe -->
+                <rect x="25" y="24" width="70" height="52" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <line x1="25" y1="24" x2="95" y2="76" stroke="#0f172a" stroke-width="1.4"/>
+                <line x1="25" y1="76" x2="95" y2="24" stroke="#0f172a" stroke-width="1.4"/>
+                <polygon points="60,24 95,50 60,76 25,50" stroke="#0f172a" stroke-width="1.4" fill="none"/>
+              </svg>
+            </div>
+
+            <div class="card-footer-row">
+              <div class="tags-cluster">
+                <span class="micro-badge">Metal Shading</span>
+                <span class="micro-badge">ProMotion</span>
+                <span class="micro-badge">Graphics</span>
+              </div>
+              <a href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener noreferrer" class="mintly-plus-btn" title="View Source on GitHub" aria-label="Open Metal Engine">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Minimal Dashboard Footer -->
+      <footer class="dashboard-footer" id="contact">
         <div class="footer-left">
-          <div class="footer-brand">≠ Yorben Vandersleyen</div>
-          <p class="footer-copy">Student at University of Antwerp · Software & App Engineer</p>
+          <span class="footer-glyph">≠</span>
+          <span class="footer-text">Yorben Vandersleyen · Universiteit Antwerpen</span>
         </div>
-        <div class="footer-links">
-          <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="footer-anchor">GitHub</a>
-          <a href="mailto:yorbenvandersleyen@users.noreply.github.com" class="footer-anchor">Email</a>
-          <span class="domain-badge">yorben.me</span>
+        <div class="footer-right">
+          <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+          <a href="mailto:yorbenvandersleyen@users.noreply.github.com" class="footer-link">Email</a>
+          <span class="domain-pill">yorben.me</span>
         </div>
       </footer>
 
-    </div>
+    </main>
   </div>
 
   <script src="script.js"></script>

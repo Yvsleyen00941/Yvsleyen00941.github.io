@@ -1,26 +1,21 @@
 /* ==========================================================================
-   Yorben.me — Mintly & Ordiva Inspired High-End Portfolio Design
+   Mintly High-End Portfolio Design for Yorben.me
    ========================================================================== */
 
 :root {
-  --canvas-bg: #ffffff;
-  --shell-bg: #07090e;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
+  --bg-deep: #08090d;
+  --canvas-white: #ffffff;
+  --text-primary: #0a0e1a;
+  --text-secondary: #64748b;
   --text-faint: #94a3b8;
-  --border-subtle: #e2e8f0;
-  --border-card: #e5e7eb;
-  --card-bg: #ffffff;
-  --card-hover-bg: #fafafa;
-  --accent-black: #0f172a;
-  --accent-blue: #2563eb;
-  --accent-cyan: #0891b2;
+  --border-light: #e5e7eb;
+  --border-card: #e2e8f0;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
   --radius-canvas: 28px;
   --radius-card: 22px;
   --radius-pill: 9999px;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *, *::before, *::after {
@@ -30,557 +25,420 @@
 }
 
 html {
-  scroll-behavior: smooth;
-  background-color: var(--shell-bg);
+  background-color: var(--bg-deep);
+  color-scheme: light;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--shell-bg);
-  color: var(--text-main);
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  padding: clamp(1rem, 3vw, 2.5rem);
+  padding: clamp(1rem, 2.5vw, 2.5rem);
 }
 
-/* Atmospheric Ambient Lighting (Mintly Style Glow) */
+/* Ethereal Ambient Gradient Fog (Mintly Inspiration) */
 .ambient-glow {
   position: fixed;
   pointer-events: none;
   z-index: 0;
   border-radius: 50%;
   filter: blur(140px);
-  opacity: 0.45;
 }
 
-.glow-top {
-  top: -100px;
+.ambient-glow-br {
+  bottom: -100px;
   right: -50px;
-  width: 600px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(217, 70, 239, 0.35) 0%, rgba(59, 130, 246, 0.2) 60%, transparent 80%);
-}
-
-.glow-bottom {
-  bottom: -150px;
-  left: 5%;
   width: 700px;
   height: 600px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, rgba(139, 92, 246, 0.2) 50%, transparent 80%);
+  background: radial-gradient(circle, rgba(217, 70, 239, 0.32) 0%, rgba(56, 189, 248, 0.22) 50%, transparent 75%);
 }
 
-/* Outer Shell */
-.page-shell {
+.ambient-glow-tl {
+  top: -150px;
+  left: 10%;
+  width: 500px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 70%);
+}
+
+/* Main Viewport Layout */
+.viewport-wrapper {
   position: relative;
   z-index: 1;
-  max-width: 1240px;
+  max-width: 1260px;
   margin: 0 auto;
 }
 
-/* Floating Pristine Canvas Container */
-.main-canvas {
-  background: var(--canvas-bg);
+/* Floating White Dashboard Canvas */
+.dashboard-canvas {
+  background: var(--canvas-white);
   border-radius: var(--radius-canvas);
-  border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 
-    0 40px 100px -25px rgba(0, 0, 0, 0.75),
-    0 1px 3px rgba(0, 0, 0, 0.05);
-  padding: clamp(1.75rem, 4vw, 3.5rem);
-  overflow: hidden;
+    0 40px 100px -25px rgba(0, 0, 0, 0.8),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: clamp(1.75rem, 3.5vw, 3.25rem);
 }
 
-/* Navigation Bar */
-.canvas-nav {
+/* Header */
+.dashboard-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 2.5rem;
-  border-bottom: 1px solid var(--border-subtle);
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
-.brand-identity {
+.brand-link {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
   text-decoration: none;
-  color: var(--accent-black);
+  color: var(--text-primary);
 }
 
-.brand-symbol {
+.brand-glyph {
   font-size: 1.6rem;
   font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.05em;
-  color: var(--accent-black);
 }
 
-.brand-name {
-  font-size: 1.25rem;
+.brand-title {
+  font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: -0.03em;
 }
 
-.nav-links {
+.center-nav {
   display: none;
   align-items: center;
   gap: 2rem;
 }
 
-@media (min-width: 768px) {
-  .nav-links {
+@media (min-width: 820px) {
+  .center-nav {
     display: flex;
   }
 }
 
-.nav-link {
+.nav-item {
   text-decoration: none;
-  color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 500;
+  color: var(--text-secondary);
   transition: var(--transition);
 }
 
-.nav-link:hover, .nav-link.active {
-  color: var(--text-main);
+.nav-item:hover, .nav-item.active {
+  color: var(--text-primary);
 }
 
-.btn-dark-pill {
+.btn-connect {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--accent-black);
-  color: #ffffff;
+  background: transparent;
+  color: var(--text-primary);
   text-decoration: none;
-  padding: 0.55rem 1.15rem;
-  font-size: 0.88rem;
-  font-weight: 600;
-  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.5rem 0.75rem;
   transition: var(--transition);
-  border: 1px solid var(--accent-black);
 }
 
-.btn-dark-pill:hover {
-  background: #1e293b;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+.btn-connect:hover {
+  opacity: 0.7;
 }
 
-/* Hero Section with Mintly Two-Tone Title */
-.hero-strip {
+.arrow-glyph {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.btn-connect:hover .arrow-glyph {
+  transform: translateX(3px);
+}
+
+/* Headline & View Switcher Row */
+.headline-section {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
-@media (min-width: 900px) {
-  .hero-strip {
+@media (min-width: 820px) {
+  .headline-section {
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
   }
 }
 
-.academic-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  background: #f1f5f9;
-  padding: 0.3rem 0.75rem;
-  border-radius: var(--radius-pill);
-  margin-bottom: 1rem;
-}
-
-.pulse-dot {
-  width: 7px;
-  height: 7px;
-  background: #10b981;
-  border-radius: 50%;
-  box-shadow: 0 0 6px #10b981;
-}
-
-.hero-headline {
-  font-size: clamp(2.5rem, 6vw, 4.2rem);
-  line-height: 1.05;
+.main-headline {
+  font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+  line-height: 1;
   letter-spacing: -0.04em;
-  margin-bottom: 0.75rem;
 }
 
-.headline-bold {
+.word-bold {
   font-weight: 800;
-  color: var(--text-main);
+  color: var(--text-primary);
 }
 
-.headline-faint {
+.word-faint {
   font-weight: 700;
   color: var(--text-faint);
-  margin-left: 0.25rem;
+  margin-left: 0.35rem;
 }
 
-.hero-subtext {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  max-width: 580px;
-  line-height: 1.6;
-}
-
-/* Mintly View Tabs with Active Underline */
-.view-tabs {
+/* Mintly View Switcher with Active Underline */
+.view-switcher {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  border-bottom: 1px solid var(--border-subtle);
-  padding-bottom: 0.5rem;
-  overflow-x: auto;
-}
-
-.tab-item {
-  background: transparent;
-  border: none;
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-faint);
-  cursor: pointer;
-  padding: 0.4rem 0.2rem;
-  position: relative;
-  transition: var(--transition);
-  white-space: nowrap;
-}
-
-.tab-item:hover {
-  color: var(--text-main);
-}
-
-.tab-item.active {
-  color: var(--text-main);
-}
-
-.tab-item.active::after {
-  content: '';
-  position: absolute;
-  bottom: -0.55rem;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--accent-black);
-  border-radius: 2px;
-}
-
-/* Mintly Card Architecture Grid */
-.grid-section {
-  margin-bottom: 4rem;
-}
-
-.apps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr));
   gap: 1.75rem;
 }
 
-.app-card {
-  background: var(--card-bg);
+.switcher-tab {
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  cursor: pointer;
+  padding: 0.35rem 0.1rem;
+  position: relative;
+  transition: var(--transition);
+}
+
+.switcher-tab:hover {
+  color: var(--text-primary);
+}
+
+.switcher-tab.active {
+  color: var(--text-primary);
+}
+
+.switcher-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.35rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+}
+
+/* Cards Section & 3x2 Grid */
+.cards-section {
+  margin-bottom: 3.5rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 1060px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mintly Card Styling */
+.mintly-card {
+  background: #ffffff;
   border: 1px solid var(--border-card);
   border-radius: var(--radius-card);
-  padding: 1.75rem;
+  padding: 1.65rem 1.65rem 1.4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 330px;
+  min-height: 270px;
   transition: var(--transition);
   position: relative;
 }
 
-.app-card:hover {
+.mintly-card:hover {
   border-color: #cbd5e1;
-  background: var(--card-hover-bg);
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
-.card-featured {
-  border-color: #cbd5e1;
-  box-shadow: 0 4px 20px rgba(8, 145, 178, 0.06);
+.mintly-card:hover .mintly-plus-btn {
+  transform: scale(1.08) rotate(45deg);
+  background: #1e293b;
 }
 
-.card-top {
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-identity {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
+  gap: 0.2rem;
 }
 
-.title-with-pill {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.app-title {
-  font-size: 1.45rem;
+.card-name {
+  font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--text-main);
+  color: var(--text-primary);
 }
 
-.ai-pill {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #0891b2;
-  background: #ecfeff;
-  border: 1px solid #cffafe;
-  padding: 0.2rem 0.55rem;
-  border-radius: var(--radius-pill);
-}
-
-.version-pill {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #059669;
-  background: #ecfdf5;
-  border: 1px solid #d1fae5;
-  padding: 0.2rem 0.55rem;
-  border-radius: var(--radius-pill);
-}
-
-.app-sub {
-  font-size: 0.88rem;
+.card-meta {
+  font-size: 0.85rem;
+  color: var(--text-faint);
   font-weight: 500;
-  color: var(--text-muted);
 }
 
-.card-editorial-note {
-  font-size: 0.88rem;
-  line-height: 1.55;
-  color: var(--text-muted);
+.card-thesis {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  max-width: 165px;
+  text-align: right;
+  display: none;
 }
 
-/* Card Visual Presentation: Real High-Res App Icon + Technical Vector Graphic */
-.card-visual-wrapper {
+@media (min-width: 480px) {
+  .card-thesis {
+    display: block;
+  }
+}
+
+/* Large, High-Contrast Geometric Art Piece */
+.card-art-stage {
+  padding: 1rem 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem 0;
-  margin-bottom: 1rem;
+  height: 110px;
 }
 
-.icon-frame {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  flex-shrink: 0;
-  transition: transform 0.25s ease;
-}
-
-.app-card:hover .icon-frame {
-  transform: scale(1.05);
-}
-
-.app-avatar-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.icon-web-frame {
-  background: #f8fafc;
-  color: #6366f1;
-}
-
-.technical-wireframe {
-  width: 150px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.85;
-}
-
-.wireframe-svg {
-  width: 100%;
-  height: 100%;
+.mintly-art-svg {
+  height: 90px;
+  width: 130px;
   overflow: visible;
 }
 
-/* Card Bottom Row: Tags + Mintly Floating Black Circle Action Button */
-.card-bottom {
+/* Card Bottom: Micro Badges + Mintly Floating Black Circle Action Button */
+.card-footer-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 1rem;
-  border-top: 1px solid #f1f5f9;
+  padding-top: 0.5rem;
 }
 
-.tag-row {
+.tags-cluster {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
-.tag-pill {
+.micro-badge {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  padding: 0.25rem 0.55rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 6px;
 }
 
-/* The Iconic Mintly Circular Action Button */
-.circle-action-btn {
+/* Iconic Mintly Circular Action Button */
+.mintly-plus-btn {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: var(--accent-black);
+  background: var(--text-primary);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   transition: var(--transition);
-  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.18);
+  box-shadow: 0 4px 10px rgba(10, 14, 26, 0.2);
   flex-shrink: 0;
 }
 
-.circle-action-btn:hover {
+.mintly-plus-btn:hover {
   background: #334155;
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.28);
-}
-
-/* Editorial / Philosophy Strip (Inspired by Ordiva 01-04 Process) */
-.editorial-strip {
-  padding: 3.5rem 0;
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
-  margin-bottom: 3.5rem;
-}
-
-.editorial-header {
-  margin-bottom: 2.5rem;
-}
-
-.section-label {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--accent-blue);
-  text-transform: uppercase;
-}
-
-.editorial-title {
-  font-size: 1.85rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  margin-top: 0.4rem;
-  color: var(--text-main);
-}
-
-.editorial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2.5rem;
-}
-
-.editorial-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.col-number {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-faint);
-  margin-bottom: 0.75rem;
-}
-
-.editorial-column h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 0.5rem;
-}
-
-.editorial-column p {
-  font-size: 0.92rem;
-  color: var(--text-muted);
-  line-height: 1.6;
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 6px 14px rgba(10, 14, 26, 0.3);
 }
 
 /* Footer Section */
-.canvas-footer {
+.dashboard-footer {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
   justify-content: space-between;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-light);
 }
 
 @media (min-width: 640px) {
-  .canvas-footer {
+  .dashboard-footer {
     flex-direction: row;
     align-items: center;
   }
 }
 
-.footer-brand {
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--text-main);
-}
-
-.footer-copy {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-top: 0.2rem;
-}
-
-.footer-links {
+.footer-left {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
 }
 
-.footer-anchor {
-  color: var(--text-muted);
+.footer-glyph {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-link {
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 600;
+  color: var(--text-secondary);
   transition: var(--transition);
 }
 
-.footer-anchor:hover {
-  color: var(--text-main);
+.footer-link:hover {
+  color: var(--text-primary);
 }
 
-.domain-badge {
+.domain-pill {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
   background: #f1f5f9;
-  color: var(--text-muted);
-  padding: 0.25rem 0.6rem;
+  color: var(--text-secondary);
+  padding: 0.25rem 0.65rem;
   border-radius: var(--radius-pill);
 }
 
-/* Filtering classes */
-.app-card.hidden {
+/* Filtering */
+.mintly-card.hidden {
   display: none !important;
 }

@@ -1,27 +1,26 @@
-// Interactive behavior for Yorben's Portfolio (Mintly-inspired architecture)
+// Mintly Interactive Filter Behavior
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Category Filtering with Active Underline
-  const tabItems = document.querySelectorAll('.tab-item');
-  const appCards = document.querySelectorAll('.app-card');
+  const switcherTabs = document.querySelectorAll('.switcher-tab');
+  const cards = document.querySelectorAll('.mintly-card');
 
-  tabItems.forEach(tab => {
+  switcherTabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      tabItems.forEach(t => t.classList.remove('active'));
+      switcherTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
-      const filterValue = tab.getAttribute('data-filter');
+      const filter = tab.getAttribute('data-filter');
 
-      appCards.forEach(card => {
+      cards.forEach(card => {
         const category = card.getAttribute('data-category') || '';
-        if (filterValue === 'all' || category.includes(filterValue)) {
+        if (filter === 'all' || category.includes(filter)) {
           card.classList.remove('hidden');
           card.style.opacity = '0';
-          card.style.transform = 'translateY(8px)';
+          card.style.transform = 'translateY(6px)';
           setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
-          }, 30);
+          }, 20);
         } else {
           card.classList.add('hidden');
         }
