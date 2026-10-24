@@ -7,29 +7,32 @@
   <meta name="description" content="Portfolio of Yorben Vandersleyen — Independent software creator building thoughtful apps across iOS, iPadOS, macOS, and Web.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Ambient Atmospheric Fog (Mintly Inspiration) -->
+  <!-- Ambient Atmospheric Lighting (Mintly Style) -->
   <div class="ambient-glow ambient-glow-br" aria-hidden="true"></div>
   <div class="ambient-glow ambient-glow-tl" aria-hidden="true"></div>
 
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast" role="status" aria-live="polite">Copied to clipboard!</div>
+
   <div class="viewport-wrapper">
-    <!-- Main Floating White Dashboard Canvas -->
+    <!-- Main Floating Dashboard Canvas -->
     <main class="dashboard-canvas">
 
       <!-- Navigation Header -->
       <header class="dashboard-header">
-        <a href="#" class="brand-link">
+        <a href="#apps" class="brand-link" aria-label="Yorben home">
           <span class="brand-glyph">≠</span>
           <span class="brand-title">Yorben</span>
         </a>
 
-        <nav class="center-nav">
+        <nav class="center-nav" aria-label="Main Navigation">
           <a href="#apps" class="nav-item active">Apps</a>
-          <a href="#stack" class="nav-item">Ecosystem</a>
-          <a href="#about" class="nav-item">Architecture</a>
+          <a href="#ecosystem" class="nav-item">Ecosystem</a>
+          <a href="#architecture" class="nav-item">Architecture</a>
           <a href="#contact" class="nav-item">Contact</a>
         </nav>
 
@@ -41,33 +44,43 @@
         </div>
       </header>
 
-      <!-- Hero Title Row (Mintly Two-Tone Headline + Right-Aligned Tabs) -->
+      <!-- Hero Title Row (Mintly Two-Tone Headline + Filter Switcher) -->
       <section class="headline-section" id="apps">
         <div class="title-column">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Student @ University of Antwerp · Software Creator</span>
+          </div>
           <h1 class="main-headline">
             <span class="word-bold">Build</span>
             <span class="word-faint">Ship Scale</span>
           </h1>
+          <p class="headline-description">
+            Thoughtful software engineered across the Apple ecosystem and modern Web. Click any project card to inspect architecture details, features, or clone the repository.
+          </p>
         </div>
 
         <div class="controls-column">
-          <div class="view-switcher" role="tablist">
-            <button class="switcher-tab active" data-filter="all">All Apps</button>
-            <button class="switcher-tab" data-filter="apple">Apple Native</button>
-            <button class="switcher-tab" data-filter="ai">AI & Web</button>
+          <div class="view-switcher" role="tablist" aria-label="Filter applications">
+            <button class="switcher-tab active" data-filter="all">All Apps <span class="tab-count">4</span></button>
+            <button class="switcher-tab" data-filter="apple">Apple Native <span class="tab-count">3</span></button>
+            <button class="switcher-tab" data-filter="ai">AI & Web <span class="tab-count">2</span></button>
           </div>
         </div>
       </section>
 
-      <!-- 6-Card Grid (Exact Mintly 3x2 Proportions & Geometric Visual Art) -->
+      <!-- 4-Card Mintly Architecture Grid -->
       <section class="cards-section">
         <div class="cards-grid">
 
           <!-- 1. Cockpit -->
-          <article class="mintly-card" data-category="apple">
+          <article class="mintly-card" data-category="apple" data-modal="modal-cockpit" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Cockpit details">
             <div class="card-header-row">
               <div class="card-identity">
-                <h2 class="card-name">Cockpit</h2>
+                <div class="title-row">
+                  <h2 class="card-name">Cockpit</h2>
+                  <span class="pill-badge">v0.4 Live</span>
+                </div>
                 <p class="card-meta">macOS, iPad & iPhone Workspace</p>
               </div>
               <div class="card-thesis">
@@ -75,38 +88,44 @@
               </div>
             </div>
 
-            <!-- Geometric Art Piece: Concentric Radar Matrix (Inspired by Mintly Bitcoin) -->
+            <!-- Geometric Art Piece: Concentric Radar Matrix -->
             <div class="card-art-stage">
-              <svg viewBox="0 0 140 100" class="mintly-art-svg">
-                <circle cx="55" cy="50" r="40" stroke="#0f172a" stroke-width="1.6" fill="none"/>
-                <circle cx="55" cy="50" r="28" stroke="#0f172a" stroke-width="1.4" fill="none"/>
-                <circle cx="55" cy="50" r="16" stroke="#0f172a" stroke-width="1.4" fill="none"/>
-                <circle cx="55" cy="50" r="6" stroke="#0f172a" stroke-width="1.6" fill="#0f172a"/>
-                <line x1="8" y1="50" x2="102" y2="50" stroke="#0f172a" stroke-width="1.2" stroke-dasharray="2 3"/>
-                <line x1="55" y1="3" x2="55" y2="97" stroke="#0f172a" stroke-width="1.2" stroke-dasharray="2 3"/>
+              <svg viewBox="0 0 140 100" class="mintly-art-svg" aria-hidden="true">
+                <circle cx="60" cy="50" r="40" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <circle cx="60" cy="50" r="28" stroke="#0f172a" stroke-width="1.4" fill="none"/>
+                <circle cx="60" cy="50" r="16" stroke="#0f172a" stroke-width="1.4" fill="none"/>
+                <circle cx="60" cy="50" r="6" stroke="#0f172a" stroke-width="1.6" fill="#0f172a"/>
+                <line x1="12" y1="50" x2="108" y2="50" stroke="#0f172a" stroke-width="1.2" stroke-dasharray="2 3"/>
+                <line x1="60" y1="3" x2="60" y2="97" stroke="#0f172a" stroke-width="1.2" stroke-dasharray="2 3"/>
               </svg>
             </div>
 
             <div class="card-footer-row">
               <div class="tags-cluster">
                 <span class="micro-badge">SwiftUI</span>
-                <span class="micro-badge">macOS</span>
-                <span class="micro-badge">Notion</span>
+                <span class="micro-badge">macOS Helper</span>
+                <span class="micro-badge">Notion API</span>
               </div>
-              <a href="https://github.com/Yvsleyen00941/Cockpit" target="_blank" rel="noopener noreferrer" class="mintly-plus-btn" title="View Cockpit on GitHub" aria-label="Open Cockpit">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              </a>
+              <div class="card-action-triggers">
+                <span class="view-details-label">Inspect</span>
+                <button class="mintly-plus-btn" title="Inspect Cockpit" aria-label="Open Cockpit details">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
             </div>
           </article>
 
           <!-- 2. Cairn -->
-          <article class="mintly-card" data-category="apple ai">
+          <article class="mintly-card" data-category="apple ai" data-modal="modal-cairn" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Cairn details">
             <div class="card-header-row">
               <div class="card-identity">
-                <h2 class="card-name">Cairn</h2>
+                <div class="title-row">
+                  <h2 class="card-name">Cairn</h2>
+                  <span class="pill-badge pill-ai">✨ Gemini AI</span>
+                </div>
                 <p class="card-meta">Global Multi-Market Portfolio</p>
               </div>
               <div class="card-thesis">
@@ -114,13 +133,12 @@
               </div>
             </div>
 
-            <!-- Geometric Art Piece: Overlapping Venn / Stone Stack (Inspired by Mintly Ethereum) -->
+            <!-- Geometric Art Piece: Overlapping Venn / Stone Stack -->
             <div class="card-art-stage">
-              <svg viewBox="0 0 140 100" class="mintly-art-svg">
-                <!-- 3 Overlapping Intersecting Rings -->
-                <circle cx="45" cy="42" r="24" stroke="#0f172a" stroke-width="1.6" fill="none"/>
-                <circle cx="75" cy="42" r="24" stroke="#0f172a" stroke-width="1.6" fill="none"/>
-                <circle cx="60" cy="65" r="24" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+              <svg viewBox="0 0 140 100" class="mintly-art-svg" aria-hidden="true">
+                <circle cx="50" cy="42" r="24" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <circle cx="80" cy="42" r="24" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <circle cx="65" cy="65" r="24" stroke="#0f172a" stroke-width="1.6" fill="none"/>
               </svg>
             </div>
 
@@ -128,22 +146,28 @@
               <div class="tags-cluster">
                 <span class="micro-badge">Gemini AI</span>
                 <span class="micro-badge">Widgets</span>
-                <span class="micro-badge">iOS</span>
+                <span class="micro-badge">iOS 17+</span>
               </div>
-              <a href="https://github.com/Yvsleyen00941/Cairn" target="_blank" rel="noopener noreferrer" class="mintly-plus-btn" title="View Cairn on GitHub" aria-label="Open Cairn">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              </a>
+              <div class="card-action-triggers">
+                <span class="view-details-label">Inspect</span>
+                <button class="mintly-plus-btn" title="Inspect Cairn" aria-label="Open Cairn details">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
             </div>
           </article>
 
           <!-- 3. Waybill -->
-          <article class="mintly-card" data-category="apple">
+          <article class="mintly-card" data-category="apple" data-modal="modal-waybill" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Waybill details">
             <div class="card-header-row">
               <div class="card-identity">
-                <h2 class="card-name">Waybill</h2>
+                <div class="title-row">
+                  <h2 class="card-name">Waybill</h2>
+                  <span class="pill-badge pill-green">v1.0 Complete</span>
+                </div>
                 <p class="card-meta">Logistics 3D Diorama Game</p>
               </div>
               <div class="card-thesis">
@@ -151,59 +175,63 @@
               </div>
             </div>
 
-            <!-- Geometric Art Piece: Perspective Layered Discs (Inspired by Mintly Solana) -->
+            <!-- Geometric Art Piece: Perspective Layered Discs -->
             <div class="card-art-stage">
-              <svg viewBox="0 0 140 100" class="mintly-art-svg">
-                <ellipse cx="60" cy="22" rx="36" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
-                <ellipse cx="60" cy="36" rx="36" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
-                <ellipse cx="60" cy="50" rx="36" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
-                <ellipse cx="60" cy="64" rx="36" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
-                <ellipse cx="60" cy="78" rx="36" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+              <svg viewBox="0 0 140 100" class="mintly-art-svg" aria-hidden="true">
+                <ellipse cx="65" cy="22" rx="38" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <ellipse cx="65" cy="36" rx="38" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <ellipse cx="65" cy="50" rx="38" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <ellipse cx="65" cy="64" rx="38" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <ellipse cx="65" cy="78" rx="38" ry="10" stroke="#0f172a" stroke-width="1.6" fill="none"/>
               </svg>
             </div>
 
             <div class="card-footer-row">
               <div class="tags-cluster">
                 <span class="micro-badge">RealityKit</span>
-                <span class="micro-badge">v1.0 Game</span>
-                <span class="micro-badge">iPadOS</span>
+                <span class="micro-badge">iPad Game</span>
+                <span class="micro-badge">Metal</span>
               </div>
-              <a href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener noreferrer" class="mintly-plus-btn" title="View Waybill on GitHub" aria-label="Open Waybill">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              </a>
+              <div class="card-action-triggers">
+                <span class="view-details-label">Inspect</span>
+                <button class="mintly-plus-btn" title="Inspect Waybill" aria-label="Open Waybill details">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
             </div>
           </article>
 
           <!-- 4. PortTracker Web -->
-          <article class="mintly-card" data-category="ai">
+          <article class="mintly-card" data-category="ai" data-modal="modal-porttracker" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View PortTracker details">
             <div class="card-header-row">
               <div class="card-identity">
-                <h2 class="card-name">PortTracker</h2>
+                <div class="title-row">
+                  <h2 class="card-name">PortTracker</h2>
+                  <span class="pill-badge">Web / PWA</span>
+                </div>
                 <p class="card-meta">Precision Financial Ledger PWA</p>
               </div>
               <div class="card-thesis">
-                <p>IEEE-754 precision rule: number is a transport format, never an arithmetic one. Built on Next.js 15, Tailwind v4, Supabase.</p>
+                <p>Strict mathematical precision contract: numbers are transport formats, never arithmetic. Built on Next.js 15 & Supabase.</p>
               </div>
             </div>
 
-            <!-- Geometric Art Piece: Topological Constellation Grid (Inspired by Mintly Cardano) -->
+            <!-- Geometric Art Piece: Topological Constellation Grid -->
             <div class="card-art-stage">
-              <svg viewBox="0 0 140 100" class="mintly-art-svg">
-                <!-- Topological grid with node points -->
-                <path d="M20 70 L45 35 L85 30 L115 55 L80 82 L35 80 Z" stroke="#0f172a" stroke-width="1.6" fill="none"/>
-                <line x1="45" y1="35" x2="80" y2="82" stroke="#0f172a" stroke-width="1.4"/>
-                <line x1="85" y1="30" x2="35" y2="80" stroke="#0f172a" stroke-width="1.4"/>
-                <line x1="20" y1="70" x2="85" y2="30" stroke="#0f172a" stroke-width="1.4"/>
-                <!-- Node circles -->
-                <circle cx="20" cy="70" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
-                <circle cx="45" cy="35" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
-                <circle cx="85" cy="30" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
-                <circle cx="115" cy="55" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
-                <circle cx="80" cy="82" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
-                <circle cx="35" cy="80" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+              <svg viewBox="0 0 140 100" class="mintly-art-svg" aria-hidden="true">
+                <path d="M25 70 L50 35 L90 30 L120 55 L85 82 L40 80 Z" stroke="#0f172a" stroke-width="1.6" fill="none"/>
+                <line x1="50" y1="35" x2="85" y2="82" stroke="#0f172a" stroke-width="1.4"/>
+                <line x1="90" y1="30" x2="40" y2="80" stroke="#0f172a" stroke-width="1.4"/>
+                <line x1="25" y1="70" x2="90" y2="30" stroke="#0f172a" stroke-width="1.4"/>
+                <circle cx="25" cy="70" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+                <circle cx="50" cy="35" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+                <circle cx="90" cy="30" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+                <circle cx="120" cy="55" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+                <circle cx="85" cy="82" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+                <circle cx="40" cy="80" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
               </svg>
             </div>
 
@@ -213,33 +241,353 @@
                 <span class="micro-badge">TypeScript</span>
                 <span class="micro-badge">Supabase</span>
               </div>
-              <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="mintly-plus-btn" title="View PortTracker on GitHub" aria-label="Open PortTracker">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              </a>
+              <div class="card-action-triggers">
+                <span class="view-details-label">Inspect</span>
+                <button class="mintly-plus-btn" title="Inspect PortTracker" aria-label="Open PortTracker details">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
             </div>
           </article>
 
         </div>
       </section>
 
+      <!-- Complete Ecosystem & Tooling Section (#ecosystem) -->
+      <section class="section-container" id="ecosystem">
+        <div class="section-header-row">
+          <span class="section-tag">01 / ECOSYSTEM & STACK</span>
+          <h3 class="section-heading">Core Engineering Toolkit</h3>
+          <p class="section-subtext">The platforms, frameworks, and foundational tools powering every project.</p>
+        </div>
+
+        <div class="ecosystem-grid">
+          <div class="eco-card">
+            <div class="eco-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h4>Apple Ecosystem</h4>
+            <p>Swift, SwiftUI, Combine, RealityKit, Metal shaders, WidgetKit, AppKit, EventKit, and Live Activities.</p>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <h4>Artificial Intelligence</h4>
+            <p>Google Gemini API for financial intelligence, Claude Pro for architecture and automated prototyping.</p>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+            <h4>Modern Web & PWA</h4>
+            <p>Next.js 15 (App Router), TypeScript, Tailwind CSS v4, Supabase (PostgreSQL), and Vitest.</p>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+            </div>
+            <h4>Cloud & Distribution</h4>
+            <p>GitHub Pages, GitHub Actions CI/CD, Namecheap DNS via the GitHub Student Developer Pack.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture & Philosophy Section (#architecture) -->
+      <section class="section-container" id="architecture">
+        <div class="section-header-row">
+          <span class="section-tag">02 / ARCHITECTURE & PHILOSOPHY</span>
+          <h3 class="section-heading">How Every App is Built</h3>
+          <p class="section-subtext">Principles guiding each line of code from prototype to production.</p>
+        </div>
+
+        <div class="architecture-columns">
+          <div class="arch-item">
+            <span class="arch-num">01</span>
+            <h4>Zero Third-Party Bloat</h4>
+            <p>Cockpit and Cairn rely exclusively on native Apple system frameworks. No CocoaPods, no bloated external dependencies, zero cloud tracking, and complete privacy.</p>
+          </div>
+
+          <div class="arch-item">
+            <span class="arch-num">02</span>
+            <h4>Strict Numerical Precision</h4>
+            <p>PortTracker enforces zero floating-point arithmetic on ledgers. Every monetary transaction is strictly verified to avoid IEEE-754 compounding drift.</p>
+          </div>
+
+          <div class="arch-item">
+            <span class="arch-num">03</span>
+            <h4>Real-time Spatial Simulation</h4>
+            <p>Waybill builds dynamic 3D dioramas with custom Metal shaders, day/night cycles, and deterministic idle mathematics simulated through Python test harnesses.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Contact & Inquiries Section (#contact) -->
+      <section class="section-container contact-box" id="contact">
+        <div class="contact-inner">
+          <div class="contact-text">
+            <span class="section-tag">03 / CONTACT & COLLABORATION</span>
+            <h3 class="section-heading">Let’s Build Something Meaningful</h3>
+            <p class="contact-desc">
+              Have feedback, an inquiry, or want to collaborate on native Apple or Web software? Feel free to reach out directly.
+            </p>
+          </div>
+
+          <div class="contact-buttons-group">
+            <a href="mailto:yorbenvandersleyen@users.noreply.github.com?subject=Inquiry%20via%20yorben.me" class="btn-primary-action">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>Send an Email</span>
+            </a>
+
+            <button class="btn-secondary-action" id="btn-copy-email" data-clipboard="yorbenvandersleyen@users.noreply.github.com">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copy Address</span>
+            </button>
+
+            <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="btn-secondary-action">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <!-- Minimal Dashboard Footer -->
-      <footer class="dashboard-footer" id="contact">
+      <footer class="dashboard-footer">
         <div class="footer-left">
           <span class="footer-glyph">≠</span>
-          <span class="footer-text">Yorben Vandersleyen · Universiteit Antwerpen</span>
+          <span class="footer-text">Yorben Vandersleyen · University of Antwerp</span>
         </div>
         <div class="footer-right">
+          <a href="#apps" class="footer-link">Back to Top ↑</a>
           <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
-          <a href="mailto:yorbenvandersleyen@users.noreply.github.com" class="footer-link">Email</a>
           <span class="domain-pill">yorben.me</span>
         </div>
       </footer>
 
     </main>
   </div>
+
+  <!-- =========================================================================
+       NATIVE HTML5 DETAIL MODALS (For Full App Inspection & Download)
+       ========================================================================= -->
+
+  <!-- Modal 1: Cockpit -->
+  <dialog id="modal-cockpit" class="mintly-modal">
+    <div class="modal-surface">
+      <button class="modal-close-trigger" aria-label="Close dialog">&times;</button>
+      
+      <div class="modal-badge-row">
+        <span class="pill-badge">macOS, iPad & iPhone</span>
+        <span class="pill-badge pill-green">v0.4 Live</span>
+      </div>
+
+      <div class="modal-header-block">
+        <img src="assets/cockpit-icon.png" alt="Cockpit App Icon" class="modal-app-icon">
+        <div>
+          <h3 class="modal-title">Cockpit</h3>
+          <p class="modal-sub">All-in-One Daily Command Surface</p>
+        </div>
+      </div>
+
+      <div class="modal-body-content">
+        <p>Cockpit unites your most critical tools into a single, distraction-free environment for Mac, iPad, and iPhone:</p>
+        <ul class="features-checklist">
+          <li><strong>📅 Morning Brief & Calendar:</strong> Daily schedule overview, lecture schedule, and top 3 focus priorities.</li>
+          <li><strong>🎵 Media & Focus Timers:</strong> Integrated Apple Music & Spotify controls paired with Pomodoro and deep work timers.</li>
+          <li><strong>📝 Notion Workspace:</strong> Contextual shortcut keys that follow active apps with zero tab-switching.</li>
+          <li><strong>🔒 Zero Cloud Tracking:</strong> Operates strictly over local network and Keychain with no external servers.</li>
+        </ul>
+
+        <div class="clone-box">
+          <span class="clone-label">Clone Repository:</span>
+          <div class="clone-code-row">
+            <code>git clone https://github.com/Yvsleyen00941/Cockpit.git</code>
+            <button class="btn-copy-code" data-clipboard="git clone https://github.com/Yvsleyen00941/Cockpit.git">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions-row">
+        <a href="https://github.com/Yvsleyen00941/Cockpit" target="_blank" rel="noopener noreferrer" class="btn-primary-action">
+          <span>Open on GitHub</span>
+          <span class="arrow-glyph">→</span>
+        </a>
+        <button class="btn-secondary-action modal-dismiss-btn">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal 2: Cairn -->
+  <dialog id="modal-cairn" class="mintly-modal">
+    <div class="modal-surface">
+      <button class="modal-close-trigger" aria-label="Close dialog">&times;</button>
+      
+      <div class="modal-badge-row">
+        <span class="pill-badge">iOS (iPhone)</span>
+        <span class="pill-badge pill-ai">✨ Gemini AI</span>
+      </div>
+
+      <div class="modal-header-block">
+        <img src="assets/cairn-icon.png" alt="Cairn App Icon" class="modal-app-icon">
+        <div>
+          <h3 class="modal-title">Cairn</h3>
+          <p class="modal-sub">Multi-Market Portfolio & AI Brief</p>
+        </div>
+      </div>
+
+      <div class="modal-body-content">
+        <p>A global portfolio tracker designed for international stocks, ETFs, and cryptocurrencies without subscription costs:</p>
+        <ul class="features-checklist">
+          <li><strong>🤖 Gemini AI Daily Brief:</strong> Intelligent morning summaries analyzing overnight market movements.</li>
+          <li><strong>📱 Live Activities & Lock Screen:</strong> Real-time price tracking on Dynamic Island and Lock Screen widgets.</li>
+          <li><strong>🔔 Custom Price Alerts:</strong> Local notifications trigger when target support or resistance thresholds are reached.</li>
+          <li><strong>🌍 35+ Global Exchanges:</strong> Euronext, XETRA, London, Zurich, New York, Tokyo and Hong Kong in one balance.</li>
+        </ul>
+
+        <div class="clone-box">
+          <span class="clone-label">Clone Repository:</span>
+          <div class="clone-code-row">
+            <code>git clone https://github.com/Yvsleyen00941/Cairn.git</code>
+            <button class="btn-copy-code" data-clipboard="git clone https://github.com/Yvsleyen00941/Cairn.git">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions-row">
+        <a href="https://github.com/Yvsleyen00941/Cairn" target="_blank" rel="noopener noreferrer" class="btn-primary-action">
+          <span>Open on GitHub</span>
+          <span class="arrow-glyph">→</span>
+        </a>
+        <button class="btn-secondary-action modal-dismiss-btn">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal 3: Waybill -->
+  <dialog id="modal-waybill" class="mintly-modal">
+    <div class="modal-surface">
+      <button class="modal-close-trigger" aria-label="Close dialog">&times;</button>
+      
+      <div class="modal-badge-row">
+        <span class="pill-badge">iPadOS (iPad)</span>
+        <span class="pill-badge pill-green">v1.0 Complete Game</span>
+      </div>
+
+      <div class="modal-header-block">
+        <img src="assets/waybill-icon.png" alt="Waybill App Icon" class="modal-app-icon">
+        <div>
+          <h3 class="modal-title">Waybill</h3>
+          <p class="modal-sub">Logistics Idle Game on RealityKit</p>
+        </div>
+      </div>
+
+      <div class="modal-body-content">
+        <p>A full-featured logistics idle management game featuring five handcrafted 3D diorama regions:</p>
+        <ul class="features-checklist">
+          <li><strong>🚚 5 Detailed Regions:</strong> Riverside box trucks, Harbour City quay cranes, Granite Pass freight trains, Metro vans, and Orbit rockets.</li>
+          <li><strong>🎨 Custom 3D & Shaders:</strong> Procedural mesh builder, custom Metal water shaders, dynamic day/night cycles.</li>
+          <li><strong>⏱️ Idle Mathematics:</strong> Offline progression curves simulated and tuned via Python balance harnesses.</li>
+          <li><strong>⚡ 120 FPS Native:</strong> Built purely with Swift, SwiftUI, and RealityKit for Apple silicon.</li>
+        </ul>
+
+        <div class="clone-box">
+          <span class="clone-label">Clone Repository:</span>
+          <div class="clone-code-row">
+            <code>git clone https://github.com/Yvsleyen00941/Waybill.git</code>
+            <button class="btn-copy-code" data-clipboard="git clone https://github.com/Yvsleyen00941/Waybill.git">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions-row">
+        <a href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener noreferrer" class="btn-primary-action">
+          <span>Open on GitHub</span>
+          <span class="arrow-glyph">→</span>
+        </a>
+        <button class="btn-secondary-action modal-dismiss-btn">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal 4: PortTracker -->
+  <dialog id="modal-porttracker" class="mintly-modal">
+    <div class="modal-surface">
+      <button class="modal-close-trigger" aria-label="Close dialog">&times;</button>
+      
+      <div class="modal-badge-row">
+        <span class="pill-badge">Web / PWA</span>
+        <span class="pill-badge">Next.js 15</span>
+      </div>
+
+      <div class="modal-header-block">
+        <div class="modal-app-icon icon-web-avatar">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="modal-title">PortTracker Web</h3>
+          <p class="modal-sub">High-Precision Financial PWA</p>
+        </div>
+      </div>
+
+      <div class="modal-body-content">
+        <p>A Progressive Web Application built specifically for European investors covering leveraged instruments, ETFs, and crypto:</p>
+        <ul class="features-checklist">
+          <li><strong>📐 The Precision Contract:</strong> Numbers are transport formats, never arithmetic. Completely eliminates floating-point rounding errors.</li>
+          <li><strong>⚡ Modern Web Architecture:</strong> Next.js 15 App Router, TypeScript, Tailwind CSS v4, and Framer Motion.</li>
+          <li><strong>🗄️ Relational Backend:</strong> Supabase PostgreSQL integration with Row-Level Security.</li>
+          <li><strong>📱 Installable PWA:</strong> Offline capability, native app manifest, and cross-platform responsive layout.</li>
+        </ul>
+
+        <div class="clone-box">
+          <span class="clone-label">Developer Profile:</span>
+          <div class="clone-code-row">
+            <code>https://github.com/Yvsleyen00941</code>
+            <button class="btn-copy-code" data-clipboard="https://github.com/Yvsleyen00941">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions-row">
+        <a href="https://github.com/Yvsleyen00941" target="_blank" rel="noopener noreferrer" class="btn-primary-action">
+          <span>View on GitHub</span>
+          <span class="arrow-glyph">→</span>
+        </a>
+        <button class="btn-secondary-action modal-dismiss-btn">Close</button>
+      </div>
+    </div>
+  </dialog>
 
   <script src="script.js"></script>
 </body>

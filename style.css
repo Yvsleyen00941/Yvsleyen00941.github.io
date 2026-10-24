@@ -1,21 +1,27 @@
 /* ==========================================================================
-   Mintly High-End Portfolio Design for Yorben.me
+   Yorben.me — Complete Mintly-Architected Portfolio Stylesheet
    ========================================================================== */
 
 :root {
   --bg-deep: #08090d;
   --canvas-white: #ffffff;
   --text-primary: #0a0e1a;
-  --text-secondary: #64748b;
+  --text-secondary: #475569;
   --text-faint: #94a3b8;
-  --border-light: #e5e7eb;
+  --border-subtle: #f1f5f9;
+  --border-light: #e2e8f0;
   --border-card: #e2e8f0;
+  --accent-black: #0a0e1a;
+  --accent-blue: #2563eb;
+  --accent-cyan: #0891b2;
+  --accent-green: #059669;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --radius-canvas: 28px;
   --radius-card: 22px;
+  --radius-modal: 24px;
   --radius-pill: 9999px;
-  --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *, *::before, *::after {
@@ -27,6 +33,7 @@
 html {
   background-color: var(--bg-deep);
   color-scheme: light;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -40,7 +47,7 @@ body {
   padding: clamp(1rem, 2.5vw, 2.5rem);
 }
 
-/* Ethereal Ambient Gradient Fog (Mintly Inspiration) */
+/* Ambient Ethereal Glow */
 .ambient-glow {
   position: fixed;
   pointer-events: none;
@@ -50,22 +57,22 @@ body {
 }
 
 .ambient-glow-br {
-  bottom: -100px;
+  bottom: -80px;
   right: -50px;
-  width: 700px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(217, 70, 239, 0.32) 0%, rgba(56, 189, 248, 0.22) 50%, transparent 75%);
+  width: 750px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(217, 70, 239, 0.28) 0%, rgba(56, 189, 248, 0.2) 50%, transparent 75%);
 }
 
 .ambient-glow-tl {
-  top: -150px;
-  left: 10%;
-  width: 500px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 70%);
+  top: -120px;
+  left: 5%;
+  width: 550px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
 }
 
-/* Main Viewport Layout */
+/* Page Shell */
 .viewport-wrapper {
   position: relative;
   z-index: 1;
@@ -73,7 +80,7 @@ body {
   margin: 0 auto;
 }
 
-/* Floating White Dashboard Canvas */
+/* Floating White Canvas */
 .dashboard-canvas {
   background: var(--canvas-white);
   border-radius: var(--radius-canvas);
@@ -88,7 +95,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 3rem;
+  margin-bottom: 2.75rem;
 }
 
 .brand-link {
@@ -161,15 +168,15 @@ body {
   transform: translateX(3px);
 }
 
-/* Headline & View Switcher Row */
+/* Headline Section */
 .headline-section {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: 1.75rem;
+  margin-bottom: 2.75rem;
 }
 
-@media (min-width: 820px) {
+@media (min-width: 860px) {
   .headline-section {
     flex-direction: row;
     align-items: flex-end;
@@ -177,10 +184,33 @@ body {
   }
 }
 
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.85rem;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #10b981;
+}
+
 .main-headline {
   font-size: clamp(2.8rem, 5.5vw, 4.2rem);
   line-height: 1;
   letter-spacing: -0.04em;
+  margin-bottom: 0.75rem;
 }
 
 .word-bold {
@@ -194,24 +224,46 @@ body {
   margin-left: 0.35rem;
 }
 
-/* Mintly View Switcher with Active Underline */
+.headline-description {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  max-width: 580px;
+  line-height: 1.6;
+}
+
+/* Mintly Switcher Tabs with Count and Underline */
 .view-switcher {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.5rem;
+  overflow: visible;
+  padding-bottom: 0.25rem;
 }
 
 .switcher-tab {
   background: transparent;
   border: none;
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 600;
   color: var(--text-faint);
   cursor: pointer;
   padding: 0.35rem 0.1rem;
   position: relative;
   transition: var(--transition);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.tab-count {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: #f1f5f9;
+  color: var(--text-secondary);
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--radius-pill);
 }
 
 .switcher-tab:hover {
@@ -233,9 +285,9 @@ body {
   border-radius: 2px;
 }
 
-/* Cards Section & 3x2 Grid */
+/* Cards Section: 2x2 Spacious Mintly Architecture */
 .cards-section {
-  margin-bottom: 3.5rem;
+  margin-bottom: 4rem;
 }
 
 .cards-grid {
@@ -250,76 +302,100 @@ body {
   }
 }
 
-/* Mintly Card Styling */
+/* Mintly Card */
 .mintly-card {
   background: #ffffff;
   border: 1px solid var(--border-card);
   border-radius: var(--radius-card);
-  padding: 1.65rem 1.65rem 1.4rem;
+  padding: 1.75rem 1.75rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 270px;
+  min-height: 290px;
   transition: var(--transition);
-  position: relative;
+  cursor: pointer;
+  outline: none;
 }
 
-.mintly-card:hover {
+.mintly-card:hover, .mintly-card:focus-visible {
   border-color: #cbd5e1;
   box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
-}
-
-.mintly-card:hover .mintly-plus-btn {
-  transform: scale(1.08) rotate(45deg);
-  background: #1e293b;
 }
 
 .card-header-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 1.25rem;
+  gap: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
 .card-identity {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.25rem;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .card-name {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text-primary);
 }
 
+.pill-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #3b82f6;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+}
+
+.pill-ai {
+  color: #0891b2;
+  background: #ecfeff;
+  border-color: #cffafe;
+}
+
+.pill-green {
+  color: #059669;
+  background: #ecfdf5;
+  border-color: #d1fae5;
+}
+
 .card-meta {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-faint);
   font-weight: 500;
 }
 
 .card-thesis {
-  font-size: 0.82rem;
-  line-height: 1.45;
+  font-size: 0.85rem;
+  line-height: 1.5;
   color: var(--text-secondary);
-  max-width: 165px;
+  max-width: 220px;
   text-align: right;
   display: none;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 520px) {
   .card-thesis {
     display: block;
   }
 }
 
-/* Large, High-Contrast Geometric Art Piece */
+/* Card Vector Artwork */
 .card-art-stage {
-  padding: 1rem 0;
+  padding: 1.25rem 0;
   display: flex;
   align-items: center;
   height: 110px;
@@ -327,22 +403,23 @@ body {
 
 .mintly-art-svg {
   height: 90px;
-  width: 130px;
+  width: 140px;
   overflow: visible;
 }
 
-/* Card Bottom: Micro Badges + Mintly Floating Black Circle Action Button */
+/* Card Bottom Footer */
 .card-footer-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-subtle);
 }
 
 .tags-cluster {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
+  gap: 0.4rem;
 }
 
 .micro-badge {
@@ -356,7 +433,23 @@ body {
   border-radius: 6px;
 }
 
-/* Iconic Mintly Circular Action Button */
+.card-action-triggers {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.view-details-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  transition: var(--transition);
+}
+
+.mintly-card:hover .view-details-label {
+  color: var(--text-primary);
+}
+
 .mintly-plus-btn {
   width: 38px;
   height: 38px;
@@ -366,25 +459,217 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
+  border: none;
+  cursor: pointer;
   transition: var(--transition);
   box-shadow: 0 4px 10px rgba(10, 14, 26, 0.2);
   flex-shrink: 0;
 }
 
-.mintly-plus-btn:hover {
-  background: #334155;
-  transform: scale(1.1) rotate(90deg);
-  box-shadow: 0 6px 14px rgba(10, 14, 26, 0.3);
+.mintly-card:hover .mintly-plus-btn {
+  background: #1e293b;
+  transform: scale(1.1) rotate(45deg);
+  box-shadow: 0 6px 16px rgba(10, 14, 26, 0.3);
 }
 
-/* Footer Section */
+/* Generic Section Styles */
+.section-container {
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.section-header-row {
+  margin-bottom: 2.25rem;
+}
+
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.section-heading {
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.section-subtext {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  margin-top: 0.4rem;
+}
+
+/* Ecosystem Grid */
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 1.5rem;
+}
+
+.eco-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.eco-icon-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.eco-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.eco-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* Architecture Pillars */
+.architecture-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 2.5rem;
+}
+
+.arch-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.arch-num {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-faint);
+  margin-bottom: 0.75rem;
+}
+
+.arch-item h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.arch-item p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Contact Box */
+.contact-box {
+  background: #f8fafc;
+  border-radius: 20px;
+  border: 1px solid var(--border-light);
+  padding: 2.5rem;
+}
+
+.contact-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 820px) {
+  .contact-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.contact-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin-top: 0.5rem;
+  line-height: 1.55;
+}
+
+.contact-buttons-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.btn-primary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent-black);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+  border: 1px solid var(--accent-black);
+  cursor: pointer;
+}
+
+.btn-primary-action:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+}
+
+.btn-secondary-action:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+/* Footer */
 .dashboard-footer {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   justify-content: space-between;
   padding-top: 2rem;
+  margin-top: 2rem;
   border-top: 1px solid var(--border-light);
 }
 
@@ -438,7 +723,213 @@ body {
   border-radius: var(--radius-pill);
 }
 
-/* Filtering */
+/* =========================================================================
+   NATIVE HTML5 DETAIL MODALS STYLING
+   ========================================================================= */
+
+.mintly-modal {
+  margin: auto;
+  border: none;
+  background: transparent;
+  padding: 1rem;
+  max-width: 580px;
+  width: 92%;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.mintly-modal::backdrop {
+  background: rgba(8, 9, 13, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.modal-surface {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-modal);
+  padding: 2.25rem;
+  position: relative;
+  box-shadow: 0 30px 80px -15px rgba(0, 0, 0, 0.4);
+}
+
+.modal-close-trigger {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  background: #f8fafc;
+  color: var(--text-secondary);
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: var(--transition);
+}
+
+.modal-close-trigger:hover {
+  background: var(--text-primary);
+  color: #ffffff;
+}
+
+.modal-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.modal-header-block {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.modal-app-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.icon-web-avatar {
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6366f1;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.modal-sub {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.modal-body-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.features-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.features-checklist li {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  background: #f8fafc;
+  border-left: 3px solid var(--accent-black);
+  padding: 0.55rem 0.85rem;
+  border-radius: 6px;
+  line-height: 1.5;
+}
+
+/* Clone Box */
+.clone-box {
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.clone-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  font-weight: 600;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.clone-code-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.clone-code-row code {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.btn-copy-code {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.btn-copy-code:hover {
+  background: var(--text-primary);
+  color: #ffffff;
+}
+
+.modal-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Toast Component */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #0f172a;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Filtering classes */
 .mintly-card.hidden {
   display: none !important;
 }
