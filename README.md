@@ -1,17 +1,15 @@
-# App Showcase & Portfolio (yorben.me)
+# yorben.me
 
-Mijn persoonlijke portfolio website voor iOS, macOS en Web applicaties gebouwd als student aan de Universiteit Antwerpen.
+Personal site of Yorben Vandersleyen: native apps for iPhone, iPad and Mac.
 
-## 🚀 Uitgelichte Projecten
+- **Cockpit** (macOS): the whole day in one window.
+- **Cairn** (iPhone): every market in one portfolio.
+- **AeroCommand** (iPad): an airline tycoon on a satellite globe.
+- **Waybill** (iPad): a logistics idle game in toy-scale 3D.
+- **Home Hub** (iPad Air 2): the calm screen in the living room.
 
-- **Cockpit**: All-in-one productiviteitsapp voor iOS & macOS (Calendar + Music + Notion + Mail).
-- **Portfolio Tracker AI**: Slim vermogensbeheer met ingebouwde gratis Gemini AI analyses.
-- **Idle Adventure**: Visuele idle & incremental game voor iOS & macOS.
-- **Web Platform**: Responsieve webapplicatie.
+Plain HTML, CSS and JavaScript, hosted on GitHub Pages. Each project opens in a sheet
+that can be linked directly, for example `yorben.me/#cairn`.
 
-## 🛠️ Technologieën
-
-- HTML5 (semantisch & modern)
-- CSS3 (Container Queries, Glassmorphism, CSS Custom Properties)
-- Vanilla JavaScript (Micro-interactions, Dialog API)
-- GitHub Pages voor hosting op [yorben.me](https://yorben.me)
+Screenshots live in `assets/work/<project>/` as WebP, captured from the apps with their
+demo data (simulators and Cockpit's `--shots` mode), never from personal accounts.
