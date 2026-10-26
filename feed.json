@@ -1,0 +1,29 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Yorben Vandersleyen — Engineering & Apps",
+  "home_page_url": "https://yorben.me/",
+  "feed_url": "https://yorben.me/feed.json",
+  "description": "Engineering logs and release announcements for native Apple ecosystem applications: Cockpit, Waybill, and modern software.",
+  "authors": [
+    {
+      "name": "Yorben Vandersleyen",
+      "url": "https://yorben.me"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://github.com/Yvsleyen00941/Cockpit/releases/tag/v1.0.0",
+      "url": "https://github.com/Yvsleyen00941/Cockpit",
+      "title": "Cockpit v1.0: A Zero-Cloud macOS & iPad Productivity HUD",
+      "content_text": "Announcing Cockpit v1.0.0: A modular heads-up display engineered for macOS and iPadOS consolidating Calendar, Music, Notion, and Mail into a zero-cloud physical control surface. Install via Homebrew: brew tap Yvsleyen00941/tap && brew install cockpit.",
+      "date_published": "2026-10-26T11:30:00Z"
+    },
+    {
+      "id": "https://github.com/Yvsleyen00941/Waybill/releases/tag/v1.0.0",
+      "url": "https://github.com/Yvsleyen00941/Waybill",
+      "title": "Waybill v1.0: Tactile 3D Logistics Idle Dioramas on iPadOS with RealityKit",
+      "content_text": "Waybill v1.0 is now live: Explore five hand-built 3D dioramas with real-time physics dispatch, intermodal container ships, freight trains, and orbital rocket launches built with RealityKit and SwiftUI on iPad.",
+      "date_published": "2026-10-26T11:30:00Z"
+    }
+  ]
+}

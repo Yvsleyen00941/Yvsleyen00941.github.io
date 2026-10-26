@@ -162,8 +162,10 @@ function showToast(text) {
 }
 document.querySelectorAll('[data-copy]').forEach(btn => {
   btn.addEventListener('click', () => {
-    navigator.clipboard?.writeText(btn.dataset.copy)
-      .then(() => showToast('Address copied'))
-      .catch(() => showToast(btn.dataset.copy));
+    const val = btn.dataset.copy;
+    const msg = val.startsWith('http') ? 'Link copied to clipboard!' : 'Address copied';
+    navigator.clipboard?.writeText(val)
+      .then(() => showToast(msg))
+      .catch(() => showToast(val));
   });
 });
