@@ -1,6 +1,6 @@
 # yorben.me
 
-Personal site of Yorben Vandersleyen: native apps for iPhone, iPad and Mac.
+Personal site of Yorben Vander Sleyen: native apps for iPhone, iPad and Mac.
 
 - **Cockpit** (macOS): the whole day in one window.
 - **Cairn** (iPhone): every market in one portfolio.
