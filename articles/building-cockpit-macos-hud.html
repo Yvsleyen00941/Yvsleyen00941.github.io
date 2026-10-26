@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Building Cockpit: A Zero-Cloud macOS &amp; iPad Productivity HUD with Swift &amp; SwiftUI — Yorben</title>
+  <meta name="description" content="Technical deep dive into building Cockpit: a native macOS menu bar daemon and iPad touch HUD engineered with pure Swift, Network.framework peer-to-peer encryption, and zero cloud telemetry.">
+  <meta name="author" content="Yorben Vander Sleyen">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://yorben.me/articles/building-cockpit-macos-hud.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yorben.me/articles/building-cockpit-macos-hud.html">
+  <meta property="og:title" content="Building Cockpit: A Zero-Cloud macOS & iPad Productivity HUD with Swift & SwiftUI">
+  <meta property="og:description" content="A native, zero-cloud productivity heads-up display engineered for macOS and iPad. Peer-to-peer encryption, contextual keys, and SwiftUI architecture.">
+  <meta property="og:image" content="https://yorben.me/assets/og-image.png">
+  <meta property="article:published_time" content="2026-10-26T12:00:00Z">
+  <meta property="article:author" content="Yorben Vander Sleyen">
+  <meta property="article:tag" content="SwiftUI, macOS, Swift, Open Source, Productivity">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Building Cockpit: Zero-Cloud macOS & iPad Productivity HUD">
+  <meta name="twitter:description" content="Pure Swift & SwiftUI heads-up display for macOS and iPad. Zero cloud dependencies, 100% private.">
+  <meta name="twitter:image" content="https://yorben.me/assets/og-image.png">
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .article-shell { width: min(840px, 100% - 32px); margin: 0 auto; padding: 48px 0 96px; }
+    @media (min-width: 768px) { .article-shell { width: min(840px, 100% - 64px); padding: 72px 0 120px; } }
+    .back-nav { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--muted); margin-bottom: 32px; transition: color 0.15s; }
+    .back-nav:hover { color: var(--ink); }
+    .article-header { margin-bottom: 40px; border-bottom: 1px solid var(--hairline); padding-bottom: 32px; }
+    .article-kicker { font-size: 13px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 12px; }
+    .article-title { font-size: clamp(28px, 4vw, 42px); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 16px; }
+    .article-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; font-size: 14px; color: var(--muted); }
+    .article-meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .cta-box { background: var(--glass-strong); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--edge); border-radius: var(--r-md); padding: 20px 24px; margin: 32px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; box-shadow: var(--shadow-card); }
+    .cta-box-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .code-box { background: #1C1C1E; color: #F4F4F2; font-family: var(--mono); font-size: 13.5px; line-height: 1.6; border-radius: var(--r-md); padding: 20px; overflow-x: auto; margin: 24px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .code-box code { color: inherit; font-family: inherit; }
+    .article-body { font-size: 17.5px; line-height: 1.7; color: var(--ink-soft); }
+    .article-body h2 { font-size: 24px; font-weight: 600; color: var(--ink); margin: 48px 0 16px; letter-spacing: -0.01em; }
+    .article-body h3 { font-size: 19px; font-weight: 600; color: var(--ink); margin: 32px 0 12px; }
+    .article-body p { margin-bottom: 20px; }
+    .article-body ul { margin: 0 0 24px 20px; list-style: disc; }
+    .article-body li { margin-bottom: 10px; }
+    .article-body strong { color: var(--ink); font-weight: 600; }
+    .article-body a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
+    .pill-copy { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 13px; background: rgba(0,0,0,0.05); padding: 8px 14px; border-radius: 999px; border: 1px solid var(--hairline); cursor: pointer; user-select: all; transition: background 0.15s; }
+    .pill-copy:hover { background: rgba(0,0,0,0.08); }
+    .author-card { display: flex; align-items: center; gap: 16px; margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--hairline); }
+    .author-info h4 { margin: 0 0 4px; font-size: 16px; font-weight: 600; color: var(--ink); }
+    .author-info p { margin: 0; font-size: 14px; color: var(--muted); }
+  </style>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Building Cockpit: A Zero-Cloud macOS & iPad Productivity HUD with Swift & SwiftUI",
+    "description": "Technical deep dive into building Cockpit: a native macOS menu bar daemon and iPad touch HUD engineered with pure Swift and peer-to-peer encryption.",
+    "author": {
+      "@type": "Person",
+      "name": "Yorben Vander Sleyen",
+      "url": "https://yorben.me"
+    },
+    "datePublished": "2026-10-26T12:00:00Z",
+    "image": "https://yorben.me/assets/og-image.png",
+    "publisher": {
+      "@type": "Person",
+      "name": "Yorben Vander Sleyen"
+    },
+    "about": [
+      { "@type": "SoftwareApplication", "name": "Cockpit", "url": "https://github.com/Yvsleyen00941/Cockpit" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="article-shell">
+    <a href="../#cockpit" class="back-nav">
+      <span aria-hidden="true">←</span> Back to Yorben’s Portfolio
+    </a>
+
+    <header class="article-header">
+      <div class="article-kicker">Case Study &amp; Technical Architecture</div>
+      <h1 class="article-title">Building Cockpit: A Zero-Cloud macOS &amp; iPad Productivity HUD with Swift and SwiftUI</h1>
+      <div class="article-meta">
+        <span>By Yorben Vander Sleyen</span>
+        <span>•</span>
+        <span>October 2026</span>
+        <span>•</span>
+        <span>4 min read</span>
+        <span>•</span>
+        <span class="chip">macOS</span>
+        <span class="chip">SwiftUI</span>
+        <span class="chip">MIT Open Source</span>
+      </div>
+    </header>
+
+    <div class="cta-box">
+      <div>
+        <strong>Explore or Install Cockpit</strong>
+        <p style="margin: 4px 0 0; font-size: 14px; color: var(--muted);">Free, open-source native Mac productivity HUD</p>
+      </div>
+      <div class="cta-box-actions">
+        <a class="btn btn-ink btn-sm" href="https://github.com/Yvsleyen00941/Cockpit/releases/download/v1.0.0/Cockpit-macOS-v1.0.0.zip">Download .zip</a>
+        <a class="btn btn-glass btn-sm" href="https://github.com/Yvsleyen00941/Cockpit" target="_blank" rel="noopener">★ Star on GitHub</a>
+      </div>
+    </div>
+
+    <main class="article-body">
+      <p>As developers and students, our daily workflow is constantly fragmented. In any given hour, we alternate between an editor, calendar notifications, music controls, Notion project trackers, and email threads.</p>
+
+      <p>Most modern tools attempt to solve this by introducing yet another Electron app or web dashboard that consumes 2GB of RAM and sends telemetry across third-party cloud servers. I wanted something fundamentally different: a <strong>purely native, zero-cloud productivity heads-up display (HUD)</strong> engineered specifically for the Apple ecosystem. That project is <a href="https://github.com/Yvsleyen00941/Cockpit" target="_blank" rel="noopener">Cockpit</a>.</p>
+
+      <h2>The Vision: Turning the iPad into an Active Control Surface</h2>
+      <p>The core philosophy behind Cockpit is treating the iPad resting next to your MacBook keyboard not as a secondary passive display, but as an active physical control surface:</p>
+
+      <ul>
+        <li><strong>Contextual Action Keys:</strong> Hotkeys adapt dynamically to whatever application has frontmost focus (Xcode, Safari, Terminal, Notion, Finder).</li>
+        <li><strong>Four-Quadrant System Vitals:</strong> Real-time monitoring of local services, focus states, music playback, and calendar scheduling without opening browser tabs.</li>
+        <li><strong>Daily Planner Engine:</strong> A unified morning briefing combining local calendar items, top-3 priorities, and local Pomodoro deep-work timers.</li>
+      </ul>
+
+      <h2>Architectural Breakdown</h2>
+      <p>Cockpit is composed of two native Swift applications communicating seamlessly with <strong>zero third-party dependencies</strong>:</p>
+
+      <div class="code-box">
+<pre><code>+-------------------------------------------------------------+
+|                     macOS Workstation                       |
+|  [ ControlCenter Helper (Daemon / Menu Bar Service) ]        |
+|  - System Vitals, Calendar EventKit, Music ScriptingBridge  |
++-------------------------------------------------------------+
+                             ▲
+                             │ (End-to-End Encrypted TCP/USB)
+                             ▼
++-------------------------------------------------------------+
+|                      iPad / iOS Client                      |
+|  [ Cockpit Touch HUD (SwiftUI + Live Activities) ]          |
+|  - Real-time quadrant rendering, 120Hz ProMotion interaction|
++-------------------------------------------------------------+</code></pre>
+      </div>
+
+      <h3>1. Peer-to-Peer Local Connectivity</h3>
+      <p>Instead of relaying data through remote cloud servers or external WebSockets, Cockpit establishes a direct peer-to-peer connection over local Wi-Fi or high-speed USB-C using Apple's <code>Network.framework</code>. All packets are end-to-end encrypted locally. If your internet goes down, your desk HUD remains 100% operational.</p>
+
+      <h3>2. High-Performance SwiftUI Layout</h3>
+      <p>Rendering rich data cards with sub-millisecond response requires avoiding unnecessary view graph recalculations. Cockpit isolates each quadrant (<em>Vitals</em>, <em>Schedule</em>, <em>Focus</em>, <em>Media</em>) into independent Observable models with targeted state projections, keeping 120Hz ProMotion animation fluid.</p>
+
+      <h2>Installation via Homebrew</h2>
+      <p>You can install Cockpit on macOS with a single terminal command through the official Homebrew tap:</p>
+
+      <p>
+        <span class="pill-copy" onclick="navigator.clipboard.writeText('brew install --cask Yvsleyen00941/tap/cockpit'); alert('Copied to clipboard!')">
+          <code>brew install --cask Yvsleyen00941/tap/cockpit</code> 📋
+        </span>
+      </p>
+
+      <h2>Open Source &amp; Community</h2>
+      <p>Cockpit is completely free and open-source under the MIT license. Explore the code, inspect the architectural patterns, or contribute:</p>
+
+      <ul>
+        <li><strong>GitHub Repository:</strong> <a href="https://github.com/Yvsleyen00941/Cockpit" target="_blank" rel="noopener">github.com/Yvsleyen00941/Cockpit</a></li>
+        <li><strong>Live Portfolio &amp; Details:</strong> <a href="https://yorben.me/#cockpit">yorben.me/#cockpit</a></li>
+        <li><strong>Latest Standalone Release:</strong> <a href="https://github.com/Yvsleyen00941/Cockpit/releases/tag/v1.0.0" target="_blank" rel="noopener">v1.0.0 Release on GitHub</a></li>
+      </ul>
+    </main>
+
+    <div class="cta-box" style="margin-top: 48px;">
+      <div>
+        <strong>Support Cockpit on GitHub</strong>
+        <p style="margin: 4px 0 0; font-size: 14px; color: var(--muted);">Star the repository to help other developers find native macOS tools.</p>
+      </div>
+      <div class="cta-box-actions">
+        <a class="btn btn-ink btn-sm" href="https://github.com/Yvsleyen00941/Cockpit" target="_blank" rel="noopener">★ Star on GitHub</a>
+      </div>
+    </div>
+
+    <footer class="author-card">
+      <img class="app-icon" src="../assets/icons/cockpit.webp" width="56" height="56" alt="Cockpit icon">
+      <div class="author-info">
+        <h4>Yorben Vander Sleyen</h4>
+        <p>Student at University of Antwerp. Designing and building native Apple software with Swift, RealityKit, and SwiftUI.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

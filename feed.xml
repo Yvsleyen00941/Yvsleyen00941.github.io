@@ -5,23 +5,23 @@
     <link>https://yorben.me/</link>
     <description>Engineering logs and release announcements for native Apple ecosystem applications: Cockpit, Waybill, and modern software.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 14:00:00 GMT</lastBuildDate>
     <atom:link href="https://yorben.me/feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
-      <title>Cockpit v1.0: A Zero-Cloud macOS &amp; iPad Productivity HUD</title>
-      <link>https://github.com/Yvsleyen00941/Cockpit</link>
-      <guid isPermaLink="true">https://github.com/Yvsleyen00941/Cockpit/releases/tag/v1.0.0</guid>
-      <pubDate>Mon, 26 Oct 2026 11:30:00 GMT</pubDate>
-      <description><![CDATA[Announcing Cockpit v1.0.0: A modular heads-up display engineered for macOS and iPadOS consolidating Calendar, Music, Notion, and Mail into a zero-cloud physical control surface. Install via Homebrew: brew tap Yvsleyen00941/tap && brew install cockpit.]]></description>
+      <title>Building Cockpit: A Zero-Cloud macOS &amp; iPad Productivity HUD</title>
+      <link>https://yorben.me/articles/building-cockpit-macos-hud.html</link>
+      <guid isPermaLink="true">https://yorben.me/articles/building-cockpit-macos-hud.html</guid>
+      <pubDate>Mon, 26 Oct 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Technical deep dive into building Cockpit: A modular heads-up display engineered for macOS and iPadOS consolidating Calendar, Music, Notion, and Mail into a zero-cloud physical control surface with peer-to-peer Network.framework encryption.]]></description>
     </item>
 
     <item>
-      <title>Waybill v1.0: Tactile 3D Logistics Idle Dioramas on iPadOS with RealityKit</title>
-      <link>https://github.com/Yvsleyen00941/Waybill</link>
-      <guid isPermaLink="true">https://github.com/Yvsleyen00941/Waybill/releases/tag/v1.0.0</guid>
-      <pubDate>Mon, 26 Oct 2026 11:30:00 GMT</pubDate>
-      <description><![CDATA[Waybill v1.0 is now live: Explore five hand-built 3D dioramas with real-time physics dispatch, intermodal container ships, freight trains, and orbital rocket launches built with RealityKit and SwiftUI on iPad.]]></description>
+      <title>Simulating 3D Logistics Dioramas on iPadOS with RealityKit &amp; SwiftUI</title>
+      <link>https://yorben.me/articles/simulating-3d-logistics-dioramas-realitykit.html</link>
+      <guid isPermaLink="true">https://yorben.me/articles/simulating-3d-logistics-dioramas-realitykit.html</guid>
+      <pubDate>Mon, 26 Oct 2026 12:00:00 GMT</pubDate>
+      <description><![CDATA[Behind the scenes of Waybill: tactile 3D logistics idle dioramas on iPadOS powered by Apple's RealityKit engine, custom physics, procedural routing, and mathematical balance modeling.]]></description>
     </item>
   </channel>
 </rss>

@@ -101,6 +101,7 @@
       </a>
       <div class="nav-links">
         <a href="#work">Work</a>
+        <a href="#engineering">Engineering</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
@@ -265,6 +266,34 @@
       </div>
     </section>
 
+    <!-- Engineering & Deep Dives -->
+    <section id="engineering" class="section shell">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Engineering</p>
+        <h2 class="title">Technical Deep Dives</h2>
+      </div>
+
+      <div class="articles-grid">
+        <a href="articles/building-cockpit-macos-hud.html" class="article-card glass" data-reveal>
+          <div>
+            <span class="tag">macOS · SwiftUI · Architecture</span>
+            <h3>Building Cockpit: Zero-Cloud macOS &amp; iPad Productivity HUD</h3>
+            <p>Peer-to-peer Network.framework sockets, menu bar daemons, and SwiftUI architecture for a sub-millisecond physical control surface.</p>
+          </div>
+          <span class="read-more">Read case study <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a href="articles/simulating-3d-logistics-dioramas-realitykit.html" class="article-card glass" data-reveal>
+          <div>
+            <span class="tag">iPadOS · RealityKit · Metal</span>
+            <h3>Simulating 3D Logistics Dioramas on iPadOS with RealityKit</h3>
+            <p>Procedural logistics simulation, Metal rendering, physics dispatch, and mathematical progression modeling in Swift.</p>
+          </div>
+          <span class="read-more">Read case study <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact" class="section shell">
       <div class="contact glass" data-reveal>
@@ -283,7 +312,7 @@
 
   <footer class="footer shell">
     <span class="footer-brand"><svg class="brand-mark sm" aria-hidden="true"><use href="#mark"/></svg>Yorben Vander Sleyen</span>
-    <span class="footer-meta">Antwerp · <a href="#top">Back to top</a></span>
+    <span class="footer-meta">Antwerp · <a href="feed.xml">RSS</a> · <a href="feed.json">JSON Feed</a> · <a href="#top">Back to top</a></span>
   </footer>
 
   <!-- Project sheet: one dialog, one article per project (content stays in the HTML for search engines) -->
@@ -308,9 +337,14 @@
         <div class="detail-meta">
           <span class="chip">macOS</span><span class="chip">SwiftUI</span><span class="chip">In daily use</span>
           <a class="btn btn-ink btn-sm" href="https://github.com/Yvsleyen00941/Cockpit/releases/download/v1.0.0/Cockpit-macOS-v1.0.0.zip">Download for Mac (.zip)</a>
-          <a class="btn btn-glass btn-sm" href="https://github.com/Yvsleyen00941/Cockpit" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-glass btn-sm" href="https://github.com/Yvsleyen00941/Cockpit" target="_blank" rel="noopener">★ Star on GitHub</a>
+          <a class="btn btn-glass btn-sm" href="articles/building-cockpit-macos-hud.html">Case Study →</a>
           <button class="btn btn-glass btn-sm" type="button" data-copy="https://yorben.me/#cockpit">Share link</button>
         </div>
+        <p style="margin: 12px 0 0; font-size: 13px; font-family: var(--mono); color: var(--muted); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span>Homebrew:</span>
+          <button type="button" style="cursor: pointer; border: 1px solid var(--hairline); background: var(--glass); padding: 4px 10px; border-radius: 6px; font-family: inherit; font-size: inherit; color: var(--ink);" data-copy="brew install --cask Yvsleyen00941/tap/cockpit">brew install --cask Yvsleyen00941/tap/cockpit 📋</button>
+        </p>
 
         <figure class="shot shot-hero media-mac">
           <img loading="lazy" decoding="async" src="assets/work/cockpit/today.webp" width="2000" height="1250" alt="Cockpit’s Today screen">
@@ -432,7 +466,8 @@
         </header>
         <div class="detail-meta">
           <span class="chip">iPad</span><span class="chip">RealityKit</span><span class="chip">Version 1.0</span>
-          <a class="btn btn-ink btn-sm" href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-ink btn-sm" href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener">★ Star on GitHub</a>
+          <a class="btn btn-glass btn-sm" href="articles/simulating-3d-logistics-dioramas-realitykit.html">Case Study →</a>
           <button class="btn btn-glass btn-sm" type="button" data-copy="https://yorben.me/#waybill">Share link</button>
         </div>
 

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Simulating 3D Logistics Dioramas on iPadOS with RealityKit &amp; SwiftUI — Yorben</title>
+  <meta name="description" content="Behind the scenes of Waybill: building a tactile 3D logistics idle game for iPad using Apple's RealityKit engine, custom physics, procedural routing, and mathematical balance modeling.">
+  <meta name="author" content="Yorben Vander Sleyen">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://yorben.me/articles/simulating-3d-logistics-dioramas-realitykit.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yorben.me/articles/simulating-3d-logistics-dioramas-realitykit.html">
+  <meta property="og:title" content="Simulating 3D Logistics Dioramas on iPadOS with RealityKit & SwiftUI">
+  <meta property="og:description" content="Behind the scenes of Waybill: tactile 3D logistics idle dioramas on iPadOS powered by RealityKit, Metal, and SwiftUI.">
+  <meta property="og:image" content="https://yorben.me/assets/og-image.png">
+  <meta property="article:published_time" content="2026-10-26T12:00:00Z">
+  <meta property="article:author" content="Yorben Vander Sleyen">
+  <meta property="article:tag" content="RealityKit, SwiftUI, iPadOS, Game Development, Metal">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Simulating 3D Logistics Dioramas on iPadOS with RealityKit">
+  <meta name="twitter:description" content="Tactile miniature 3D dioramas with Apple's RealityKit and SwiftUI.">
+  <meta name="twitter:image" content="https://yorben.me/assets/og-image.png">
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .article-shell { width: min(840px, 100% - 32px); margin: 0 auto; padding: 48px 0 96px; }
+    @media (min-width: 768px) { .article-shell { width: min(840px, 100% - 64px); padding: 72px 0 120px; } }
+    .back-nav { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--muted); margin-bottom: 32px; transition: color 0.15s; }
+    .back-nav:hover { color: var(--ink); }
+    .article-header { margin-bottom: 40px; border-bottom: 1px solid var(--hairline); padding-bottom: 32px; }
+    .article-kicker { font-size: 13px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 12px; }
+    .article-title { font-size: clamp(28px, 4vw, 42px); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 16px; }
+    .article-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; font-size: 14px; color: var(--muted); }
+    .article-meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .cta-box { background: var(--glass-strong); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--edge); border-radius: var(--r-md); padding: 20px 24px; margin: 32px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; box-shadow: var(--shadow-card); }
+    .cta-box-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .code-box { background: #1C1C1E; color: #F4F4F2; font-family: var(--mono); font-size: 13.5px; line-height: 1.6; border-radius: var(--r-md); padding: 20px; overflow-x: auto; margin: 24px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .code-box code { color: inherit; font-family: inherit; }
+    .article-body { font-size: 17.5px; line-height: 1.7; color: var(--ink-soft); }
+    .article-body h2 { font-size: 24px; font-weight: 600; color: var(--ink); margin: 48px 0 16px; letter-spacing: -0.01em; }
+    .article-body h3 { font-size: 19px; font-weight: 600; color: var(--ink); margin: 32px 0 12px; }
+    .article-body p { margin-bottom: 20px; }
+    .article-body ul { margin: 0 0 24px 20px; list-style: disc; }
+    .article-body li { margin-bottom: 10px; }
+    .article-body strong { color: var(--ink); font-weight: 600; }
+    .article-body a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
+    .author-card { display: flex; align-items: center; gap: 16px; margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--hairline); }
+    .author-info h4 { margin: 0 0 4px; font-size: 16px; font-weight: 600; color: var(--ink); }
+    .author-info p { margin: 0; font-size: 14px; color: var(--muted); }
+  </style>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Simulating 3D Logistics Dioramas on iPadOS with RealityKit & SwiftUI",
+    "description": "Behind the scenes of Waybill: building a tactile 3D logistics idle game for iPad using RealityKit, custom physics, procedural routing, and mathematical balance modeling.",
+    "author": {
+      "@type": "Person",
+      "name": "Yorben Vander Sleyen",
+      "url": "https://yorben.me"
+    },
+    "datePublished": "2026-10-26T12:00:00Z",
+    "image": "https://yorben.me/assets/og-image.png",
+    "publisher": {
+      "@type": "Person",
+      "name": "Yorben Vander Sleyen"
+    },
+    "about": [
+      { "@type": "SoftwareApplication", "name": "Waybill", "url": "https://github.com/Yvsleyen00941/Waybill" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="article-shell">
+    <a href="../#waybill" class="back-nav">
+      <span aria-hidden="true">←</span> Back to Yorben’s Portfolio
+    </a>
+
+    <header class="article-header">
+      <div class="article-kicker">Case Study &amp; Game Mechanics</div>
+      <h1 class="article-title">Simulating 3D Logistics Dioramas on iPadOS with RealityKit &amp; SwiftUI</h1>
+      <div class="article-meta">
+        <span>By Yorben Vander Sleyen</span>
+        <span>•</span>
+        <span>October 2026</span>
+        <span>•</span>
+        <span>4 min read</span>
+        <span>•</span>
+        <span class="chip">iPadOS</span>
+        <span class="chip">RealityKit</span>
+        <span class="chip">MIT Open Source</span>
+      </div>
+    </header>
+
+    <div class="cta-box">
+      <div>
+        <strong>Explore Waybill on GitHub</strong>
+        <p style="margin: 4px 0 0; font-size: 14px; color: var(--muted);">Open-source tactile 3D logistics game for iPad</p>
+      </div>
+      <div class="cta-box-actions">
+        <a class="btn btn-ink btn-sm" href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener">★ Star on GitHub</a>
+        <a class="btn btn-glass btn-sm" href="https://github.com/Yvsleyen00941/Waybill/releases/tag/v1.0.0" target="_blank" rel="noopener">v1.0.0 Release</a>
+      </div>
+    </div>
+
+    <main class="article-body">
+      <p>Idle and logistics management games frequently suffer from generic 2D spreadsheets disguised as games. When designing <a href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener">Waybill</a>, my goal was to combine the addictive progression loops of supply-chain logistics with tactile, miniature <strong>3D dioramas</strong> powered by Apple's <strong>RealityKit</strong> engine on iPadOS.</p>
+
+      <p>Here is a technical overview of how RealityKit, physics dispatch, and mathematical balance modeling came together.</p>
+
+      <h2>1. Why RealityKit on iPadOS?</h2>
+      <p>Traditionally, games on iOS are developed using third-party engines like Unity or Godot. However, RealityKit provides substantial advantages for native Apple platforms:</p>
+
+      <ul>
+        <li><strong>Hardware-Accelerated Metal Rendering:</strong> Optimized natively for Apple Silicon (M-series chips on iPad Pro and iPad Air).</li>
+        <li><strong>Spatial Audio &amp; Dynamic Lighting:</strong> Realistic physical audio and directional lighting that adapts naturally as the player tilts or rotates the diorama.</li>
+        <li><strong>First-Class SwiftUI Integration:</strong> Via <code>RealityView</code>, allowing declarative SwiftUI control panels to float seamlessly over active 3D models.</li>
+      </ul>
+
+      <h2>2. Five Dynamic Regions, Hand-Crafted Dioramas</h2>
+      <p>In Waybill, progress moves through five distinct topological regions, each introducing unique physical constraints and vehicle dynamics:</p>
+
+      <ul>
+        <li><strong>Riverside:</strong> Regional box-truck distribution and introductory four-step logistics chains.</li>
+        <li><strong>Harbour City:</strong> Intermodal scheduling with cargo ships, berthing windows, and automated quay cranes.</li>
+        <li><strong>Granite Pass:</strong> Heavy freight railway networks crossing suspension bridges and mountain tunnels.</li>
+        <li><strong>Metro:</strong> High-density urban dispatch featuring autonomous delivery vans and eVTOL air taxi routes.</li>
+        <li><strong>Orbit:</strong> Rocket staging, orbital payload launches, and booster landing telemetry.</li>
+      </ul>
+
+      <div class="code-box">
+<pre><code>Supply Source ──► Processing Hub ──► Intermodal Transit ──► Market Destination
+  (Mining/Agri)     (Manufacturing)      (Ship / Train)          (Metropolis)</code></pre>
+      </div>
+
+      <h2>3. Real-Time Physics &amp; Procedural Scheduling</h2>
+      <p>Vehicles in Waybill are not simple prerendered animations; they are physics-enabled entities adhering to velocity, mass, braking curves, and collision bounds. When a cargo ship berths in Harbour City, quay cranes calculate inverse-kinematic paths to unload containers into waiting truck bays. If a bottleneck occurs, trucks queue physically along the highway, giving immediate visual feedback on logistical inefficiencies.</p>
+
+      <h2>4. Rigorous Balance Simulation</h2>
+      <p>An idle game lives and dies by its mathematical pacing. To ensure a playthrough takes approximately two and a half weeks of organic play (three short daily sessions, idle accumulation in between), the entire economy was modeled in Python (<code>balance.py</code>) simulating progression curves, cash-flow velocity, and upgrade costs before committing a single line of game code.</p>
+
+      <h2>Explore Waybill</h2>
+      <p>Waybill is fully open-source under the MIT License:</p>
+
+      <ul>
+        <li><strong>GitHub Repository:</strong> <a href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener">github.com/Yvsleyen00941/Waybill</a></li>
+        <li><strong>Interactive Showcase:</strong> <a href="https://yorben.me/#waybill">yorben.me/#waybill</a></li>
+        <li><strong>Official Release:</strong> <a href="https://github.com/Yvsleyen00941/Waybill/releases/tag/v1.0.0" target="_blank" rel="noopener">v1.0.0 Release on GitHub</a></li>
+      </ul>
+    </main>
+
+    <div class="cta-box" style="margin-top: 48px;">
+      <div>
+        <strong>Support Waybill on GitHub</strong>
+        <p style="margin: 4px 0 0; font-size: 14px; color: var(--muted);">Star the repository to help other iOS &amp; RealityKit developers.</p>
+      </div>
+      <div class="cta-box-actions">
+        <a class="btn btn-ink btn-sm" href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener">★ Star on GitHub</a>
+      </div>
+    </div>
+
+    <footer class="author-card">
+      <img class="app-icon" src="../assets/icons/waybill.webp" width="56" height="56" alt="Waybill icon">
+      <div class="author-info">
+        <h4>Yorben Vander Sleyen</h4>
+        <p>Student at University of Antwerp. Designing and building native Apple software with Swift, RealityKit, and SwiftUI.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
