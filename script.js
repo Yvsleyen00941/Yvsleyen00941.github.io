@@ -5,6 +5,22 @@ document.documentElement.classList.add('js');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const projects = ['rime', 'cockpit', 'cairn', 'aerocommand', 'waybill', 'homehub'];
 
+// 0. Opening the site always starts at the top. The browser doesn't restore an old scroll
+//    position, and section links (#work, #about, …) don't stay in the address, so a saved or
+//    autocompleted URL can't land halfway down. Project links (#rime, …) still open their sheet.
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+const isSection = hash => hash.length > 1 && !projects.includes(hash.slice(1));
+function dropSectionHash() {
+  if (isSection(location.hash)) history.replaceState(history.state, '', location.pathname + location.search);
+}
+if (isSection(location.hash)) {
+  dropSectionHash();
+  const toTop = () => window.scrollTo({ top: 0, behavior: 'instant' });
+  toTop();
+  window.addEventListener('load', toTop, { once: true });
+}
+window.addEventListener('hashchange', dropSectionHash);
+
 // 1. Reveal sections as they scroll in. A wall-clock fallback shows everything
 //    even when animation frames are paused (background tab, slow device).
 const revealables = document.querySelectorAll('[data-reveal]');
