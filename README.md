@@ -2,6 +2,7 @@
 
 Personal site of Yorben Vander Sleyen: native apps for iPhone, iPad and Mac.
 
+- **Rime** (macOS): a PDF reader where everything but the page freezes over.
 - **Cockpit** (macOS): the whole day in one window.
 - **Cairn** (iPhone): every market in one portfolio.
 - **AeroCommand** (iPad): an airline tycoon on a satellite globe.

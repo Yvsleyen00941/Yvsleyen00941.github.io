@@ -244,6 +244,7 @@ ul { padding: 0; list-style: none; }
 .card:hover .card-open { background: var(--ink); color: #fff; transform: rotate(45deg); }
 
 /* project colours: used only as each project's light */
+.c-rime { --tint: 140 185 240; }
 .c-cockpit { --tint: 255 110 60; }
 .c-cairn { --tint: 62 230 168; }
 .c-aero { --tint: 60 110 225; }

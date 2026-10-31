@@ -3,7 +3,7 @@
 document.documentElement.classList.add('js');
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const projects = ['cockpit', 'cairn', 'aerocommand', 'waybill', 'homehub'];
+const projects = ['rime', 'cockpit', 'cairn', 'aerocommand', 'waybill', 'homehub'];
 
 // 1. Reveal sections as they scroll in. A wall-clock fallback shows everything
 //    even when animation frames are paused (background tab, slow device).
