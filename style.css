@@ -221,7 +221,7 @@ ul { padding: 0; list-style: none; }
   transform: translateY(10px); transition: transform 0.7s var(--spring);
 }
 .card:hover .card-media img { transform: translateY(0) scale(1.012); }
-.card .media-mac img { width: calc(100% + var(--pad)); border-radius: 12px 0 0 0; }
+.card .media-mac img { border-radius: 12px 12px 0 0; }
 .card .media-ipad img { border-radius: 16px 16px 0 0; }
 
 .card-tall .card-media { container-type: inline-size; }
@@ -233,7 +233,7 @@ ul { padding: 0; list-style: none; }
 .card-wide { --h: 440px; flex-direction: row; gap: 40px; }
 .card-wide .card-text { flex: 0 0 32%; align-self: center; padding-bottom: var(--pad); }
 .card-wide .card-media { margin-top: 12px; }
-.card-wide .card-media img { width: calc(100% + var(--pad)); border-radius: 16px 0 0 0; }
+.card-wide .card-media img { border-radius: 16px 16px 0 0; }
 
 .card-open {
   position: absolute; top: 22px; right: 22px; width: 40px; height: 40px; border-radius: 50%;
