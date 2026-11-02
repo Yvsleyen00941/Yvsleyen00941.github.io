@@ -1,0 +1,12 @@
+/* TEAM */
+Developer & Designer: Yorben Vander Sleyen
+Contact: yorben.vander.sleyen@icloud.com
+GitHub: https://github.com/Yvsleyen00941
+Location: Belgium
+
+/* SITE */
+Standards: HTML5, CSS3, Vanilla JS
+Software: Rime, Cockpit, Waybill
+Hosting: Cloudflare Pages / Edge CDN
+Typeface: Geist, Geist Mono
+Language: English
