@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>/uses — Yorben Vander Sleyen</title>
+  <meta name="description" content="A detailed breakdown of the hardware, software, developer tools, and macOS environment used by Yorben Vander Sleyen to engineer native Swift systems and minimalist software.">
+  <meta name="author" content="Yorben Vander Sleyen">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://yorben.me/uses.html">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yorben.me/uses.html">
+  <meta property="og:title" content="/uses — Yorben Vander Sleyen">
+  <meta property="og:description" content="Hardware, developer setup, native macOS tools, and design workflow.">
+  <meta property="og:image" content="https://yorben.me/assets/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="/uses — Yorben Vander Sleyen">
+  <meta name="twitter:description" content="Hardware, developer setup, native macOS tools, and design workflow.">
+  <meta name="twitter:image" content="https://yorben.me/assets/og-image.png">
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+
+  <style>
+    .article-shell { width: min(840px, 100% - 32px); margin: 0 auto; padding: 48px 0 96px; }
+    @media (min-width: 768px) { .article-shell { width: min(840px, 100% - 64px); padding: 72px 0 120px; } }
+    .back-nav { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--muted); margin-bottom: 32px; text-decoration: none; transition: color 0.15s; }
+    .back-nav:hover { color: var(--ink); }
+    .article-header { margin-bottom: 40px; border-bottom: 1px solid var(--hairline); padding-bottom: 32px; }
+    .article-kicker { font-size: 13px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 12px; }
+    .article-title { font-size: clamp(28px, 4vw, 42px); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 16px; }
+    .article-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; font-size: 14px; color: var(--muted); }
+    .uses-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 32px 0; }
+    .uses-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+    .uses-card h3 { font-size: 18px; font-weight: 600; margin: 0 0 12px; color: var(--ink); }
+    .uses-card ul { margin: 0; padding-left: 20px; color: var(--ink-soft); line-height: 1.7; }
+    .uses-card li { margin-bottom: 8px; }
+    .uses-card strong { color: var(--ink); font-weight: 600; }
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="article-shell">
+    <a href="./index.html" class="back-nav">← Back to yorben.me</a>
+    <header class="article-header">
+      <div class="article-kicker">Workspace &amp; Equipment</div>
+      <h1 class="article-title">/uses</h1>
+      <div class="article-meta">
+        <span>Hardware, development tools, native software, and everyday gear.</span>
+      </div>
+    </header>
+
+    <div class="uses-grid">
+      <div class="uses-card">
+        <h3>💻 Hardware &amp; Desk</h3>
+        <ul>
+          <li><strong>Workstation:</strong> Apple Silicon MacBook Pro — optimized for rapid Swift builds and instant simulator execution.</li>
+          <li><strong>Display:</strong> High-DPI external monitor calibrated for retina UI design and code readability.</li>
+          <li><strong>Audio:</strong> Apple AirPods Pro for focus, active noise cancellation, and seamless macOS audio switching.</li>
+          <li><strong>Input:</strong> Apple Magic Trackpad with custom gestures and mechanical keyboard with tactile switches.</li>
+        </ul>
+      </div>
+
+      <div class="uses-card">
+        <h3>🛠 Development &amp; Engineering</h3>
+        <ul>
+          <li><strong>IDE:</strong> Xcode for native macOS, iOS, and visionOS development with Instruments for memory profiling.</li>
+          <li><strong>Editor:</strong> VS Code &amp; Cursor with Geist Mono font and minimalist dark theme for web and systems documentation.</li>
+          <li><strong>Terminal:</strong> Native macOS Terminal &amp; zsh with custom aliases, Git integrations, and Homebrew.</li>
+          <li><strong>Version Control:</strong> Git + GitHub CLI (<code>gh</code>) for open-source workflow and releases.</li>
+        </ul>
+      </div>
+
+      <div class="uses-card">
+        <h3>⚡️ Native macOS Applications</h3>
+        <ul>
+          <li><strong>Cockpit:</strong> Self-engineered native macOS menu bar daemon &amp; iPad productivity HUD (<a href="https://github.com/Yvsleyen00941/Cockpit" target="_blank" rel="noopener">Cockpit on GitHub</a>).</li>
+          <li><strong>Rime:</strong> Liquid Glass PDF reader engineered specifically for macOS with multi-tab browsing and bookmark persistence (<a href="https://github.com/Yvsleyen00941/Rime" target="_blank" rel="noopener">Rime on GitHub</a>).</li>
+          <li><strong>Raycast:</strong> System launcher, clipboard manager, and custom developer script executor.</li>
+          <li><strong>Homebrew:</strong> Package management for macOS CLI utilities and self-hosted tap (<a href="https://github.com/Yvsleyen00941/homebrew-tap" target="_blank" rel="noopener">homebrew-tap</a>).</li>
+        </ul>
+      </div>
+
+      <div class="uses-card">
+        <h3>🎨 Design &amp; Typography</h3>
+        <ul>
+          <li><strong>Design Tool:</strong> Figma for user interface design, bento layouts, and design systems.</li>
+          <li><strong>Typefaces:</strong> Geist Sans &amp; Geist Mono (Vercel / Basel), Inter, and Apple SF Pro.</li>
+          <li><strong>Design Philosophy:</strong> Native AppKit/SwiftUI feel, low-overhead micro-interactions, dark mode elegance, and zero-telemetry privacy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--hairline); font-size: 14px; color: var(--muted);">
+      Inspired by <a href="https://uses.tech" target="_blank" rel="noopener" style="color: var(--ink); text-decoration: underline;">uses.tech</a> curated by Wes Bos.
+    </div>
+  </div>
+</body>
+</html>

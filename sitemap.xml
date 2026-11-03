@@ -28,6 +28,11 @@
     <loc>https://yorben.me/feed.json</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
+  <url>
+    <loc>https://yorben.me/uses.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
+
