@@ -185,3 +185,20 @@ document.querySelectorAll('[data-copy]').forEach(btn => {
       .catch(() => showToast(val));
   });
 });
+
+// 7. Developer keyboard shortcuts: Cmd+K quick actions & 1/2 quick Homebrew copy
+window.addEventListener('keydown', e => {
+  const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+  if (activeTag === 'input' || activeTag === 'textarea') return;
+
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+    e.preventDefault();
+    showToast('Developer Mode: Press 1 to copy Cockpit brew, 2 for Rime brew');
+  } else if (!sheet.open && e.key === '1' && !e.metaKey && !e.ctrlKey && !e.altKey) {
+    const cmd = 'brew install --cask Yvsleyen00941/tap/cockpit';
+    navigator.clipboard?.writeText(cmd).then(() => showToast('Copied: ' + cmd));
+  } else if (!sheet.open && e.key === '2' && !e.metaKey && !e.ctrlKey && !e.altKey) {
+    const cmd = 'brew install --cask Yvsleyen00941/tap/rime';
+    navigator.clipboard?.writeText(cmd).then(() => showToast('Copied: ' + cmd));
+  }
+});
