@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <title>Yorben Vander Sleyen — Native macOS &amp; iOS Apps | Cockpit &amp; Rime</title>
-  <meta name="description" content="I design and build native apps for the way I live: Rime and Cockpit for the Mac, Waybill and AeroCommand for iPad, and the Home Hub in our living room.">
+  <meta name="description" content="I design and build native apps for the way I live: Rime, Cockpit and Tape for the Mac, Waybill and AeroCommand for iPad, and the Home Hub in our living room.">
   <meta name="author" content="Yorben Vander Sleyen">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="google-site-verification" content="Z_RtTBpZtgyaPvrGHRmG_qd2ILT0IXAozDNLmGOcXIw">
@@ -25,7 +25,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yorben.me/">
   <meta property="og:title" content="Yorben — apps for the way I live">
-  <meta property="og:description" content="Native apps for iPhone, iPad and Mac: Rime, Cockpit, Waybill, AeroCommand and Home Hub.">
+  <meta property="og:description" content="Native apps for iPhone, iPad and Mac: Rime, Cockpit, Tape, Waybill, AeroCommand and Home Hub.">
   <meta property="og:image" content="https://yorben.me/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -33,7 +33,7 @@
   <meta property="og:site_name" content="Yorben">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Yorben — apps for the way I live">
-  <meta name="twitter:description" content="Native apps for iPhone, iPad and Mac: Rime, Cockpit, Waybill, AeroCommand and Home Hub.">
+  <meta name="twitter:description" content="Native apps for iPhone, iPad and Mac: Rime, Cockpit, Tape, Waybill, AeroCommand and Home Hub.">
   <meta name="twitter:image" content="https://yorben.me/assets/og-image.png">
 
 
@@ -100,6 +100,24 @@
       },
       {
         "@type": "SoftwareApplication",
+        "@id": "https://yorben.me/#tape",
+        "name": "Tape",
+        "operatingSystem": "macOS 26.0 or later",
+        "applicationCategory": "FinanceApplication",
+        "description": "Stock ticker for macOS in the empty corner beside the Dock. One stock, ETF, index or crypto at a time, with its logo, price, the day's move and chart, in its logo's colour.",
+        "url": "https://yorben.me/#tape",
+        "downloadUrl": "https://github.com/Yvsleyen00941/Tape/releases/latest/download/Tape-macOS-v1.0.0.zip",
+        "softwareVersion": "1.0.0",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "EUR"
+        },
+        "image": "https://yorben.me/assets/work/tape/corner.webp",
+        "author": { "@id": "https://yorben.me/#person" }
+      },
+      {
+        "@type": "SoftwareApplication",
         "@id": "https://yorben.me/#waybill",
         "name": "Waybill",
         "operatingSystem": "iPadOS 17.0 or later",
@@ -137,18 +155,26 @@
           },
           {
             "@type": "Question",
-            "name": "How can I install Cockpit and Rime via Homebrew?",
+            "name": "What is Tape for macOS?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Both apps can be installed via terminal using Homebrew: brew install --cask Yvsleyen00941/tap/cockpit and brew install --cask Yvsleyen00941/tap/rime."
+              "text": "Tape is a free, open-source stock ticker for macOS that sits in the empty corner beside the Dock. It shows one stock, ETF, index or crypto at a time, with its logo, price, the day's move and chart, using quotes from Yahoo Finance."
             }
           },
           {
             "@type": "Question",
-            "name": "Are Cockpit and Rime completely free and open source?",
+            "name": "How can I install Cockpit, Rime and Tape via Homebrew?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, both Cockpit and Rime are 100% free, MIT licensed, and open source with source code available on GitHub."
+              "text": "All three apps can be installed via terminal using Homebrew: brew install --cask Yvsleyen00941/tap/cockpit, brew install --cask Yvsleyen00941/tap/rime and brew install --cask Yvsleyen00941/tap/tape."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are Cockpit, Rime and Tape completely free and open source?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Cockpit, Rime and Tape are 100% free, MIT licensed, and open source with source code available on GitHub."
             }
           }
         ]
@@ -198,7 +224,7 @@
     <section class="hero shell">
       <div class="hero-copy">
         <h1 class="display" data-reveal>I build apps for<br>the way I live.</h1>
-        <p class="lede" data-reveal>Hi, I’m Yorben. I design and build native apps for iPhone, iPad and Mac. A portfolio tracker, a daily cockpit, a PDF reader made of ice, two games and the quiet screen in our living room. Every one of them runs on my own devices, every day.</p>
+        <p class="lede" data-reveal>Hi, I’m Yorben. I design and build native apps for iPhone, iPad and Mac. A portfolio tracker, a daily cockpit, a PDF reader made of ice, a ticker beside the Dock, two games and the quiet screen in our living room. Every one of them runs on my own devices, every day.</p>
         <div class="hero-actions" data-reveal>
           <a class="btn btn-ink" href="#work">See the work</a>
           <a class="btn btn-glass" href="#contact">Say hi</a>
@@ -223,7 +249,7 @@
     <section id="work" class="section shell">
       <div class="section-head" data-reveal>
         <p class="eyebrow">Work</p>
-        <h2 class="title">Six apps, all in daily use.</h2>
+        <h2 class="title">Seven apps, all in daily use.</h2>
         <p class="sub">Tap one to see what it does and how it looks up close.</p>
       </div>
 
@@ -275,6 +301,23 @@
           </div>
           <div class="card-media media-phone">
             <img src="assets/work/cairn/home.webp" width="900" height="1957" alt="Cairn’s portfolio screen" loading="lazy" decoding="async">
+          </div>
+          <span class="card-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a href="#tape" class="card glass c-tape span-12 card-wide" data-project="tape" data-reveal>
+          <div class="card-text">
+            <div class="card-title-row">
+              <img class="app-icon" src="assets/icons/tape.webp" width="256" height="256" alt="">
+              <div>
+                <h3>Tape</h3>
+                <p class="platform">macOS · markets</p>
+              </div>
+            </div>
+            <p class="card-line">A stock ticker in the empty corner beside the Dock. One at a time, in its logo’s colour.</p>
+          </div>
+          <div class="card-media media-mac">
+            <img src="assets/work/tape/cover.webp" width="1476" height="640" alt="Tape beside the Dock on a MacBook, showing Amazon at $259.30, down 0.35%" loading="lazy" decoding="async">
           </div>
           <span class="card-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         </a>
@@ -555,6 +598,57 @@
 
         <div class="detail-foot">
           <p class="built">Built with SwiftUI, Swift 6, WidgetKit, Live Activities and the Gemini API. Screens show the demo portfolio.</p>
+          <a class="next" href="#tape">Next: Tape <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <!-- Tape -->
+      <article class="detail c-tape" id="detail-tape" data-detail="tape" hidden>
+        <header class="detail-head">
+          <img class="app-icon lg" src="assets/icons/tape.webp" width="256" height="256" alt="Tape app icon">
+          <div>
+            <h2 class="detail-title">Tape</h2>
+            <p class="detail-tag">One stock at a time, beside the Dock.</p>
+          </div>
+        </header>
+        <div class="detail-meta">
+          <span class="chip">macOS 26</span><span class="chip">AppKit · Core Animation</span><span class="chip">Version 1.0</span>
+          <a class="btn btn-ink btn-sm" href="https://github.com/Yvsleyen00941/Tape/releases/download/v1.0.0/Tape-macOS-v1.0.0.zip">Download for Mac (.zip)</a>
+          <a class="btn btn-glass btn-sm" href="https://github.com/Yvsleyen00941/Tape" target="_blank" rel="noopener">★ Star on GitHub</a>
+          <button class="btn btn-glass btn-sm" type="button" data-copy="https://yorben.me/#tape">Share link</button>
+        </div>
+        <p style="margin: 12px 0 0; font-size: 13px; font-family: var(--mono); color: var(--muted); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span>Homebrew:</span>
+          <button type="button" style="cursor: pointer; border: 1px solid var(--hairline); background: var(--glass); padding: 4px 10px; border-radius: 6px; font-family: inherit; font-size: inherit; color: var(--ink);" data-copy="brew install --cask Yvsleyen00941/tap/tape">brew install --cask Yvsleyen00941/tap/tape 📋</button>
+        </p>
+
+        <figure class="shot shot-hero media-mac">
+          <img loading="lazy" decoding="async" src="assets/work/tape/corner.webp" width="1880" height="604" alt="Tape in the corner beside the Dock on a 14-inch MacBook, showing Amazon at $259.30, down 0.35%">
+          <figcaption>On a 14-inch MacBook: halfway between the screen’s edge and the Dock, level with its icons.</figcaption>
+        </figure>
+
+        <ul class="facts">
+          <li><strong>Exactly beside the Dock.</strong> Tape measures the Dock and sits in the middle of the corner it leaves empty. It follows as apps open and close.</li>
+          <li><strong>One at a time.</strong> A logo tile, the price, the move in mint or coral and the day so far. Then the next one comes into focus, column by column.</li>
+          <li><strong>Names in their own colour.</strong> NVIDIA green, Vanguard red: each colour comes from the logo, adjusted to read on the wallpaper.</li>
+          <li><strong>Fits any Dock.</strong> Wide on a big screen; on a laptop with a long Dock it turns compact, then stacks ticker, price and move.</li>
+        </ul>
+
+        <div class="shots">
+          <div class="shot-row actuals">
+            <figure class="shot media-mac actual" style="--w: 179px"><img loading="lazy" decoding="async" src="assets/work/tape/focus-0.webp" width="358" height="112" alt="The S&amp;P 500 in focus"><figcaption>The S&amp;P 500, in focus.</figcaption></figure>
+            <figure class="shot media-mac actual" style="--w: 179px"><img loading="lazy" decoding="async" src="assets/work/tape/focus-1.webp" width="358" height="112" alt="The S&amp;P 500 drifting up and blurring away"><figcaption>115 ms: it drifts up and blurs.</figcaption></figure>
+            <figure class="shot media-mac actual" style="--w: 179px"><img loading="lazy" decoding="async" src="assets/work/tape/focus-2.webp" width="358" height="112" alt="NVIDIA rising out of the blur, column by column"><figcaption>217 ms: NVIDIA rises.</figcaption></figure>
+            <figure class="shot media-mac actual" style="--w: 179px"><img loading="lazy" decoding="async" src="assets/work/tape/focus-3.webp" width="358" height="112" alt="NVIDIA in focus"><figcaption>424 ms: sharp again.</figcaption></figure>
+          </div>
+          <div class="shot-row">
+            <figure class="shot media-window" style="--ar: 1.039"><img loading="lazy" decoding="async" src="assets/work/tape/watchlist.webp" width="1069" height="1029" alt="Watchlist settings with brand-coloured names and live prices"><figcaption>The watchlist: colours come from each logo.</figcaption></figure>
+            <figure class="shot media-window" style="--ar: 1.382"><img loading="lazy" decoding="async" src="assets/work/tape/placement.webp" width="962" height="696" alt="Placement settings: left or right of the Dock, fitted exactly"><figcaption>Placement: left or right, fitted to the Dock.</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="detail-foot">
+          <p class="built">Built with AppKit, SwiftUI, Core Animation and the Accessibility API, with quotes from Yahoo Finance. Five more looks (Liquid, LED, Paper, Aura and Classic) are one click away in Settings.</p>
           <a class="next" href="#aerocommand">Next: AeroCommand <span aria-hidden="true">→</span></a>
         </div>
       </article>

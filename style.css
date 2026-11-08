@@ -250,6 +250,10 @@ ul { padding: 0; list-style: none; }
 .c-aero { --tint: 60 110 225; }
 .c-waybill { --tint: 85 89 225; }
 .c-hub { --tint: 232 150 90; }
+.c-tape { --tint: 52 211 153; }
+
+/* Tape lives on the bottom edge of the screen, so its picture stands on the card's bottom edge. */
+.c-tape .card-media img { top: auto; bottom: 0; transform: none; transform-origin: 50% 100%; }
 
 @media (max-width: 980px) {
   .span-8, .span-4 { grid-column: span 12; }
@@ -265,6 +269,9 @@ ul { padding: 0; list-style: none; }
   .card-wide .card-text { padding-bottom: 0; align-self: auto; }
   .card-wide .card-media { margin-top: 22px; }
   .card-open { top: 18px; right: 18px; }
+  /* Wide and short: the card takes the picture's own height instead of leaving a gap above it. */
+  .c-tape .card-media { height: auto; }
+  .c-tape .card-media img { position: relative; }
 }
 
 /* ---------- About ---------- */
@@ -363,6 +370,15 @@ ul { padding: 0; list-style: none; }
 .shots { display: grid; gap: 32px; }
 .shot-row { display: flex; gap: 20px; align-items: flex-start; }
 .shot-row .shot { flex: var(--ar, 1) 1 0%; min-width: 0; }
+/* At actual size: one CSS pixel per point, so a small window stays as sharp as on the Mac. */
+.shot-row .shot.actual { flex: none; width: var(--w); }
+.shot.actual img { border-radius: 8px; }
+@media (max-width: 640px) {
+  .shot-row.actuals { flex-direction: row; flex-wrap: wrap; gap: 24px 16px; }
+  .shot-row.actuals .shot.actual { width: calc(50% - 8px); }
+}
+/* A window that brings its own corners and shadow gets no frame of ours. */
+.shot.media-window img { border-radius: 0; box-shadow: none; background: none; }
 .phones { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 20px; margin-bottom: 8px; }
 .phones figcaption { text-align: center; }
 .phones + .facts { margin: 36px 0 0; }

@@ -3,7 +3,7 @@
 document.documentElement.classList.add('js');
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const projects = ['rime', 'cockpit', 'cairn', 'aerocommand', 'waybill', 'homehub'];
+const projects = ['rime', 'cockpit', 'cairn', 'tape', 'aerocommand', 'waybill', 'homehub'];
 
 // 0. Opening the site always starts at the top. The browser doesn't restore an old scroll
 //    position, and section links (#work, #about, …) don't stay in the address, so a saved or
@@ -186,19 +186,17 @@ document.querySelectorAll('[data-copy]').forEach(btn => {
   });
 });
 
-// 7. Developer keyboard shortcuts: Cmd+K quick actions & 1/2 quick Homebrew copy
+// 7. Developer keyboard shortcuts: Cmd+K quick actions & 1/2/3 quick Homebrew copy
+const brewCasks = { 1: 'cockpit', 2: 'rime', 3: 'tape' };
 window.addEventListener('keydown', e => {
   const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
   if (activeTag === 'input' || activeTag === 'textarea') return;
 
   if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
     e.preventDefault();
-    showToast('Developer Mode: Press 1 to copy Cockpit brew, 2 for Rime brew');
-  } else if (!sheet.open && e.key === '1' && !e.metaKey && !e.ctrlKey && !e.altKey) {
-    const cmd = 'brew install --cask Yvsleyen00941/tap/cockpit';
-    navigator.clipboard?.writeText(cmd).then(() => showToast('Copied: ' + cmd));
-  } else if (!sheet.open && e.key === '2' && !e.metaKey && !e.ctrlKey && !e.altKey) {
-    const cmd = 'brew install --cask Yvsleyen00941/tap/rime';
+    showToast('Developer Mode: Press 1 to copy Cockpit brew, 2 for Rime, 3 for Tape');
+  } else if (!sheet.open && brewCasks[e.key] && !e.metaKey && !e.ctrlKey && !e.altKey) {
+    const cmd = `brew install --cask Yvsleyen00941/tap/${brewCasks[e.key]}`;
     navigator.clipboard?.writeText(cmd).then(() => showToast('Copied: ' + cmd));
   }
 });
