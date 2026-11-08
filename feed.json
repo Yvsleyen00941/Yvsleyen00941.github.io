@@ -10,6 +10,13 @@
   },
   "items": [
     {
+      "id": "https://yorben.me/#tape",
+      "url": "https://yorben.me/#tape",
+      "title": "Tape: A Native macOS Stock Ticker Beside the Dock",
+      "content_text": "Introducing Tape: A native macOS stock ticker sitting in the empty corner beside the Dock. Displays one stock, ETF, index or crypto at a time with brand-matched colors, fluid AppKit & Core Animation transitions, and Homebrew support.",
+      "date_published": "2026-11-08T18:00:00Z"
+    },
+    {
       "id": "https://yorben.me/articles/building-cockpit-macos-hud.html",
       "url": "https://yorben.me/articles/building-cockpit-macos-hud.html",
       "title": "Building Cockpit: A Zero-Cloud macOS & iPad Productivity HUD",
