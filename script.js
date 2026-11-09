@@ -3,7 +3,7 @@
 document.documentElement.classList.add('js');
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const projects = ['rime', 'cockpit', 'cairn', 'tape', 'aerocommand', 'waybill', 'homehub'];
+const projects = ['rime', 'cockpit', 'cairn', 'tape', 'needle', 'aerocommand', 'waybill', 'homehub'];
 
 // 0. Opening the site always starts at the top. The browser doesn't restore an old scroll
 //    position, and section links (#work, #about, …) don't stay in the address, so a saved or
@@ -186,15 +186,15 @@ document.querySelectorAll('[data-copy]').forEach(btn => {
   });
 });
 
-// 7. Developer keyboard shortcuts: Cmd+K quick actions & 1/2/3 quick Homebrew copy
-const brewCasks = { 1: 'cockpit', 2: 'rime', 3: 'tape' };
+// 7. Developer keyboard shortcuts: Cmd+K quick actions & 1–4 quick Homebrew copy
+const brewCasks = { 1: 'cockpit', 2: 'rime', 3: 'tape', 4: 'needle' };
 window.addEventListener('keydown', e => {
   const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
   if (activeTag === 'input' || activeTag === 'textarea') return;
 
   if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
     e.preventDefault();
-    showToast('Developer Mode: Press 1 to copy Cockpit brew, 2 for Rime, 3 for Tape');
+    showToast('Developer Mode: Press 1 to copy Cockpit brew, 2 for Rime, 3 for Tape, 4 for Needle');
   } else if (!sheet.open && brewCasks[e.key] && !e.metaKey && !e.ctrlKey && !e.altKey) {
     const cmd = `brew install --cask Yvsleyen00941/tap/${brewCasks[e.key]}`;
     navigator.clipboard?.writeText(cmd).then(() => showToast('Copied: ' + cmd));

@@ -6,6 +6,7 @@ Personal site of Yorben Vander Sleyen: native apps for iPhone, iPad and Mac.
 - **Cockpit** (macOS): the whole day in one window.
 - **Cairn** (iPhone): every market in one portfolio.
 - **Tape** (macOS): a stock ticker in the empty corner beside the Dock.
+- **Needle** (macOS): what's playing, in the corner on the Dock's other side.
 - **AeroCommand** (iPad): an airline tycoon on a satellite globe.
 - **Waybill** (iPad): a logistics idle game in toy-scale 3D.
 - **Home Hub** (iPad Air 2): the calm screen in the living room.

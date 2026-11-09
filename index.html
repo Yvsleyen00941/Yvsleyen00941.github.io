@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <title>Yorben Vander Sleyen — Native macOS &amp; iOS Apps | Cockpit &amp; Rime</title>
-  <meta name="description" content="I design and build native apps for the way I live: Rime, Cockpit and Tape for the Mac, Waybill and AeroCommand for iPad, and the Home Hub in our living room.">
+  <meta name="description" content="I design and build native apps for the way I live: Rime, Cockpit, Tape and Needle for the Mac, Waybill and AeroCommand for iPad, and the Home Hub in our living room.">
   <meta name="author" content="Yorben Vander Sleyen">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="google-site-verification" content="Z_RtTBpZtgyaPvrGHRmG_qd2ILT0IXAozDNLmGOcXIw">
@@ -25,7 +25,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yorben.me/">
   <meta property="og:title" content="Yorben — apps for the way I live">
-  <meta property="og:description" content="Native apps for iPhone, iPad and Mac: Rime, Cockpit, Tape, Waybill, AeroCommand and Home Hub.">
+  <meta property="og:description" content="Native apps for iPhone, iPad and Mac: Rime, Cockpit, Tape, Needle, Waybill, AeroCommand and Home Hub.">
   <meta property="og:image" content="https://yorben.me/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -33,7 +33,7 @@
   <meta property="og:site_name" content="Yorben">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Yorben — apps for the way I live">
-  <meta name="twitter:description" content="Native apps for iPhone, iPad and Mac: Rime, Cockpit, Tape, Waybill, AeroCommand and Home Hub.">
+  <meta name="twitter:description" content="Native apps for iPhone, iPad and Mac: Rime, Cockpit, Tape, Needle, Waybill, AeroCommand and Home Hub.">
   <meta name="twitter:image" content="https://yorben.me/assets/og-image.png">
 
 
@@ -118,6 +118,24 @@
       },
       {
         "@type": "SoftwareApplication",
+        "@id": "https://yorben.me/#needle",
+        "name": "Needle",
+        "operatingSystem": "macOS 26.0 or later",
+        "applicationCategory": "MultimediaApplication",
+        "description": "What's playing on the Mac, in the empty corner beside the Dock: the album cover, with the title in the cover's colour. Works with Music, Spotify, Podcasts and browsers.",
+        "url": "https://yorben.me/#needle",
+        "downloadUrl": "https://github.com/Yvsleyen00941/Needle/releases/latest/download/Needle-macOS-v1.0.0.zip",
+        "softwareVersion": "1.0.0",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "EUR"
+        },
+        "image": "https://yorben.me/assets/work/needle/corner.webp",
+        "author": { "@id": "https://yorben.me/#person" }
+      },
+      {
+        "@type": "SoftwareApplication",
         "@id": "https://yorben.me/#waybill",
         "name": "Waybill",
         "operatingSystem": "iPadOS 17.0 or later",
@@ -163,18 +181,26 @@
           },
           {
             "@type": "Question",
-            "name": "How can I install Cockpit, Rime and Tape via Homebrew?",
+            "name": "What is Needle for macOS?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "All three apps can be installed via terminal using Homebrew: brew install --cask Yvsleyen00941/tap/cockpit, brew install --cask Yvsleyen00941/tap/rime and brew install --cask Yvsleyen00941/tap/tape."
+              "text": "Needle is a free, open-source now-playing app for macOS that shows the album cover in the empty corner beside the Dock, with the title in the cover's colour. It reads the same Now Playing information as Control Center, so it works with Music, Spotify, Podcasts and browsers. Click the cover to play or pause, swipe to skip."
             }
           },
           {
             "@type": "Question",
-            "name": "Are Cockpit, Rime and Tape completely free and open source?",
+            "name": "How can I install Cockpit, Rime, Tape and Needle via Homebrew?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, Cockpit, Rime and Tape are 100% free, MIT licensed, and open source with source code available on GitHub."
+              "text": "All four apps can be installed via terminal using Homebrew: brew install --cask Yvsleyen00941/tap/cockpit, brew install --cask Yvsleyen00941/tap/rime, brew install --cask Yvsleyen00941/tap/tape and brew install --cask Yvsleyen00941/tap/needle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are Cockpit, Rime, Tape and Needle completely free and open source?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Cockpit, Rime, Tape and Needle are 100% free, MIT licensed, and open source with source code available on GitHub."
             }
           }
         ]
@@ -224,7 +250,7 @@
     <section class="hero shell">
       <div class="hero-copy">
         <h1 class="display" data-reveal>I build apps for<br>the way I live.</h1>
-        <p class="lede" data-reveal>Hi, I’m Yorben. I design and build native apps for iPhone, iPad and Mac. A portfolio tracker, a daily cockpit, a PDF reader made of ice, a ticker beside the Dock, two games and the quiet screen in our living room. Every one of them runs on my own devices, every day.</p>
+        <p class="lede" data-reveal>Hi, I’m Yorben. I design and build native apps for iPhone, iPad and Mac. A portfolio tracker, a daily cockpit, a PDF reader made of ice, a ticker beside the Dock and the record playing on the other side of it, two games and the quiet screen in our living room. Every one of them runs on my own devices, every day.</p>
         <div class="hero-actions" data-reveal>
           <a class="btn btn-ink" href="#work">See the work</a>
           <a class="btn btn-glass" href="#contact">Say hi</a>
@@ -249,7 +275,7 @@
     <section id="work" class="section shell">
       <div class="section-head" data-reveal>
         <p class="eyebrow">Work</p>
-        <h2 class="title">Seven apps, all in daily use.</h2>
+        <h2 class="title">Eight apps, all in daily use.</h2>
         <p class="sub">Tap one to see what it does and how it looks up close.</p>
       </div>
 
@@ -318,6 +344,23 @@
           </div>
           <div class="card-media media-mac">
             <img src="assets/work/tape/cover.webp" width="1476" height="640" alt="Tape beside the Dock on a MacBook, showing Amazon at $259.30, down 0.35%" loading="lazy" decoding="async">
+          </div>
+          <span class="card-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <a href="#needle" class="card glass c-needle span-12 card-wide" data-project="needle" data-reveal>
+          <div class="card-text">
+            <div class="card-title-row">
+              <img class="app-icon" src="assets/icons/needle.webp" width="256" height="256" alt="">
+              <div>
+                <h3>Needle</h3>
+                <p class="platform">macOS · music</p>
+              </div>
+            </div>
+            <p class="card-line">What’s playing, in the empty corner beside the Dock. The cover, and the title in its colour.</p>
+          </div>
+          <div class="card-media media-mac">
+            <img src="assets/work/needle/cover.webp" width="1476" height="640" alt="Needle right of the Dock on a MacBook, showing Undertow by Marina Vale" loading="lazy" decoding="async">
           </div>
           <span class="card-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         </a>
@@ -649,6 +692,61 @@
 
         <div class="detail-foot">
           <p class="built">Built with AppKit, SwiftUI, Core Animation and the Accessibility API, with quotes from Yahoo Finance. Five more looks (Liquid, LED, Paper, Aura and Classic) are one click away in Settings.</p>
+          <a class="next" href="#needle">Next: Needle <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <!-- Needle -->
+      <article class="detail c-needle" id="detail-needle" data-detail="needle" hidden>
+        <header class="detail-head">
+          <img class="app-icon lg" src="assets/icons/needle.webp" width="256" height="256" alt="Needle app icon">
+          <div>
+            <h2 class="detail-title">Needle</h2>
+            <p class="detail-tag">What’s playing, beside the Dock.</p>
+          </div>
+        </header>
+        <div class="detail-meta">
+          <span class="chip">macOS 26</span><span class="chip">AppKit · Core Animation</span><span class="chip">Version 1.0</span>
+          <a class="btn btn-ink btn-sm" href="https://github.com/Yvsleyen00941/Needle/releases/download/v1.0.0/Needle-macOS-v1.0.0.zip">Download for Mac (.zip)</a>
+          <a class="btn btn-glass btn-sm" href="https://github.com/Yvsleyen00941/Needle" target="_blank" rel="noopener">★ Star on GitHub</a>
+          <button class="btn btn-glass btn-sm" type="button" data-copy="https://yorben.me/#needle">Share link</button>
+        </div>
+        <p style="margin: 12px 0 0; font-size: 13px; font-family: var(--mono); color: var(--muted); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span>Homebrew:</span>
+          <button type="button" style="cursor: pointer; border: 1px solid var(--hairline); background: var(--glass); padding: 4px 10px; border-radius: 6px; font-family: inherit; font-size: inherit; color: var(--ink);" data-copy="brew install --cask Yvsleyen00941/tap/needle">brew install --cask Yvsleyen00941/tap/needle 📋</button>
+        </p>
+
+        <figure class="shot shot-hero media-mac">
+          <img loading="lazy" decoding="async" src="assets/work/needle/corner.webp" width="1880" height="604" alt="Needle in the corner right of the Dock on a 14-inch MacBook, showing Undertow by Marina Vale">
+          <figcaption>On a 14-inch MacBook: the cover in the corner the Dock leaves, level with its icons.</figcaption>
+        </figure>
+
+        <ul class="facts">
+          <li><strong>The cover in the corner.</strong> The album art beside the Dock, with a soft shadow in its own colours. The title takes the cover’s colour.</li>
+          <li><strong>Same album, same cover.</strong> A new track comes into focus the way a new listing does in Tape. From the same album, only the words change.</li>
+          <li><strong>Click, swipe, done.</strong> Click the cover to pause, the title to see it large, and swipe with two fingers to skip.</li>
+          <li><strong>Fits any Dock.</strong> Cover, words and clock on a big screen; beside a long Dock on a laptop, the cover alone.</li>
+        </ul>
+
+        <div class="shots">
+          <div class="shot-row actuals">
+            <figure class="shot media-mac actual" style="--w: 142px"><img loading="lazy" decoding="async" src="assets/work/needle/skip-0.webp" width="284" height="112" alt="Undertow by Marina Vale in focus"><figcaption>Undertow, in focus.</figcaption></figure>
+            <figure class="shot media-mac actual" style="--w: 142px"><img loading="lazy" decoding="async" src="assets/work/needle/skip-1.webp" width="284" height="112" alt="The title drifting up and blurring away while the cover stays sharp"><figcaption>280 ms: the words drift up and blur.</figcaption></figure>
+            <figure class="shot media-mac actual" style="--w: 142px"><img loading="lazy" decoding="async" src="assets/work/needle/skip-2.webp" width="284" height="112" alt="The next title rising out of the blur"><figcaption>420 ms: the next one rises.</figcaption></figure>
+            <figure class="shot media-mac actual" style="--w: 142px"><img loading="lazy" decoding="async" src="assets/work/needle/skip-3.webp" width="284" height="112" alt="Salt in the Air in focus, under the same cover"><figcaption>Same album: the cover never moved.</figcaption></figure>
+          </div>
+          <figure class="shot media-mac">
+            <img loading="lazy" decoding="async" src="assets/work/needle/both.webp" width="3024" height="173" alt="Tape left of the Dock and Needle right of it on a MacBook">
+            <figcaption>Tape takes the left of the Dock, Needle the right.</figcaption>
+          </figure>
+          <div class="shot-row">
+            <figure class="shot media-window" style="--ar: 0.633"><img loading="lazy" decoding="async" src="assets/work/needle/card.webp" width="608" height="960" alt="The cover card: the cover large, the track, a scrubber and play controls"><figcaption>Click the title: the cover, large.</figcaption></figure>
+            <figure class="shot media-window" style="--ar: 0.884"><img loading="lazy" decoding="async" src="assets/work/needle/settings.webp" width="1040" height="1176" alt="Appearance settings with a live preview of the corner"><figcaption>Appearance, with the corner as it looks now.</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="detail-foot">
+          <p class="built">Built with AppKit, SwiftUI and Core Animation. Needle reads the same Now Playing information as Control Center, so it works with Music, Spotify, Podcasts and browsers. The records in these pictures are made up, and their covers are drawn in code.</p>
           <a class="next" href="#aerocommand">Next: AeroCommand <span aria-hidden="true">→</span></a>
         </div>
       </article>

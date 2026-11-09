@@ -10,6 +10,13 @@
   },
   "items": [
     {
+      "id": "https://yorben.me/#needle",
+      "url": "https://yorben.me/#needle",
+      "title": "Needle: What's Playing, Beside the Dock",
+      "content_text": "Introducing Needle, Tape's other side: the album cover in the empty corner beside the Dock, with the title in the cover's colour. Works with Music, Spotify, Podcasts and browsers. Click to pause, swipe to skip. Free, open source and on Homebrew.",
+      "date_published": "2026-11-09T09:00:00Z"
+    },
+    {
       "id": "https://yorben.me/#tape",
       "url": "https://yorben.me/#tape",
       "title": "Tape: A Native macOS Stock Ticker Beside the Dock",
