@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Waybill — 3D Logistics Idle Diorama Game for iPad & macOS</title>
+  <meta name="description" content="Waybill is a tactile 3D logistics idle diorama game built with RealityKit and SwiftUI featuring toy-scale harbors, metros, and spaceports.">
+  <meta name="author" content="Yorben Vander Sleyen">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://yorben.me/waybill/">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yorben.me/waybill/">
+  <meta property="og:title" content="Waybill — 3D Logistics Idle Diorama Game for iPad & macOS">
+  <meta property="og:description" content="Waybill is a tactile 3D logistics idle diorama game built with RealityKit and SwiftUI featuring toy-scale harbors, metros, and spaceports.">
+  <meta property="og:image" content="https://yorben.me/assets/work/waybill/riverside.webp">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Waybill — 3D Logistics Idle Diorama Game for iPad & macOS">
+  <meta name="twitter:description" content="Waybill is a tactile 3D logistics idle diorama game built with RealityKit and SwiftUI featuring toy-scale harbors, metros, and spaceports.">
+  <meta name="twitter:image" content="https://yorben.me/assets/work/waybill/riverside.webp">
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .app-shell { width: min(840px, 100% - 32px); margin: 0 auto; padding: 36px 0 96px; }
+    @media (min-width: 768px) { .app-shell { width: min(840px, 100% - 64px); padding: 48px 0 120px; } }
+    .app-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 36px; padding-bottom: 20px; border-bottom: 1px solid var(--hairline); font-size: 14px; font-weight: 500; }
+    .app-nav a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    .app-nav a:hover { color: var(--ink); }
+    .detail { display: block !important; padding: 0 !important; max-width: 100% !important; }
+    .download-card { margin-top: 48px; padding: 28px; border-radius: 16px; border: 1px solid var(--hairline); background: var(--glass); text-align: center; }
+    .download-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: var(--ink); }
+    .download-card p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <nav class="app-nav">
+      <a href="https://yorben.me">← yorben.me</a>
+      <div style="display: flex; gap: 16px;">
+        <a href="https://yorben.me/cockpit/">Cockpit</a>
+        <a href="https://yorben.me/tape/">Tape</a>
+        <a href="https://yorben.me/rime/">Rime</a>
+        <a href="https://yorben.me/needle/">Needle</a>
+        <a href="https://yorben.me/waybill/">Waybill</a>
+      </div>
+    </nav>
+
+    <article class="detail c-waybill" id="detail-waybill" data-detail="waybill">
+        <header class="detail-head">
+          <img class="app-icon lg" src="../assets/icons/waybill.webp" width="256" height="256" alt="Waybill app icon">
+          <div>
+            <h2 class="detail-title">Waybill</h2>
+            <p class="detail-tag">A logistics idle game in toy-scale 3D.</p>
+          </div>
+        </header>
+        <div class="detail-meta">
+          <span class="chip">iPad</span><span class="chip">RealityKit</span><span class="chip">Version 1.0</span>
+          <a class="btn btn-ink btn-sm" href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener">★ Star on GitHub</a>
+          <a class="btn btn-glass btn-sm" href="../articles/simulating-3d-logistics-dioramas-realitykit.html">Case Study →</a>
+          <button class="btn btn-glass btn-sm" type="button" data-copy="https://yorben.me/#waybill">Share link</button>
+        </div>
+
+        <figure class="shot shot-hero media-ipad">
+          <img loading="lazy" decoding="async" src="../assets/work/waybill/riverside.webp" width="2000" height="1397" alt="Riverside depot with the full interface">
+          <figcaption>Riverside: the depot grows from one bay to a distribution centre.</figcaption>
+        </figure>
+
+        <ul class="facts">
+          <li><strong>Five regions.</strong> Riverside, Harbour City, Granite Pass, Metro and finally Orbit.</li>
+          <li><strong>Trucks that really drive.</strong> They follow real turning circles, reverse into bays and never overlap.</li>
+          <li><strong>All made in code.</strong> Every model, plus my own edge smoothing and shading.</li>
+          <li><strong>Real time.</strong> Day and night follow the clock; the depot keeps working while you’re away.</li>
+        </ul>
+
+        <div class="shots">
+          <div class="shot-row">
+            <figure class="shot media-ipad" style="--ar: 1.432"><img loading="lazy" decoding="async" src="../assets/work/waybill/harbour.webp" width="1800" height="1257" alt="Harbour City quay cranes"><figcaption>Harbour City</figcaption></figure>
+            <figure class="shot media-ipad" style="--ar: 1.432"><img loading="lazy" decoding="async" src="../assets/work/waybill/granite.webp" width="1800" height="1257" alt="Granite Pass rail yard"><figcaption>Granite Pass</figcaption></figure>
+          </div>
+          <div class="shot-row">
+            <figure class="shot media-ipad" style="--ar: 1.432"><img loading="lazy" decoding="async" src="../assets/work/waybill/metro.webp" width="1800" height="1257" alt="Metro warehouse at night"><figcaption>Metro at night</figcaption></figure>
+            <figure class="shot media-ipad" style="--ar: 1.432"><img loading="lazy" decoding="async" src="../assets/work/waybill/orbit.webp" width="1800" height="1257" alt="Orbit launch site at dusk"><figcaption>Orbit launch site</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="detail-foot">
+          <p class="built">Built with RealityKit, SwiftUI and Metal, balanced with a Python simulation.</p>
+          <a class="next" href="#homehub">Next: Home Hub <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+    <div class="download-card">
+      <h3>Get Waybill</h3>
+      <p>Free, native, and open source for Apple platforms.</p>
+      <div style="display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+        <a class="btn btn-ink" href="https://github.com/Yvsleyen00941/Waybill">Direct Download (.zip)</a>
+        <a class="btn btn-glass" href="https://github.com/Yvsleyen00941/Waybill" target="_blank" rel="noopener">View Source on GitHub ★</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6a0b22985e364760aff75a8e9f5f2784"}'></script>
+</body>
+</html>

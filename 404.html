@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Page Not Found — Yorben Vander Sleyen</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+
+  <script>
+    (function() {
+      var p = window.location.pathname.toLowerCase();
+      var apps = ['cockpit', 'tape', 'rime', 'needle', 'waybill'];
+      for (var i = 0; i < apps.length; i++) {
+        if (p.indexOf(apps[i]) !== -1) {
+          window.location.replace('/' + apps[i] + '/');
+          return;
+        }
+      }
+    })();
+  </script>
+
+  <style>
+    .shell-404 { width: min(600px, 100% - 32px); margin: 0 auto; padding: 96px 0 120px; text-align: center; }
+    .kicker-404 { font-family: var(--mono); font-size: 14px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+    .title-404 { font-size: clamp(32px, 5vw, 48px); font-weight: 600; color: var(--ink); margin-bottom: 16px; }
+    .desc-404 { font-size: 16px; color: var(--muted); margin-bottom: 32px; line-height: 1.5; }
+    .links-404 { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 36px; }
+  </style>
+</head>
+<body>
+  <div class="shell-404">
+    <div class="kicker-404">404 · Page Not Found</div>
+    <h1 class="title-404">Looking for one of my apps?</h1>
+    <p class="desc-404">The link you followed doesn't exist, but you can jump directly to any of my native Apple platforms software below:</p>
+
+    <div class="links-404">
+      <a class="btn btn-ink" href="/cockpit/">Cockpit</a>
+      <a class="btn btn-ink" href="/tape/">Tape</a>
+      <a class="btn btn-ink" href="/rime/">Rime</a>
+      <a class="btn btn-ink" href="/needle/">Needle</a>
+      <a class="btn btn-ink" href="/waybill/">Waybill</a>
+    </div>
+
+    <div>
+      <a class="btn btn-glass" href="/">← Return to Homepage</a>
+    </div>
+  </div>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6a0b22985e364760aff75a8e9f5f2784"}'></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Needle — Album Art & Now Playing Beside The Dock for macOS</title>
+  <meta name="description" content="Needle displays the current album cover in the corner beside the macOS Dock with a soft reactive ambient shadow matching the track colors.">
+  <meta name="author" content="Yorben Vander Sleyen">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://yorben.me/needle/">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yorben.me/needle/">
+  <meta property="og:title" content="Needle — Album Art & Now Playing Beside The Dock for macOS">
+  <meta property="og:description" content="Needle displays the current album cover in the corner beside the macOS Dock with a soft reactive ambient shadow matching the track colors.">
+  <meta property="og:image" content="https://yorben.me/assets/work/needle/corner.webp">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Needle — Album Art & Now Playing Beside The Dock for macOS">
+  <meta name="twitter:description" content="Needle displays the current album cover in the corner beside the macOS Dock with a soft reactive ambient shadow matching the track colors.">
+  <meta name="twitter:image" content="https://yorben.me/assets/work/needle/corner.webp">
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .app-shell { width: min(840px, 100% - 32px); margin: 0 auto; padding: 36px 0 96px; }
+    @media (min-width: 768px) { .app-shell { width: min(840px, 100% - 64px); padding: 48px 0 120px; } }
+    .app-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 36px; padding-bottom: 20px; border-bottom: 1px solid var(--hairline); font-size: 14px; font-weight: 500; }
+    .app-nav a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    .app-nav a:hover { color: var(--ink); }
+    .detail { display: block !important; padding: 0 !important; max-width: 100% !important; }
+    .download-card { margin-top: 48px; padding: 28px; border-radius: 16px; border: 1px solid var(--hairline); background: var(--glass); text-align: center; }
+    .download-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: var(--ink); }
+    .download-card p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <nav class="app-nav">
+      <a href="https://yorben.me">← yorben.me</a>
+      <div style="display: flex; gap: 16px;">
+        <a href="https://yorben.me/cockpit/">Cockpit</a>
+        <a href="https://yorben.me/tape/">Tape</a>
+        <a href="https://yorben.me/rime/">Rime</a>
+        <a href="https://yorben.me/needle/">Needle</a>
+        <a href="https://yorben.me/waybill/">Waybill</a>
+      </div>
+    </nav>
+
+    <article class="detail c-needle" id="detail-needle" data-detail="needle">
+        <header class="detail-head">
+          <img class="app-icon lg" src="../assets/icons/needle.webp" width="256" height="256" alt="Needle app icon">
+          <div>
+            <h2 class="detail-title">Needle</h2>
+            <p class="detail-tag">What’s playing, beside the Dock.</p>
+          </div>
+        </header>
+        <div class="detail-meta">
+          <span class="chip">macOS 26</span><span class="chip">AppKit · Core Animation</span><span class="chip">Version 1.0</span>
+          <a class="btn btn-ink btn-sm" href="https://github.com/Yvsleyen00941/Needle/releases/download/v1.0.0/Needle-macOS-v1.0.0.zip">Download for Mac (.zip)</a>
+          <a class="btn btn-glass btn-sm" href="https://github.com/Yvsleyen00941/Needle" target="_blank" rel="noopener">★ Star on GitHub</a>
+          <button class="btn btn-glass btn-sm" type="button" data-copy="https://yorben.me/#needle">Share link</button>
+        </div>
+        <p style="margin: 12px 0 0; font-size: 13px; font-family: var(--mono); color: var(--muted); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span>Homebrew:</span>
+          <button type="button" style="cursor: pointer; border: 1px solid var(--hairline); background: var(--glass); padding: 4px 10px; border-radius: 6px; font-family: inherit; font-size: inherit; color: var(--ink);" data-copy="brew install --cask Yvsleyen00941/tap/needle">brew install --cask Yvsleyen00941/tap/needle 📋</button>
+        </p>
+
+        <figure class="shot shot-hero media-mac">
+          <img loading="lazy" decoding="async" src="../assets/work/needle/corner.webp" width="1880" height="604" alt="Needle in the corner right of the Dock on a 14-inch MacBook, showing Undertow by Marina Vale">
+          <figcaption>On a 14-inch MacBook: the cover in the corner the Dock leaves, level with its icons.</figcaption>
+        </figure>
+
+        <ul class="facts">
+          <li><strong>The cover in the corner.</strong> The album art beside the Dock, with a soft shadow in its own colours. The title takes the cover’s colour.</li>
+          <li><strong>Same album, same cover.</strong> A new track comes into focus the way a new listing does in Tape. From the same album, only the words change.</li>
+          <li><strong>Click, swipe, done.</strong> Click the cover to pause, the title to see it large, and swipe with two fingers to skip.</li>
+          <li><strong>Fits any Dock.</strong> Cover, words and clock on a big screen; beside a long Dock on a laptop, the cover alone.</li>
+        </ul>
+
+        <div class="shots">
+          <div class="shot-row actuals">
+            <figure class="shot media-mac actual" style="--w: 142px"><img loading="lazy" decoding="async" src="../assets/work/needle/skip-0.webp" width="284" height="112" alt="Undertow by Marina Vale in focus"><figcaption>Undertow, in focus.</figcaption></figure>
+            <figure class="shot media-mac actual" style="--w: 142px"><img loading="lazy" decoding="async" src="../assets/work/needle/skip-1.webp" width="284" height="112" alt="The title drifting up and blurring away while the cover stays sharp"><figcaption>280 ms: the words drift up and blur.</figcaption></figure>
+            <figure class="shot media-mac actual" style="--w: 142px"><img loading="lazy" decoding="async" src="../assets/work/needle/skip-2.webp" width="284" height="112" alt="The next title rising out of the blur"><figcaption>420 ms: the next one rises.</figcaption></figure>
+            <figure class="shot media-mac actual" style="--w: 142px"><img loading="lazy" decoding="async" src="../assets/work/needle/skip-3.webp" width="284" height="112" alt="Salt in the Air in focus, under the same cover"><figcaption>Same album: the cover never moved.</figcaption></figure>
+          </div>
+          <figure class="shot media-mac">
+            <img loading="lazy" decoding="async" src="../assets/work/needle/both.webp" width="3024" height="173" alt="Tape left of the Dock and Needle right of it on a MacBook">
+            <figcaption>Tape takes the left of the Dock, Needle the right.</figcaption>
+          </figure>
+          <div class="shot-row">
+            <figure class="shot media-window" style="--ar: 0.633"><img loading="lazy" decoding="async" src="../assets/work/needle/card.webp" width="608" height="960" alt="The cover card: the cover large, the track, a scrubber and play controls"><figcaption>Click the title: the cover, large.</figcaption></figure>
+            <figure class="shot media-window" style="--ar: 0.884"><img loading="lazy" decoding="async" src="../assets/work/needle/settings.webp" width="1040" height="1176" alt="Appearance settings with a live preview of the corner"><figcaption>Appearance, with the corner as it looks now.</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="detail-foot">
+          <p class="built">Built with AppKit, SwiftUI and Core Animation. Needle reads the same Now Playing information as Control Center, so it works with Music, Spotify, Podcasts and browsers. The records in these pictures are made up, and their covers are drawn in code.</p>
+          <a class="next" href="#aerocommand">Next: AeroCommand <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+    <div class="download-card">
+      <h3>Get Needle</h3>
+      <p>Free, native, and open source for Apple platforms.</p>
+      <div style="display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+        <a class="btn btn-ink" href="https://github.com/Yvsleyen00941/Needle/releases/download/v1.0.0/Needle-macOS-v1.0.0.zip">Direct Download (.zip)</a>
+        <a class="btn btn-glass" href="https://github.com/Yvsleyen00941/Needle" target="_blank" rel="noopener">View Source on GitHub ★</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6a0b22985e364760aff75a8e9f5f2784"}'></script>
+</body>
+</html>
