@@ -40,6 +40,29 @@
     .download-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: var(--ink); }
     .download-card p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
   </style>
+  <!-- Schema.org SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Rime",
+    "operatingSystem": "macOS 14.0 or later",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "downloadUrl": "https://github.com/Yvsleyen00941/Rime/releases/download/v1.0.0/Rime-macOS-v1.0.0.zip",
+    "softwareVersion": "1.0.0",
+    "description": "Distraction-free native macOS PDF reader and study companion with margin notes and frosted focus mode.",
+    "author": {
+      "@type": "Person",
+      "name": "Yorben Vander Sleyen",
+      "url": "https://yorben.me"
+    }
+  }
+  </script>
 </head>
 <body>
   <div class="app-shell">
@@ -107,6 +130,9 @@
       <div style="display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
         <a class="btn btn-ink" href="https://github.com/Yvsleyen00941/Rime/releases/download/v1.0.0/Rime-macOS-v1.0.0.zip">Direct Download (.zip)</a>
         <a class="btn btn-glass" href="https://github.com/Yvsleyen00941/Rime" target="_blank" rel="noopener">View Source on GitHub ★</a>
+      </div>
+      <div style="margin-top: 16px;">
+        <code style="display: inline-block; padding: 7px 14px; background: rgba(0,0,0,0.05); border-radius: 8px; font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--ink); border: 1px solid var(--hairline); cursor: pointer;" title="Click to copy" onclick="navigator.clipboard.writeText('brew install --cask yvsleyen00941/tap/rime'); this.innerText = 'Copied to clipboard!'; setTimeout(() => this.innerText = 'brew install --cask yvsleyen00941/tap/rime', 2000);">brew install --cask yvsleyen00941/tap/rime</code>
       </div>
     </div>
   </div>
