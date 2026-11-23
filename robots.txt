@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /*-pad.xml
 
 # Explicitly allow AI and search crawlers for maximum discovery
 User-agent: Googlebot

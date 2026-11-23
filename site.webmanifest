@@ -17,5 +17,36 @@
       "sizes": "180x180",
       "type": "image/png"
     }
+  ],
+  "categories": ["utilities", "productivity", "finance", "developer"],
+  "shortcuts": [
+    {
+      "name": "Cockpit",
+      "short_name": "Cockpit",
+      "description": "Unified macOS & Windows Productivity HUD",
+      "url": "/cockpit/",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Tape",
+      "short_name": "Tape",
+      "description": "Stock Ticker Beside the Dock",
+      "url": "/tape/",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Needle",
+      "short_name": "Needle",
+      "description": "Now Playing Album Art Companion",
+      "url": "/needle/",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Rime",
+      "short_name": "Rime",
+      "description": "Distraction-Free Focus PDF Reader",
+      "url": "/rime/",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    }
   ]
 }
