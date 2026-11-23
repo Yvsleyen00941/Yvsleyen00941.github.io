@@ -9,6 +9,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://yorben.me/waybill/">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="alternate" type="text/markdown" title="LLM Context (llms.txt)" href="https://yorben.me/llms.txt">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -46,23 +47,44 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Waybill",
-    "operatingSystem": "iPadOS 17.0 or later, macOS 14.0 or later",
-    "applicationCategory": "GameApplication",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "downloadUrl": "https://github.com/Yvsleyen00941/Waybill",
-    "softwareVersion": "1.0.0",
-    "description": "A spatial miniature rail operations game for iPadOS and macOS built with Swift and RealityKit.",
-    "author": {
-      "@type": "Person",
-      "name": "Yorben Vander Sleyen",
-      "url": "https://yorben.me"
-    }
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Waybill",
+        "operatingSystem": "iPadOS 17.0 or later, macOS 14.0 or later",
+        "applicationCategory": "GameApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        },
+        "downloadUrl": "https://github.com/Yvsleyen00941/Waybill/archive/refs/heads/main.zip",
+        "softwareVersion": "1.0.0",
+        "description": "A spatial miniature rail operations game for iPadOS and macOS built with Swift and RealityKit.",
+        "author": {
+          "@type": "Person",
+          "name": "Yorben Vander Sleyen",
+          "url": "https://yorben.me"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yorben.me/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Waybill",
+            "item": "https://yorben.me/waybill/"
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>

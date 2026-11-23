@@ -10,6 +10,7 @@
   <link rel="canonical" href="https://yorben.me/cockpit/">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="alternate" type="application/xml" title="Cockpit PAD XML" href="https://yorben.me/cockpit-pad.xml">
+  <link rel="alternate" type="text/markdown" title="LLM Context (llms.txt)" href="https://yorben.me/llms.txt">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -47,23 +48,44 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Cockpit",
-    "operatingSystem": "macOS 14.0 or later",
-    "applicationCategory": "ProductivityApplication",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "downloadUrl": "https://github.com/Yvsleyen00941/Cockpit/releases/download/v1.0.0/Cockpit-macOS-v1.0.0.zip",
-    "softwareVersion": "1.0.0",
-    "description": "Cockpit consolidates your calendar, tasks, music, and triage signals into a unified native macOS productivity HUD with a 24-hour day dial.",
-    "author": {
-      "@type": "Person",
-      "name": "Yorben Vander Sleyen",
-      "url": "https://yorben.me"
-    }
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Cockpit",
+        "operatingSystem": "macOS 14.0 or later, Windows 10/11 (x64 and ARM64)",
+        "applicationCategory": "ProductivityApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        },
+        "downloadUrl": "https://github.com/Yvsleyen00941/Cockpit/releases/download/v1.0.0/Cockpit-macOS-v1.0.0.zip",
+        "softwareVersion": "1.0.0",
+        "description": "Cockpit consolidates your calendar, tasks, music, and triage signals into a unified native productivity HUD for macOS and Windows with a 24-hour day dial.",
+        "author": {
+          "@type": "Person",
+          "name": "Yorben Vander Sleyen",
+          "url": "https://yorben.me"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yorben.me/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Cockpit",
+            "item": "https://yorben.me/cockpit/"
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
