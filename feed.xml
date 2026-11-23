@@ -3,25 +3,41 @@
   <channel>
     <title>Yorben Vandersleyen — Engineering &amp; Apps</title>
     <link>https://yorben.me/</link>
-    <description>Engineering logs and release announcements for native Apple ecosystem applications: Cockpit, Waybill, and modern software.</description>
+    <description>Engineering logs and release announcements for native Apple ecosystem applications: Cockpit, Tape, Needle, Rime, and Waybill.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Nov 2026 09:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 11:30:00 GMT</lastBuildDate>
     <atom:link href="https://yorben.me/feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
+      <title>Cockpit: Unified Daily Productivity HUD for macOS &amp; Windows</title>
+      <link>https://yorben.me/cockpit/</link>
+      <guid isPermaLink="true">https://yorben.me/cockpit/</guid>
+      <pubDate>Mon, 23 Nov 2026 11:00:00 GMT</pubDate>
+      <description><![CDATA[Cockpit unifies your daily schedule, Notion workspaces, and real-time hardware telemetry into a single distraction-free popover and 24-hour day dial. Built natively with sub-millisecond responsiveness (<0.1% CPU idle overhead) for macOS and now Windows (x64 and ARM64). Free and open source under MIT.]]></description>
+    </item>
+
+    <item>
+      <title>Rime: Distraction-Free Frosted-Ice PDF Reader for macOS</title>
+      <link>https://yorben.me/rime/</link>
+      <guid isPermaLink="true">https://yorben.me/rime/</guid>
+      <pubDate>Mon, 23 Nov 2026 10:30:00 GMT</pubDate>
+      <description><![CDATA[Rime freezes out background screen clutter with a frosted glass focus backdrop, leaving only your document. Designed for deep reading, research, and papers with continuous vertical flow, multi-tab support, and instant keyboard bookmarks. 100% native Swift and PDFKit.]]></description>
+    </item>
+
+    <item>
       <title>Needle: What's Playing, Beside the Dock</title>
-      <link>https://yorben.me/#needle</link>
-      <guid isPermaLink="true">https://yorben.me/#needle</guid>
+      <link>https://yorben.me/needle/</link>
+      <guid isPermaLink="true">https://yorben.me/needle/</guid>
       <pubDate>Mon, 09 Nov 2026 09:00:00 GMT</pubDate>
-      <description><![CDATA[Introducing Needle, Tape's other side: the album cover in the empty corner beside the Dock, with the title in the cover's colour. Works with Music, Spotify, Podcasts and browsers. Click to pause, swipe to skip. Free, open source and on Homebrew.]]></description>
+      <description><![CDATA[Introducing Needle, Tape's musical counterpart: the album cover in the empty corner beside the Dock, with track titles tinted in real-time by the artwork's dominant color palette. Works with Apple Music, Spotify, Podcasts, and browsers. Free on Homebrew.]]></description>
     </item>
 
     <item>
       <title>Tape: A Native macOS Stock Ticker Beside the Dock</title>
-      <link>https://yorben.me/#tape</link>
-      <guid isPermaLink="true">https://yorben.me/#tape</guid>
+      <link>https://yorben.me/tape/</link>
+      <guid isPermaLink="true">https://yorben.me/tape/</guid>
       <pubDate>Sun, 08 Nov 2026 18:00:00 GMT</pubDate>
-      <description><![CDATA[Introducing Tape: A native macOS stock ticker sitting in the empty corner beside the Dock. Displays one stock, ETF, index or crypto at a time with brand-matched colors, fluid AppKit & Core Animation transitions, and Homebrew support.]]></description>
+      <description><![CDATA[Introducing Tape: A native macOS stock and crypto ticker sitting in the empty corner beside the Dock. Displays one asset at a time with brand-matched colors, fluid AppKit & Core Animation transitions, and Homebrew support.]]></description>
     </item>
 
     <item>

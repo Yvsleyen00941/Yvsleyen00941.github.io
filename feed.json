@@ -3,24 +3,38 @@
   "title": "Yorben Vandersleyen — Engineering & Apps",
   "home_page_url": "https://yorben.me/",
   "feed_url": "https://yorben.me/feed.json",
-  "description": "Engineering logs and releases for native Apple applications: Cockpit, Waybill, and modern software.",
+  "description": "Engineering logs and releases for native Apple applications: Cockpit, Tape, Needle, Rime, and Waybill.",
   "author": {
     "name": "Yorben Vander Sleyen",
     "url": "https://yorben.me"
   },
   "items": [
     {
-      "id": "https://yorben.me/#needle",
-      "url": "https://yorben.me/#needle",
+      "id": "https://yorben.me/cockpit/",
+      "url": "https://yorben.me/cockpit/",
+      "title": "Cockpit: Unified Daily Productivity HUD for macOS & Windows",
+      "content_text": "Cockpit unifies your daily schedule, Notion workspaces, and real-time hardware telemetry into a single distraction-free popover and 24-hour day dial. Built natively with sub-millisecond responsiveness (<0.1% CPU idle overhead) for macOS and now Windows (x64 and ARM64). Free and open source under MIT.",
+      "date_published": "2026-11-23T11:00:00Z"
+    },
+    {
+      "id": "https://yorben.me/rime/",
+      "url": "https://yorben.me/rime/",
+      "title": "Rime: Distraction-Free Frosted-Ice PDF Reader for macOS",
+      "content_text": "Rime freezes out background screen clutter with a frosted glass focus backdrop, leaving only your document. Designed for deep reading, research, and papers with continuous vertical flow, multi-tab support, and instant keyboard bookmarks. 100% native Swift and PDFKit.",
+      "date_published": "2026-11-23T10:30:00Z"
+    },
+    {
+      "id": "https://yorben.me/needle/",
+      "url": "https://yorben.me/needle/",
       "title": "Needle: What's Playing, Beside the Dock",
-      "content_text": "Introducing Needle, Tape's other side: the album cover in the empty corner beside the Dock, with the title in the cover's colour. Works with Music, Spotify, Podcasts and browsers. Click to pause, swipe to skip. Free, open source and on Homebrew.",
+      "content_text": "Introducing Needle, Tape's musical counterpart: the album cover in the empty corner beside the Dock, with track titles tinted in real-time by the artwork's dominant color palette. Works with Apple Music, Spotify, Podcasts, and browsers. Free on Homebrew.",
       "date_published": "2026-11-09T09:00:00Z"
     },
     {
-      "id": "https://yorben.me/#tape",
-      "url": "https://yorben.me/#tape",
+      "id": "https://yorben.me/tape/",
+      "url": "https://yorben.me/tape/",
       "title": "Tape: A Native macOS Stock Ticker Beside the Dock",
-      "content_text": "Introducing Tape: A native macOS stock ticker sitting in the empty corner beside the Dock. Displays one stock, ETF, index or crypto at a time with brand-matched colors, fluid AppKit & Core Animation transitions, and Homebrew support.",
+      "content_text": "Introducing Tape: A native macOS stock and crypto ticker sitting in the empty corner beside the Dock. Displays one asset at a time with brand-matched colors, fluid AppKit & Core Animation transitions, and Homebrew support.",
       "date_published": "2026-11-08T18:00:00Z"
     },
     {
