@@ -1,0 +1,38 @@
+# Yorben Vander Sleyen — Native Apple Ecosystem & Desktop Software
+
+> High-performance, distraction-free native desktop utilities for macOS and cross-platform desktop environments. Built exclusively in Swift, SwiftUI, AppKit, and native C/C++ backends with zero Electron, zero webviews, zero tracking, and minimal memory footprints.
+
+## Core Applications
+
+- [Cockpit](https://yorben.me/cockpit/): All-in-one unified daily productivity HUD, day dial, and menu bar control surface for macOS and Windows. Consolidates calendar events, system telemetry, and Notion workspaces.
+- [Tape](https://yorben.me/tape/): Minimalist stock & crypto ticker that measures the macOS Dock and lives unobtrusively in its empty corner. Shows ticker, price, and daily change in the asset's brand color.
+- [Needle](https://yorben.me/needle/): Now Playing companion sitting in the empty corner beside the macOS Dock. Dynamically extracts dominant colors from album artwork across Spotify, Apple Music, and web audio.
+- [Rime](https://yorben.me/rime/): Distraction-free minimalist PDF reader engine featuring frosted-ice reading modes, multi-tab layout, and persistent research bookmarks.
+- [Waybill](https://yorben.me/waybill/): Tactile 3D logistics idle diorama game built with RealityKit and SwiftUI for iPadOS.
+
+## Distribution & Installation
+
+All software is free, open source under the MIT license, and distributed without paywalls:
+
+### Homebrew Cask (macOS)
+```bash
+brew tap Yvsleyen00941/tap
+brew install --cask cockpit
+brew install --cask tape
+brew install --cask needle
+brew install --cask rime
+```
+
+### Direct Download Mirrors
+- Cockpit (macOS): https://github.com/Yvsleyen00941/Cockpit/releases/latest/download/Cockpit-macOS-v1.0.0.zip
+- Cockpit (Windows x64): https://github.com/Yvsleyen00941/Cockpit/releases/latest/download/Cockpit-Windows-x64-v1.0.0.zip
+- Cockpit (Windows ARM64): https://github.com/Yvsleyen00941/Cockpit/releases/latest/download/Cockpit-Windows-ARM64-v1.0.0.zip
+- Tape (macOS): https://github.com/Yvsleyen00941/Tape/releases/latest/download/Tape-macOS-v1.0.0.zip
+- Needle (macOS): https://github.com/Yvsleyen00941/Needle/releases/latest/download/Needle-macOS-v1.0.0.zip
+- Rime (macOS): https://github.com/Yvsleyen00941/Rime/releases/latest/download/Rime-macOS-v1.0.0.zip
+
+## Developer & Links
+- Website: https://yorben.me
+- GitHub: https://github.com/Yvsleyen00941
+- RSS Feed: https://yorben.me/feed.xml
+- Full Documentation: https://yorben.me/llms-full.txt

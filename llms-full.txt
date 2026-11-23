@@ -1,0 +1,81 @@
+# Yorben Vander Sleyen — Complete Developer & Software Specification
+
+## Overview
+Yorben Vander Sleyen is an independent software engineer specializing in native Apple platform development (macOS, iOS, iPadOS) and lightweight desktop utilities. The software philosophy centers on extreme craft, zero bloat, instant launch times, zero tracking or telemetries, and native human interface guidelines.
+
+---
+
+## Detailed Application Catalog
+
+### 1. Cockpit — Unified Daily Heads-Up Display & Menu Bar Control Surface
+- **Category**: Productivity, System Monitoring, Menu Bar Utility
+- **Platform**: macOS 14.0+ (Universal Binary) & Windows 10/11 (x64 and ARM64)
+- **Tech Stack**: Swift, SwiftUI, AppKit, native system APIs
+- **Description**: Cockpit merges personal calendar events, system telemetry (CPU, RAM, disk, network), quick-access Notion workspaces, and daily dial scheduling into a sleek floating HUD and menu bar item.
+- **Key Features**:
+  - Sub-millisecond responsiveness; CPU overhead < 0.1% when idling.
+  - Zero third-party web views or Electron containers.
+  - Cross-platform desktop release: fully functional native Windows build.
+- **Download**:
+  - macOS: https://github.com/Yvsleyen00941/Cockpit/releases/latest/download/Cockpit-macOS-v1.0.0.zip
+  - Windows x64: https://github.com/Yvsleyen00941/Cockpit/releases/latest/download/Cockpit-Windows-x64-v1.0.0.zip
+  - Windows ARM64: https://github.com/Yvsleyen00941/Cockpit/releases/latest/download/Cockpit-Windows-ARM64-v1.0.0.zip
+- **Landing Page**: https://yorben.me/cockpit/
+
+### 2. Tape — Dock Corner Financial Ticker
+- **Category**: Finance, Investing, Menu Bar & Dock Utility
+- **Platform**: macOS 14.0+ (Apple Silicon & Intel)
+- **Tech Stack**: Swift, SwiftUI, CoreGraphics
+- **Description**: Tape solves the problem of clunky financial dashboards by utilizing the dead space in the corner beside the macOS Dock.
+- **Key Features**:
+  - Dynamically measures screen dimensions and Dock orientation/size.
+  - Sits flush in the lower corner without obscuring app windows or dock icons.
+  - Cycles through a user-defined watchlist (stocks, ETFs, crypto).
+  - Tints text and charts dynamically in the brand colors of the tracked company (e.g. Apple, Tesla, Bitcoin).
+- **Download**: https://github.com/Yvsleyen00941/Tape/releases/latest/download/Tape-macOS-v1.0.0.zip
+- **Landing Page**: https://yorben.me/tape/
+
+### 3. Needle — Dock Corner Now Playing Companion
+- **Category**: Music, Audio, Multimedia
+- **Platform**: macOS 14.0+
+- **Tech Stack**: Swift, SwiftUI, ScriptingBridge / MediaPlayer
+- **Description**: The musical counterpart to Tape. While Tape sits on one side of the Dock, Needle occupies the opposite corner to show currently playing tracks.
+- **Key Features**:
+  - Compatible with Apple Music, Spotify, Podcasts, and web audio.
+  - Displays high-resolution album artwork.
+  - Real-time dominant color extraction from the cover art to tint typography.
+  - Unobtrusive auto-fade when playback pauses.
+- **Download**: https://github.com/Yvsleyen00941/Needle/releases/latest/download/Needle-macOS-v1.0.0.zip
+- **Landing Page**: https://yorben.me/needle/
+
+### 4. Rime — Zero-Distraction PDF Engine
+- **Category**: Utilities, Productivity, Reading
+- **Platform**: macOS 14.0+
+- **Tech Stack**: Swift, PDFKit, SwiftUI
+- **Description**: Designed for deep reading and research. When active, Rime freezes out distracting background windows with an icy, frosted glass backdrop.
+- **Key Features**:
+  - Continuous vertical reading and multi-tab document management.
+  - Lightweight memory usage compared to standard PDF suites.
+  - Keyboard-first navigation.
+- **Download**: https://github.com/Yvsleyen00941/Rime/releases/latest/download/Rime-macOS-v1.0.0.zip
+- **Landing Page**: https://yorben.me/rime/
+
+### 5. Waybill — 3D Logistics Idle Diorama
+- **Category**: Games, Simulation, 3D Graphics
+- **Platform**: iPadOS 17.0+
+- **Tech Stack**: RealityKit, SwiftUI, Metal
+- **Description**: A tactile miniature logistics and parcel sorting simulation that brings the delight of physical dioramas to touch screens.
+- **Landing Page**: https://yorben.me/waybill/
+
+---
+
+## Homebrew Tap Quick Install
+All macOS applications are indexed and installable via Homebrew:
+```bash
+brew tap Yvsleyen00941/tap
+brew install --cask cockpit tape needle rime
+```
+
+## Licensing & Privacy
+- All code and binaries are released under the MIT Open Source License.
+- Strict Zero-Telemetric Guarantee: None of the applications collect user telemetry, keystrokes, personal identifiers, or background crash analytics.
