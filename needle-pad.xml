@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <PAD_VERSION>4.0</PAD_VERSION>
+  </MASTER_PAD_VERSION_INFO>
+  <Company_Info>
+    <Company_Name>Yorben Vander Sleyen</Company_Name>
+    <Company_WebSite_URL>https://yorben.me</Company_WebSite_URL>
+    <Contact_Info>
+      <Author_First_Name>Yorben</Author_First_Name>
+      <Author_Last_Name>Vander Sleyen</Author_Last_Name>
+    </Contact_Info>
+  </Company_Info>
+  <Program_Info>
+    <Program_Name>Needle</Program_Name>
+    <Program_Version>1.0.0</Program_Version>
+    <Program_Release_Month>11</Program_Release_Month>
+    <Program_Release_Day>15</Program_Release_Day>
+    <Program_Release_Year>2026</Program_Release_Year>
+    <Program_Cost_Dollars>0.00</Program_Cost_Dollars>
+    <Program_Cost_Other_Code>EUR</Program_Cost_Other_Code>
+    <Program_Cost_Other>0.00</Program_Cost_Other>
+    <Program_Type>Freeware</Program_Type>
+    <Program_Release_Status>New Release</Program_Release_Status>
+    <Program_Install_Support>No Install Support</Program_Install_Support>
+    <Program_OS_Support>macOS 14.0 Sonoma, macOS 15.0 Sequoia</Program_OS_Support>
+    <Program_Language>English</Program_Language>
+    <Program_Change_Info>Initial release of Needle now-playing dock companion.</Program_Change_Info>
+    <Program_Categories>Multimedia, Audio Players, Spotify, Apple Music, Desktop Enhancements</Program_Categories>
+  </Program_Info>
+  <Program_Descriptions>
+    <English>
+      <Keywords>macOS, now playing, sleeve alternative, spotify, apple music, dock companion, album art</Keywords>
+      <Char_Desc_45>Dock corner now playing companion for Mac</Char_Desc_45>
+      <Char_Desc_80>Album artwork and dynamic color palette track title in the corner beside the Dock.</Char_Desc_80>
+      <Char_Desc_250>Needle sits in the empty corner beside the macOS Dock, displaying high-res album covers with titles tinted in real-time by the artwork's dominant color palette. Supports Spotify and Apple Music.</Char_Desc_250>
+      <Char_Desc_2000>Needle is the musical companion for macOS. Positioned in the corner opposite your Dock, it displays current playing tracks from Spotify, Apple Music, Podcasts, and web audio. Featuring real-time color extraction that tints interface typography to match cover art, Needle automatically disappears when playback pauses. Free, native Swift, open source under MIT.</Char_Desc_2000>
+    </English>
+  </Program_Descriptions>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>https://yorben.me/needle/</Application_Info_URL>
+      <Application_Screenshot_URL>https://yorben.me/assets/work/needle/corner.webp</Application_Screenshot_URL>
+      <Application_Icon_URL>https://yorben.me/favicon.svg</Application_Icon_URL>
+      <Application_XML_File_URL>https://yorben.me/needle-pad.xml</Application_XML_File_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>https://github.com/Yvsleyen00941/Needle/releases/latest/download/Needle-macOS-v1.0.0.zip</Primary_Download_URL>
+    </Download_URLs>
+  </Web_Info>
+</XML_DIZ_INFO>

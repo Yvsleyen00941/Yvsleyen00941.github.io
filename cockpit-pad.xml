@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <PAD_VERSION>4.0</PAD_VERSION>
+  </MASTER_PAD_VERSION_INFO>
+  <Company_Info>
+    <Company_Name>Yorben Vander Sleyen</Company_Name>
+    <Company_WebSite_URL>https://yorben.me</Company_WebSite_URL>
+    <Contact_Info>
+      <Author_First_Name>Yorben</Author_First_Name>
+      <Author_Last_Name>Vander Sleyen</Author_Last_Name>
+    </Contact_Info>
+  </Company_Info>
+  <Program_Info>
+    <Program_Name>Cockpit</Program_Name>
+    <Program_Version>1.0.0</Program_Version>
+    <Program_Release_Month>11</Program_Release_Month>
+    <Program_Release_Day>15</Program_Release_Day>
+    <Program_Release_Year>2026</Program_Release_Year>
+    <Program_Cost_Dollars>0.00</Program_Cost_Dollars>
+    <Program_Cost_Other_Code>EUR</Program_Cost_Other_Code>
+    <Program_Cost_Other>0.00</Program_Cost_Other>
+    <Program_Type>Freeware</Program_Type>
+    <Program_Release_Status>Major Update</Program_Release_Status>
+    <Program_Install_Support>No Install Support</Program_Install_Support>
+    <Program_OS_Support>Mac OS X, macOS 14.0 Sonoma, macOS 15.0 Sequoia, Windows 10, Windows 11</Program_OS_Support>
+    <Program_Language>English</Program_Language>
+    <Program_Change_Info>Initial cross-platform release with unified heads-up display, Notion integration, and sub-millisecond calendar dial.</Program_Change_Info>
+    <Program_Categories>Desktop Utilities, System Monitoring, Menu Bar Tools</Program_Categories>
+  </Program_Info>
+  <Program_Descriptions>
+    <English>
+      <Keywords>macOS, menu bar, productivity, HUD, iStat Menus alternative, system monitor, calendar, Notion</Keywords>
+      <Char_Desc_45>Daily productivity HUD and menu bar daemon</Char_Desc_45>
+      <Char_Desc_80>Unified daily productivity heads-up display and menu bar daemon for Mac/Win.</Char_Desc_80>
+      <Char_Desc_250>Cockpit merges calendar events, system telemetry (CPU, RAM, disk, network), Notion workspaces, and daily dial scheduling into a sleek floating HUD and menu bar item with sub-millisecond responsiveness (<0.1% CPU).</Char_Desc_250>
+      <Char_Desc_2000>Cockpit is an all-in-one daily productivity heads-up display and menu bar control surface built for macOS and Windows. Written natively with zero Electron, zero webviews, and zero background tracking, it unifies your daily schedule, project workspaces, and hardware metrics in a clean, distraction-free popover. Free and open source under MIT.</Char_Desc_2000>
+    </English>
+  </Program_Descriptions>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>https://yorben.me/cockpit/</Application_Info_URL>
+      <Application_Order_URL>https://yorben.me/cockpit/</Application_Order_URL>
+      <Application_Screenshot_URL>https://yorben.me/assets/work/cockpit/cover.webp</Application_Screenshot_URL>
+      <Application_Icon_URL>https://yorben.me/favicon.svg</Application_Icon_URL>
+      <Application_XML_File_URL>https://yorben.me/cockpit-pad.xml</Application_XML_File_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>https://github.com/Yvsleyen00941/Cockpit/releases/latest/download/Cockpit-macOS-v1.0.0.zip</Primary_Download_URL>
+      <Secondary_Download_URL>https://github.com/Yvsleyen00941/Cockpit/releases/latest/download/Cockpit-Windows-x64-v1.0.0.zip</Secondary_Download_URL>
+    </Download_URLs>
+  </Web_Info>
+</XML_DIZ_INFO>
